@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习资源 - 极客导航</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .software-card {
+            background: var(--bg-card);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .software-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .card-icon { font-size: 2.5rem; flex-shrink: 0; }
+        .card-info { flex: 1; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .meta-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        .meta-tag.platform {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+        .card-body { padding: 0 1.5rem 1.5rem; }
+        .card-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); border: none; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dev.html">开发工具</a></li>
+                    <li><a href="design.html">设计工具</a></li>
+                    <li><a href="learning.html" class="active">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span>/</span>
+            <span>学习资源</span>
+        </div>
+
+        <div class="section-title">
+            <h1>📚 学习资源</h1>
+            <p>持续学习是程序员的自我修养，这些资源帮我不断进步</p>
+        </div>
+
+        <div class="software-grid">
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📘</div>
+                    <div class="card-info">
+                        <div class="card-title">MDN Web Docs</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Web</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Mozilla 维护的 Web 技术权威文档，HTML、CSS、JavaScript、Web API 都有详尽说明。是前端开发者每天必查的技术文档。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/mdn.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://developer.mozilla.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🏫</div>
+                    <div class="card-info">
+                        <div class="card-title">Coursera</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Web / App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">全球知名在线学习平台，与斯坦福、耶鲁等顶尖大学合作提供专业课程。涵盖编程、数据科学、商业管理等各个领域。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/coursera.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.coursera.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📝</div>
+                    <div class="card-info">
+                        <div class="card-title">LeetCode</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Web / App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">程序员算法刷题必备平台，拥有数千道算法题目和面经分享。想进大厂工作，LeetCode 是绕不过的一道坎。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/leetcode.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://leetcode.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📻</div>
+                    <div class="card-info">
+                        <div class="card-title">GitHub</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Web</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">全球最大的开源代码托管平台，也是学习优秀开源项目的最佳场所。Star 感兴趣的项目，跟踪最新技术趋势。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-info">
+                        <div class="card-title">Bilibili</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Web / App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">你以为 B 站只是二次元？这里有大量优质的技术教程、学习直播、考试辅导。程序员假装在娱乐，实际在学习。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/bilibili.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.bilibili.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

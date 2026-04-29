@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发工具 - 极客导航</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* V2 Style - Software Card Grid */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .software-card {
+            background: var(--bg-card);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .software-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-info {
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .meta-tag.platform {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+
+        .card-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dev.html" class="active">开发工具</a></li>
+                    <li><a href="design.html">设计工具</a></li>
+                    <li><a href="learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span>/</span>
+            <span>开发工具</span>
+        </div>
+
+        <div class="section-title">
+            <h1>🖥️ 开发工具</h1>
+            <p>工欲善其事，必先利其器。这些工具陪伴我完成无数项目</p>
+        </div>
+
+        <div class="software-grid">
+            <!-- VS Code -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🔧</div>
+                    <div class="card-info">
+                        <div class="card-title">Visual Studio Code</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win / Mac / Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">微软开源的现代化代码编辑器，支持几乎所有主流编程语言。内置 Git 终端、智能代码补全、调试器，插件生态丰富，是目前最受欢迎的开发者工具。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/vscode.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://code.visualstudio.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <!-- GitHub Desktop -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🐙</div>
+                    <div class="card-info">
+                        <div class="card-title">GitHub Desktop</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win / Mac</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">GitHub 官方桌面客户端，提供可视化的仓库管理、提交历史、分支操作等功能。对 Git 命令不熟悉的用户也能轻松管理代码版本。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-desktop.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://desktop.github.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <!-- Docker -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🐳</div>
+                    <div class="card-info">
+                        <div class="card-title">Docker</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Win / Mac / Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">容器化平台，让应用在不同环境中保持一致运行。打包、分发、运行应用程序的完整解决方案，是现代云原生开发的基础设施。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/docker.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.docker.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <!-- Postman -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📮</div>
+                    <div class="card-info">
+                        <div class="card-title">Postman</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Win / Mac / Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">API 开发协作平台，发送 HTTP 请求、测试 API 接口、管理环境变量。团队可以共享 API 文档和测试用例，大幅提升开发效率。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/postman.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.postman.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <!-- Chrome DevTools -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-info">
+                        <div class="card-title">Chrome DevTools</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Web / Chrome</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Chrome 浏览器内置的开发者工具，调试 JavaScript、检查网络请求、分析性能、修改 DOM 样式。前端开发必备的调试神器。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/devtools.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://developer.chrome.com/docs/devtools/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <!-- npm -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📦</div>
+                    <div class="card-info">
+                        <div class="card-title">npm</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Node.js 包管理器，全球最大的软件注册表之一。拥有超过百万个开源包，轻松安装、更新和管理项目依赖，是前端开发的必备工具。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/npm.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.npmjs.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

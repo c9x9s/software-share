@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计工具 - 极客导航</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .software-card {
+            background: var(--bg-card);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .software-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .card-icon { font-size: 2.5rem; flex-shrink: 0; }
+        .card-info { flex: 1; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .meta-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        .meta-tag.platform {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+        .card-body { padding: 0 1.5rem 1.5rem; }
+        .card-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); border: none; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dev.html">开发工具</a></li>
+                    <li><a href="design.html" class="active">设计工具</a></li>
+                    <li><a href="learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span>/</span>
+            <span>设计工具</span>
+        </div>
+
+        <div class="section-title">
+            <h1>🎨 设计工具</h1>
+            <p>从图标到原型，这些工具帮我把创意变成现实</p>
+        </div>
+
+        <div class="software-grid">
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-info">
+                        <div class="card-title">Figma</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Web / Mac / Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">基于浏览器的协作设计工具，团队可以实时共同编辑同一份设计稿。内置组件库、原型交互、设计系统功能，设计师和开发者都能高效协作。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/figma.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.figma.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🖌️</div>
+                    <div class="card-info">
+                        <div class="card-title">Photoshop</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">订阅制</span>
+                            <span class="meta-tag platform">Mac / Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Adobe 专业的图片编辑软件，从照片修图到图形设计、从数字绘画到UI制作，几乎能完成所有图像相关的设计工作。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/photoshop.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎬</div>
+                    <div class="card-info">
+                        <div class="card-title">Premiere Pro</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">订阅制</span>
+                            <span class="meta-tag platform">Mac / Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Adobe 专业的视频剪辑软件，支持从短视频到长电影的完整制作流程。配合 After Effects 可以完成复杂的视觉效果制作。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/premiere.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.adobe.com/products/premiere.html" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎭</div>
+                    <div class="card-info">
+                        <div class="card-title">Blender</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费开源</span>
+                            <span class="meta-tag platform">Mac / Win / Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">开源的3D创作套件，建模、雕刻、动画、模拟、渲染、视频剪辑一应俱全。专业级别的3D软件，完全免费。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/blender.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.blender.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>
