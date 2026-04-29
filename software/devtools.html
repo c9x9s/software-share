@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome DevTools 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav"><ul><li><a href="../index.html">首页</a></li><li><a href="../dev.html">开发工具</a></li><li><a href="../design.html">设计工具</a></li><li><a href="../learning.html">学习资源</a></li></ul></nav>
+        </div>
+    </header>
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>Chrome DevTools</span></div>
+            <div class="article-header">
+                <div class="article-icon">🔍</div>
+                <h1 class="article-title">Chrome DevTools</h1>
+                <div class="article-meta"><span>🌐 Web / Chrome</span><span>|</span><span>💰 免费</span><span>|</span><span>📅 内置浏览器</span></div>
+                <div class="article-tags"><span class="tag">调试</span><span class="tag">前端</span><span class="tag">性能分析</span></div>
+            </div>
+            <div class="article-content">
+                <h2>为什么用 Chrome DevTools</h2>
+                <p>做前端开发，Chrome DevTools 就是我的"第二双手"。不用这个，CSS 调样式只能靠猜，JS 调试只能靠 alert，页面加载慢也不知道卡在哪。</p>
+                <p>DevTools 功能非常全面，从 <strong>Elements 面板改 DOM</strong>，到 <strong>Console 跑代码</strong>，到 <strong>Network 看请求</strong>，再到 <strong>Performance 分析性能</strong>，几乎涵盖了所有前端调试场景。</p>
+
+                <h2>最实用的面板</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 常用面板</h4>
+                    <ul>
+                        <li><strong>Elements</strong> — 实时编辑 DOM 和 CSS，所见即所得</li>
+                        <li><strong>Console</strong> — 运行 JS，查看日志，调试输出</li>
+                        <li><strong>Sources</strong> — 设置断点调试 JS，单步执行</li>
+                        <li><strong>Network</strong> — 查看所有网络请求，分析加载慢的原因</li>
+                        <li><strong>Application</strong> — 检查 LocalStorage、SessionStorage、Cookies</li>
+                        <li><strong>Lighthouse</strong> — 网页性能评分，给优化建议</li>
+                    </ul>
+                </div>
+
+                <h2>进阶技巧</h2>
+                <p><strong>断点调试</strong> — 在 Sources 面板给 JS 打断点，比 console.log 精准多了。条件断点、XHR 断点也很实用。</p>
+                <p><strong>移动端调试</strong> — 手机连上电脑，直接在浏览器里调试真机上的页面，不用肉眼看。</p>
+                <p><strong>Coverage 面板</strong> — 看哪些 JS/CSS 没用到，可以删掉减少体积。</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>内置 Chrome，无需安装</li>
+                            <li>功能全面，几乎什么都能干</li>
+                            <li>实时预览，效率极高</li>
+                            <li>性能分析工具强大</li>
+                            <li>移动端调试支持好</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>Firefox 的开发者工具也不错</li>
+                            <li>某些 Safari 特性调试不到</li>
+                            <li>面板太多，新手容易晕</li>
+                            <li>长时间开 DevTools 浏览器会变卡</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p><strong>前端开发者</strong> 必备，后端工程师调接口有时候也需要。哪怕不是程序员，做网页相关工作的都应该了解一二。</p>
+
+                <h2>总结</h2>
+                <p>Chrome 内置的前端神器，熟练使用能大幅提升开发和调试效率。建议系统学习一下各个面板的功能。</p>
+                <p><strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）</p>
+
+                <div class="action-buttons">
+                    <a href="https://developer.chrome.com/docs/devtools/" target="_blank" class="action-btn primary">📖 官方文档</a>
+                    <a href="../dev.html" class="action-btn secondary">← 返回开发工具</a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer><p>© 2024 极客导航 · 发现优质工具，提升工作效率</p></footer>
+</body>
+</html>

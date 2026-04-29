@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Desktop 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav"><ul><li><a href="../index.html">首页</a></li><li><a href="../dev.html">开发工具</a></li><li><a href="../design.html">设计工具</a></li><li><a href="../learning.html">学习资源</a></li></ul></nav>
+        </div>
+    </header>
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>GitHub Desktop</span></div>
+            <div class="article-header">
+                <div class="article-icon">🐙</div>
+                <h1 class="article-title">GitHub Desktop</h1>
+                <div class="article-meta"><span>🖥️ Windows / Mac</span><span>|</span><span>💰 免费</span><span>|</span><span>📅 2024年12月</span></div>
+                <div class="article-tags"><span class="tag">Git</span><span class="tag">版本控制</span><span class="tag">协作</span></div>
+            </div>
+            <div class="article-content">
+                <h2>为什么选择 GitHub Desktop</h2>
+                <p>作为一个从命令行 Git 转过来的开发者，GitHub Desktop 让我重新爱上了版本控制。不用记各种命令，点几下鼠标就能完成日常 Git 操作。</p>
+                <p>特别适合 <strong>Git 入门新手</strong> 和 <strong>不经常用 Git 的设计师/产品经理</strong>。可视化界面让复杂的版本历史变得直观易懂。</p>
+
+                <h2>核心功能</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 主要功能</h4>
+                    <ul>
+                        <li><strong>可视化提交</strong> — 勾选要提交的文件，写好备注，一键提交</li>
+                        <li><strong>分支管理</strong> — 创建、切换、合并分支，不用记命令</li>
+                        <li><strong>冲突解决</strong> — 可视化对比差异，轻松处理合并冲突</li>
+                        <li><strong>快速审查</strong> — 在提交历史中查看每次改动，对比差异</li>
+                    </ul>
+                </div>
+
+                <h2>实际使用感受</h2>
+                <p>我主要用 GitHub Desktop 做两件事：一是日常提交和推送，二是不时查看代码改动历史。</p>
+                <p>团队协作时，经常需要切到别人的分支测试，以前得查文档找命令，现在直接下拉选择就行。Pull Request 也能直接在这里发起，不用再开浏览器。</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>界面简洁，上手容易</li>
+                            <li>不用记 Git 命令</li>
+                            <li>提交历史可视化，一目了然</li>
+                            <li>分支切换方便</li>
+                            <li>与 GitHub 无缝集成</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>高级功能不如命令行</li>
+                            <li>不支持 Stash</li>
+                            <li>多仓库管理不如 SourceTree</li>
+                            <li>Mac 版功能略少</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>如果你是 <strong>Git 新手</strong>，或者团队 <strong>主要用 GitHub</strong>，想快速完成日常提交和分支操作，GitHub Desktop 是很好的选择。但如果需要处理复杂的多分支工作流，可能还是需要命令行。</p>
+
+                <h2>总结</h2>
+                <p>简洁好用的 Git 可视化工具，让版本控制变得平易近人。日常高频操作用它足够，省时省力。</p>
+                <p><strong>评分：⭐⭐⭐⭐☆</strong>（4/5）</p>
+
+                <div class="action-buttons">
+                    <a href="https://desktop.github.com/" target="_blank" class="action-btn primary">⬇️ 前往下载</a>
+                    <a href="../dev.html" class="action-btn secondary">← 返回开发工具</a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer><p>© 2024 极客导航 · 发现优质工具，提升工作效率</p></footer>
+</body>
+</html>

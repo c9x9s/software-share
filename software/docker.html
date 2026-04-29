@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav"><ul><li><a href="../index.html">首页</a></li><li><a href="../dev.html">开发工具</a></li><li><a href="../design.html">设计工具</a></li><li><a href="../learning.html">学习资源</a></li></ul></nav>
+        </div>
+    </header>
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>Docker</span></div>
+            <div class="article-header">
+                <div class="article-icon">🐳</div>
+                <h1 class="article-title">Docker</h1>
+                <div class="article-meta"><span>🖥️ Win / Mac / Linux</span><span>|</span><span>💰 免费/付费</span><span>|</span><span>📅 2024年12月</span></div>
+                <div class="article-tags"><span class="tag">容器化</span><span class="tag">DevOps</span><span class="tag">云原生</span></div>
+            </div>
+            <div class="article-content">
+                <h2>为什么选择 Docker</h2>
+                <p>"Works on my machine" 是每个开发者都听过的问题。Docker 彻底解决了这个烦恼——把应用和它的依赖打包成一个容器，走到哪都能跑。</p>
+                <p>现在面试经常问 Docker，工作中也几乎成了标配。不管是本地开发、测试环境、还是生产部署，容器化都让这些变得简单可控。</p>
+
+                <h2>核心概念</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 三个关键概念</h4>
+                    <ul>
+                        <li><strong>镜像（Image）</strong> — 应用的模板，只读不可变</li>
+                        <li><strong>容器（Container）</strong> — 镜像的运行实例，可以启动停止删除</li>
+                        <li><strong>仓库（Registry）</strong> — 存放镜像的地方，Docker Hub 是最大的公共仓库</li>
+                    </ul>
+                </div>
+
+                <h2>实际使用场景</h2>
+                <p>我最常用 Docker 做这几件事：</p>
+                <p><strong>本地开发环境</strong> — 数据库、Redis、消息队列，用 Docker 启动一行命令搞定，不用手动安装配置。切换项目也不冲突。</p>
+                <p><strong>隔离测试</strong> — 在容器里跑测试，不怕弄脏主机环境。CI/CD 流水线里也大量使用。</p>
+                <p><strong>部署上线</strong> — 前后端都 Docker 化，K8s 调度，生产环境一致性好。</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>环境一致性好，dev=staging=prod</li>
+                            <li>快速启动，秒级创建容器</li>
+                            <li>资源占用低，一台机器跑多个服务</li>
+                            <li>生态丰富，几乎所有软件都有镜像</li>
+                            <li>社区活跃，遇到问题容易找到答案</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>Windows 性能不如 Linux</li>
+                            <li>网络配置有学习成本</li>
+                            <li>数据持久化需要额外配置</li>
+                            <li>大型应用容器化改造工作量大</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>如果你是 <strong>后端开发者</strong> 或 <strong>DevOps 工程师</strong>，Docker 几乎是必学技能。前端开发者也建议了解，特别是涉及 Node.js 构建和部署的时候。</p>
+
+                <h2>总结</h2>
+                <p>现代软件开发和部署的基础设施，值得投入时间学习。一旦掌握，效率提升明显。</p>
+                <p><strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）</p>
+
+                <div class="action-buttons">
+                    <a href="https://www.docker.com/" target="_blank" class="action-btn primary">⬇️ 前往下载</a>
+                    <a href="../dev.html" class="action-btn secondary">← 返回开发工具</a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer><p>© 2024 极客导航 · 发现优质工具，提升工作效率</p></footer>
+</body>
+</html>
