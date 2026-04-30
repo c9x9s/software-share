@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jcode 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../github.html">GitHub 热点</a>
+                <span>/</span>
+                <span>jcode</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🤖</div>
+                <h1 class="article-title">jcode</h1>
+                <div class="article-meta">
+                    <span>⭐ 1,515 Stars</span>
+                    <span>|</span>
+                    <span>📅 今日 411 Stars</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">AI 编程</span>
+                    <span class="tag">Rust</span>
+                    <span class="tag star">🔥 今日趋势</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>项目简介</h2>
+                <p>
+                    <strong>Coding Agent Harness</strong> — Rust 编写的 AI 编程助手框架。
+                </p>
+                <p>
+                    jcode 是一个轻量高性能的 AI 编程框架，使用 Rust 编写。它的设计目标是提供一个可扩展的平台，让开发者能够快速构建自己的 AI 编程代理。
+                </p>
+
+                <h2>技术特点</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 核心优势</h4>
+                    <ul>
+                        <li><strong>Rust 编写</strong> — 内存安全，性能卓越</li>
+                        <li><strong>模块化设计</strong> — 易于扩展和定制</li>
+                        <li><strong>轻量高效</strong> — 资源占用低</li>
+                        <li><strong>多模型支持</strong> — 可对接多种 LLM</li>
+                    </ul>
+                </div>
+
+                <h2>为什么选择 jcode</h2>
+                <p>
+                    随着 AI 编程工具的兴起，像 jcode 这样的框架越来越重要。Rust 的性能优势让它特别适合需要高效处理的场景。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>Rust 性能优秀</li>
+                            <li>代码质量高</li>
+                            <li>易于集成</li>
+                            <li>活跃开发中</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>相对较新</li>
+                            <li>文档在完善中</li>
+                            <li>生态还在成长</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>总结</h2>
+                <p>
+                    Rust 界的 AI 编程框架，值得关注。如果你对构建自己的 Coding Agent 感兴趣，jcode 是一个好的起点。
+                </p>
+                <p>
+                    <strong>推荐指数：⭐⭐⭐⭐</strong>
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://github.com/1jehuang/jcode" target="_blank" class="action-btn primary">
+                        ⬇️ 查看 GitHub
+                    </a>
+                    <a href="../github.html" class="action-btn secondary">
+                        ← 返回 GitHub 热点
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

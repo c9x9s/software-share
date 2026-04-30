@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../github.html">GitHub 热点</a>
+                <span>/</span>
+                <span>Warp</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🖥️</div>
+                <h1 class="article-title">Warp</h1>
+                <div class="article-meta">
+                    <span>⭐ 45,407 Stars</span>
+                    <span>|</span>
+                    <span>📅 今日 12,822 Stars</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">终端</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Rust</span>
+                    <span class="tag star">🔥 今日趋势</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>项目简介</h2>
+                <p>
+                    Warp 是 <strong>an agentic development environment, born out of the terminal</strong>。它将 AI 能力深度集成到终端中，让你可以用自然语言与命令行交互。
+                </p>
+                <p>
+                    由 <strong>warpdotdev</strong> 开发，使用 Rust 编写，性能出色。目前处于快速迭代期，几乎每天都有新功能。
+                </p>
+
+                <h2>核心特性</h2>
+                <div class="highlight-box">
+                    <h4>⚡ AI 驱动的终端</h4>
+                    <ul>
+                        <li><strong>自然语言命令</strong> — 不用记命令，说出你想做什么，Warp 帮你翻译</li>
+                        <li><strong>智能补全</strong> — 基于上下文的命令建议</li>
+                        <li><strong>命令解释</strong> — 选中任意命令，AI 帮你解释含义</li>
+                        <li><strong>Block 结构</strong> — 命令分块显示，易于阅读和复制</li>
+                    </ul>
+                </div>
+
+                <h2>为什么选择 Warp</h2>
+                <p>
+                    传统的终端几十年没变过，而 Warp 带来了全新的交互方式。<strong>不需要记住复杂的命令</strong>，只要描述你的需求，AI 就能生成正确的命令。
+                </p>
+                <p>
+                    对于经常需要用命令行的开发者来说，这能大大提升效率。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>AI 命令生成，降低学习门槛</li>
+                            <li>Rust 编写，性能优秀</li>
+                            <li>现代化 UI，容易阅读</li>
+                            <li>Block 结构清晰</li>
+                            <li>活跃开发，功能快速迭代</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>部分功能需要登录</li>
+                            <li>AI 功能可能需要付费</li>
+                            <li>Linux 支持还在完善</li>
+                            <li>可能与某些 shell 配置不兼容</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>总结</h2>
+                <p>
+                    Warp 代表了终端的未来方向。如果你厌倦了记命令，Warp 能让你用自然语言操作终端。
+                </p>
+                <p>
+                    <strong>推荐指数：⭐⭐⭐⭐</strong>
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://github.com/warpdotdev/warp" target="_blank" class="action-btn primary">
+                        ⬇️ 查看 GitHub
+                    </a>
+                    <a href="../github.html" class="action-btn secondary">
+                        ← 返回 GitHub 热点
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

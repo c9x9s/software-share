@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invidious 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../github.html">GitHub 热点</a>
+                <span>/</span>
+                <span>Invidious</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">▶️</div>
+                <h1 class="article-title">Invidious</h1>
+                <div class="article-meta">
+                    <span>⭐ 19,470 Stars</span>
+                    <span>|</span>
+                    <span>🏆 All-Time Popular</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">YouTube</span>
+                    <span class="tag">隐私保护</span>
+                    <span class="tag star">🏆 长期高赞</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>项目简介</h2>
+                <p>
+                    <strong>Invidious is an alternative front-end to YouTube.</strong> — 无需 Google 账号即可观看 YouTube 视频的开源项目。
+                </p>
+                <p>
+                    Invidious 是一个<strong>自托管的 YouTube 前端</strong>，保护你的隐私，不追踪你的行为。你可以自己部署，也可以使用公开实例。
+                </p>
+
+                <h2>为什么选择 Invidious</h2>
+                <div class="highlight-box">
+                    <h4>🔒 隐私优势</h4>
+                    <ul>
+                        <li><strong>无需登录</strong> — 不需要 Google 账号</li>
+                        <li><strong>不追踪</strong> — 不记录你的观看历史</li>
+                        <li><strong>无广告</strong> — 纯净的观看体验</li>
+                        <li><strong>轻量</strong> — 不加载 Google 的追踪脚本</li>
+                    </ul>
+                </div>
+
+                <h2>使用方法</h2>
+                <p>
+                    有两种方式使用 Invidious：
+                </p>
+                <ul>
+                    <li><strong>使用公开实例</strong> — 直接访问 yewtu.be、invidious.snopyta.org 等</li>
+                    <li><strong>自部署</strong> — 在自己的服务器上运行，完全自主控制</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>保护隐私</li>
+                            <li>无广告</li>
+                            <li>无需登录</li>
+                            <li>开源可自托管</li>
+                            <li>支持 RSS 订阅</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>无法登录自己的 YouTube 账号</li>
+                            <li>部分视频可能受限</li>
+                            <li>公开实例可能不稳定</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>总结</h2>
+                <p>
+                    Invidious 是注重隐私的用户的最佳选择。不再被 Google 追踪，还能免广告观看 YouTube。
+                </p>
+                <p>
+                    <strong>推荐指数：⭐⭐⭐⭐⭐</strong>
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://github.com/iv-org/invidious" target="_blank" class="action-btn primary">
+                        ⬇️ 查看 GitHub
+                    </a>
+                    <a href="../github.html" class="action-btn secondary">
+                        ← 返回 GitHub 热点
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>
