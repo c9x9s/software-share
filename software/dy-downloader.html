@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DY Video Downloader 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../dev.html">开发工具</a>
+                <span>/</span>
+                <span>DY Video Downloader</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">📺</div>
+                <h1 class="article-title">DY Video Downloader</h1>
+                <div class="article-meta">
+                    <span>🖥️ Win / Mac / Linux</span>
+                    <span>|</span>
+                    <span>💰 免费开源</span>
+                    <span>|</span>
+                    <span>📅 2024年更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">视频下载</span>
+                    <span class="tag">抖音</span>
+                    <span class="tag">自媒体</span>
+                    <span class="tag">开源</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>自媒体人的素材神器</h2>
+                <p>
+                    作为一个经常需要收集视频素材的自媒体人，最大的烦恼就是抖音水印问题。以前用各种小程序解析，不仅限时长，还动不动就收费。DY Video Downloader 完美解决了这个痛点。
+                </p>
+                <p>
+                    这是一个<strong>开源项目</strong>，基于 Python 开发，支持批量下载、画质选择、去水印等功能。最重要的是完全免费，没有任何限制。
+                </p>
+
+                <h2>核心功能</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 为什么选它</h4>
+                    <ul>
+                        <li><strong>批量下载</strong> — 输入多个链接，一键批量下载整个博主的历史作品</li>
+                        <li><strong>画质选择</strong> — 支持 1080P、4K 等高清画质下载</li>
+                        <li><strong>去水印</strong> — 下载后自动去除水印，直接可用</li>
+                        <li><strong>多平台支持</strong> — 不仅支持抖音，TikTok 也支持</li>
+                        <li><strong>跨平台</strong> — Windows、Mac、Linux 都能用</li>
+                    </ul>
+                </div>
+
+                <h2>使用场景</h2>
+                <p>
+                    做短视频剪辑的朋友应该深有体会：找到好的参考视频，却发现下载下来有水印，根本没法用。有了 DY Video Downloader，只需要复制链接，就能下载<strong>无水印的原片</strong>。
+                </p>
+                <p>
+                    另一个实用场景是<strong>素材库建设</strong>。关注同领域的优质博主，批量下载他们的作品，建立自己的灵感素材库，创作效率提升不止一倍。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>完全免费，开源可商用</li>
+                            <li>批量下载效率高</li>
+                            <li>支持多种画质</li>
+                            <li>去水印效果好</li>
+                            <li>跨平台支持</li>
+                            <li>持续更新维护</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>需要一定技术基础（命令行操作）</li>
+                            <li>界面是命令行，没有图形界面</li>
+                            <li>需要安装 Python 环境</li>
+                            <li>下载速度取决于网络状况</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    适合 <strong>短视频创作者</strong>、<strong>素材收集者</strong>、<strong>视频剪辑师</strong>。如果你只是偶尔下载一两个视频，用手机 App 更方便；但如果需要批量处理，这个工具效率高得多。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    对于需要频繁收集视频素材的朋友来说，DY Video Downloader 是真正的效率工具。开源免费，批量高效，值得收藏。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐☆</strong>（4/5，扣分在命令行界面）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://github.com/" target="_blank" class="action-btn primary">
+                        ⬇️ GitHub 下载
+                    </a>
+                    <a href="../dev.html" class="action-btn secondary">
+                        ← 返回开发工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

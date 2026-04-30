@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../learning.html">学习资源</a>
+                <span>/</span>
+                <span>LeetCode</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">📝</div>
+                <h1 class="article-title">LeetCode</h1>
+                <div class="article-meta">
+                    <span>🖥️ Web / App</span>
+                    <span>|</span>
+                    <span>💰 免费/付费</span>
+                    <span>|</span>
+                    <span>📅 持续更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">算法</span>
+                    <span class="tag">面试</span>
+                    <span class="tag">刷题</span>
+                    <span class="tag">程序员</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>程序员算法刷题的圣地</h2>
+                <p>
+                    LeetCode 是每个想进大厂的程序员都必须面对的名字。从字节跳动到 Google，没有一家公司在技术面试中不考算法题。LeetCode 就是为此而生的练习场。
+                </p>
+                <p>
+                    我是从 <strong>2021 年</strong>开始系统刷题的，从最初一道 Easy 都要想半天，到现在能独立解决 Medium、部分 Hard。这个过程没有捷径，只有不断练习、反复总结。
+                </p>
+
+                <h2>为什么 LeetCode 这么重要</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 刷题的核心价值</h4>
+                    <ul>
+                        <li><strong>面试必备</strong> — 大厂技术面试几乎必考算法题，原题库命中率不低</li>
+                        <li><strong>思维训练</strong> — 刷题是锻炼编程思维和逻辑能力的最佳方式之一</li>
+                        <li><strong>语言精通</strong> — 用某门语言刷题，能让你对这门语言掌握得更深入</li>
+                        <li><strong>数据库和系统设计</strong> — 现在 LeetCode 也有 SQL 和系统设计题库</li>
+                        <li><strong>企业题库</strong> — 按公司分类的真题，命中率高的面试神器</li>
+                    </ul>
+                </div>
+
+                <h2>我的刷题方法</h2>
+                <p>
+                    最开始盲目刷，效果很差。后来改进了方法：<strong>先分类</strong>，比如这周专攻二分查找；<strong>再总结</strong>，每道题做完写思路总结；<strong>最后复习</strong>，定期回顾错题。
+                </p>
+                <p>
+                    <strong>Hot 100</strong> 是我强烈建议优先刷完的题目列表，囊括了最高频的经典题目。刷完这些，面试中的大多数算法题你都能心里有底。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>题目质量高，涵盖所有常见题型</li>
+                            <li>社区活跃，题解丰富</li>
+                            <li>有 contests 竞赛，检验水平</li>
+                            <li>企业真题按公司分类</li>
+                            <li>讨论区高手云集</li>
+                            <li>会员费用相对合理</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>纯粹刷题容易陷入"应试教育"误区</li>
+                            <li>Hard 题目有时候过于脑筋急转弯</li>
+                            <li>需要长期坚持，短期效果不明显</li>
+                            <li>题目越来越多，容易焦虑</li>
+                            <li>部分题解质量参差不齐</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    正在或准备<strong>跳槽面试大厂</strong>的程序员必须刷；想<strong>提升算法能力</strong>的在校生值得刷；但如果日常工作不需要算法，那刷题的优先级可以降低。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    LeetCode 不是万能的，但没有 LeetCode 是万万不能的。它是程序员面试准备的标配工具。记住，刷题不是为了背答案，而是锻炼解决问题的思维能力。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://leetcode.com/" target="_blank" class="action-btn primary">
+                        💻 开始刷题
+                    </a>
+                    <a href="../learning.html" class="action-btn secondary">
+                        ← 返回学习资源
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

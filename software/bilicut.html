@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biliCut 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../dev.html">开发工具</a>
+                <span>/</span>
+                <span>biliCut</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">✂️</div>
+                <h1 class="article-title">biliCut（剪哔）</h1>
+                <div class="article-meta">
+                    <span>🖥️ Web</span>
+                    <span>|</span>
+                    <span>💰 完全免费</span>
+                    <span>|</span>
+                    <span>📅 持续更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">B站</span>
+                    <span class="tag">在线工具</span>
+                    <span class="tag">视频剪辑</span>
+                    <span class="tag">无需下载</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>专门为 B 站而生的剪辑工具</h2>
+                <p>
+                    做 B 站视频的朋友都知道，有时候只是想截取一小段精彩片段，或者提取音频做素材，却要打开庞大的剪辑软件，渲染导出，麻烦得要命。biliCut 就是来解决这个问题的。
+                </p>
+                <p>
+                    这是一个<strong>完全免费的在线工具</strong>，专门针对 B 站视频设计。输入链接，选择时间段，最长 60 秒，直接下载，省时省力。
+                </p>
+
+                <h2>核心功能</h2>
+                <div class="highlight-box">
+                    <h4>⚡ 专门为 B 站定制</h4>
+                    <ul>
+                        <li><strong>在线剪辑</strong> — 无需下载软件，浏览器直接用</li>
+                        <li><strong>链接提取</strong> — 输入 B 站链接，自动识别视频</li>
+                        <li><strong>时间段选择</strong> — 精确选择要截取的片段</li>
+                        <li><strong>音频提取</strong> — 可以只下载音频，格式可选</li>
+                        <li><strong>多格式支持</strong> — MP4、MP3 等常用格式</li>
+                        <li><strong>完全免费</strong> — 无广告，无收费项目</li>
+                    </ul>
+                </div>
+
+                <h2>使用场景</h2>
+                <p>
+                    最常用的场景是<strong>截取精彩片段</strong>。比如看到一段特别搞笑的直播片段，想分享给朋友，用 biliCut 30 秒搞定。
+                </p>
+                <p>
+                    另一个场景是<strong>提取音频</strong>。B 站上有很多优质的翻唱、音乐、ASMR，想下载到本地听，用 biliCut 提取音频比导出视频再转码方便多了。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>在线使用，无需下载安装</li>
+                            <li>专门适配 B 站链接</li>
+                            <li>操作简单，30 秒完成</li>
+                            <li>完全免费，无广告</li>
+                            <li>支持音频提取</li>
+                            <li>无需注册登录</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>最长只支持 60 秒</li>
+                            <li>需要网络连接才能使用</li>
+                            <li>不支持其他平台视频</li>
+                            <li>复杂剪辑需求无法满足</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    适合 <strong>B 站用户</strong>、<strong>短视频创作者</strong>、<strong>直播观众</strong>。只需要简单截取片段或提取音频，用这个工具比开剪辑软件高效得多。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    biliCut 是那种"小而美"的工具。功能专一，解决一个具体问题做到极致。不需要注册，打开就用，非常良心。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://www.bilibili.com/" target="_blank" class="action-btn primary">
+                        🔗 开始使用
+                    </a>
+                    <a href="../dev.html" class="action-btn secondary">
+                        ← 返回开发工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>
