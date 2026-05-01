@@ -1,167 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figma 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Figma 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../design.html">设计工具</a>
-                <span>/</span>
-                <span>Figma</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../design.html">设计工具</a>
+  <span>/</span>
+  <span>Figma</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎨</div>
-                <h1 class="article-title">Figma</h1>
-                <div class="article-meta">
-                    <span>🖥️ Web / Mac / Windows</span>
-                    <span>|</span>
-                    <span>💰 免费/付费</span>
-                    <span>|</span>
-                    <span>📅 2024年12月更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">UI设计</span>
-                    <span class="tag">协作</span>
-                    <span class="tag">原型设计</span>
-                    <span class="tag">推荐</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎨</div>
+  <h1 class="article-title">Figma</h1>
+  <div class="article-meta">
+   <span>🖥️ Web / Mac / Windows</span>
+   <span>|</span>
+   <span>💰 免费/付费</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">UI设计</span>
+   <span class="tag">协作</span>
+   <span class="tag">原型设计</span>
+   <span class="tag">推荐</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>为什么选择 Figma</h2>
-                <p>
-                    如果说 Photoshop 是图片编辑之王，那 Figma 就是 UI 设计领域的后起之秀。作为一个设计师，我用过 Sketch、Figma、Adobe XD，最终深深爱上了 Figma。
-                </p>
-                <p>
-                    Figma 最大的特点是<strong>基于浏览器</strong>，无需安装客户端，打开浏览器就能用。这意味着在 Mac、Windows 甚至 Linux 上都能获得一致的体验。而且所有的文件都存在云端，再也不用担心文件丢失或者版本混乱。
-                </p>
+  <div class="article-content">
+  <h2>为什么选择 Figma</h2>
+  <p>
+   如果说 Photoshop 是图片编辑之王，那 Figma 就是 UI 设计领域的后起之秀。作为一个设计师，使用过 Sketch、Figma、Adobe XD，最终深深爱上了 Figma。
+  </p>
+  <p>
+   Figma 最大的特点是<strong>基于浏览器</strong>，无需安装客户端，打开浏览器就能用。这意味着在 Mac、Windows 甚至 Linux 上都能获得一致的体验。而且所有的文件都存在云端，再也不用担心文件丢失或者版本混乱。
+  </p>
 
-                <h2>核心优势</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 让我爱不释手的功能</h4>
-                    <ul>
-                        <li><strong>实时协作</strong> — 团队成员可以同时编辑同一个文件，像 Google Docs 一样方便</li>
-                        <li><strong>组件库</strong> — 创建一次组件，全局更新，设计系统的基础</li>
-                        <li><strong>自动布局</strong> — 像 CSS 一样灵活的布局系统，响应式设计不再头疼</li>
-                        <li><strong>原型交互</strong> — 直接在 Figma 里做可交互原型，设计师和开发都能轻松上手</li>
-                        <li><strong>开发者模式</strong> — 前端开发者可以直接查看 CSS、复制代码，提高沟通效率</li>
-                    </ul>
-                </div>
+  <h2>核心优势</h2>
+  <div class="highlight-box">
+   <h4>⚡ 备受喜爱的功能</h4>
+   <ul>
+   <li><strong>实时协作</strong> — 团队成员可以同时编辑同一个文件，像 Google Docs 一样方便</li>
+   <li><strong>组件库</strong> — 创建一次组件，全局更新，设计系统的基础</li>
+   <li><strong>自动布局</strong> — 像 CSS 一样灵活的布局系统，响应式设计不再头疼</li>
+   <li><strong>原型交互</strong> — 直接在 Figma 里做可交互原型，设计师和开发都能轻松上手</li>
+   <li><strong>开发者模式</strong> — 前端开发者可以直接查看 CSS、复制代码，提高沟通效率</li>
+   </ul>
+  </div>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    团队协作效率提升显著。以前用 Sketch，每次合并文件简直是噩梦。现在大家可以同时在同一个文件里工作，<strong>评论功能</strong>让反馈清晰明了，再也不会遗漏。
-                </p>
-                <p>
-                    FigJam 白板功能也很实用，头脑风暴的时候可以直接画草图、做流程图，不用再开第二个工具。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   团队协作效率提升显著。以前用 Sketch，每次合并文件简直是噩梦。现在大家可以同时在同一个文件里工作，<strong>评论功能</strong>让反馈清晰明了，再也不会遗漏。
+  </p>
+  <p>
+   FigJam 白板功能也很实用，头脑风暴的时候可以直接画草图、做流程图，不用再开第二个工具。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>浏览器即可使用，跨平台一致</li>
-                            <li>实时协作，团队效率大幅提升</li>
-                            <li>文件版本云端管理，再也不丢文件</li>
-                            <li>开发者工具完善，交付更顺畅</li>
-                            <li>社区资源丰富，有大量免费组件</li>
-                            <li>免费额度对个人和小团队很友好</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>离线模式体验不如桌面应用</li>
-                            <li>复杂项目文件可能卡顿</li>
-                            <li>大型团队专业版费用较高</li>
-                            <li>国内网络访问速度不稳定</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>浏览器即可使用，跨平台一致</li>
+    <li>实时协作，团队效率大幅提升</li>
+    <li>文件版本云端管理，再也不丢文件</li>
+    <li>开发者工具完善，交付更顺畅</li>
+    <li>社区资源丰富，有大量免费组件</li>
+    <li>免费额度对个人和小团队很友好</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>离线模式体验不如桌面应用</li>
+    <li>复杂项目文件可能卡顿</li>
+    <li>大型团队专业版费用较高</li>
+    <li>国内网络访问速度不稳定</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    如果你是 <strong>UI/UX 设计师</strong>、<strong>产品经理</strong>、或者需要做<strong>原型演示</strong>的任何人，Figma 都是绝佳选择。特别是需要远程协作的团队，Figma 的价值更加明显。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   适合 <strong>UI/UX 设计师</strong>、<strong>产品经理</strong>、或者需要做<strong>原型演示</strong>的任何人，Figma 都是绝佳选择。特别是需要远程协作的团队，Figma 的价值更加明显。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    Figma 重新定义了设计工具的可能性。它让协作变得如此简单，以至于我现在很难想象回到没有实时协作的日子。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   Figma 重新定义了设计工具的可能性。它让协作变得如此简单，以至于现在很难想象回到没有实时协作的日子。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://www.figma.com/" target="_blank" class="action-btn primary">
-                        ⬇️ 前往使用
-                    </a>
-                    <a href="../design.html" class="action-btn secondary">
-                        ← 返回设计工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://www.figma.com/" target="_blank" class="action-btn primary">
+   ⬇️ 前往使用
+   </a>
+   <a href="../design.html" class="action-btn secondary">
+   ← 返回设计工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

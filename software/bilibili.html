@@ -1,169 +1,166 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilibili 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bilibili 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../learning.html">学习资源</a>
-                <span>/</span>
-                <span>Bilibili</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../learning.html">学习资源</a>
+  <span>/</span>
+  <span>Bilibili</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎓</div>
-                <h1 class="article-title">Bilibili（哔哩哔哩）</h1>
-                <div class="article-meta">
-                    <span>🖥️ Web / App</span>
-                    <span>|</span>
-                    <span>💰 免费</span>
-                    <span>|</span>
-                    <span>📅 持续更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">视频</span>
-                    <span class="tag">学习</span>
-                    <span class="tag">教程</span>
-                    <span class="tag">宝藏</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎓</div>
+  <h1 class="article-title">Bilibili（哔哩哔哩）</h1>
+  <div class="article-meta">
+   <span>🖥️ Web / App</span>
+   <span>|</span>
+   <span>💰 免费</span>
+   <span>|</span>
+   <span>📅 持续更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">视频</span>
+   <span class="tag">学习</span>
+   <span class="tag">教程</span>
+   <span class="tag">宝藏</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>你以为 B 站只是二次元？</h2>
-                <p>
-                    很多人对 Bilibili 的印象还停留在"二次元动漫网站"，但实际上 B 站早已成为<strong>全球最大的中文学习视频平台</strong>。从编程到烹饪，从数学到健身，B 站什么都有。
-                </p>
-                <p>
-                    我在 B 站学过 <strong>Python 爬虫</strong>、<strong>视频剪辑</strong>、<strong>英语口语</strong>，还有各种杂七杂八的技能树。B 站学习最大的好处是<strong>免费</strong>，而且弹幕让你感觉不是一个人在战斗。
-                </p>
+  <div class="article-content">
+  <h2>你以为 B 站只是二次元？</h2>
+  <p>
+   很多人对 Bilibili 的印象还停留在"二次元动漫网站"，但实际上 B 站早已成为<strong>全球最大的中文学习视频平台</strong>。从编程到烹饪，从数学到健身，B 站什么都有。
+  </p>
+  <p>
+   可在 B 站学习 <strong>Python 爬虫</strong>、<strong>视频剪辑</strong>、<strong>英语口语</strong>，还有各种杂七杂八的技能树。B 站学习最大的好处是<strong>免费</strong>，而且弹幕带来不是一个人在战斗。
+  </p>
 
-                <h2>B 站学习的独特魅力</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 为什么学习我首选 B 站</h4>
-                    <ul>
-                        <li><strong>免费高质量内容</strong> — 无数 up 主无私分享，涵盖各行各业的教程</li>
-                        <li><strong>弹幕互动</strong> — 看视频不孤单，弹幕让你知道大家都在学</li>
-                        <li><strong>时间戳</strong> — 方便跳转，不像某些平台需要反复拖进度条</li>
-                        <li><strong>收藏夹整理</strong> — 把我"已收藏"当笔记本用</li>
-                        <li><strong>倍速播放</strong> — 1.5x、2x 速看，节省时间</li>
-                        <li><strong>学习直播</strong> — 有人陪着一起学习，效率更高</li>
-                    </ul>
-                </div>
+  <h2>B 站学习的独特魅力</h2>
+  <div class="highlight-box">
+   <h4>⚡ 为什么学习首选 B 站</h4>
+   <ul>
+   <li><strong>免费高质量内容</strong> — 无数 up 主无私分享，涵盖各行各业的教程</li>
+   <li><strong>弹幕互动</strong> — 看视频不孤单，弹幕可以了解大家都在学</li>
+   <li><strong>时间戳</strong> — 方便跳转，不像某些平台需要反复拖进度条</li>
+   <li><strong>收藏夹整理</strong> — 将"已收藏"当作笔记本使用</li>
+   <li><strong>倍速播放</strong> — 1.5x、2x 速看，节省时间</li>
+   <li><strong>学习直播</strong> — 有人陪着一起学习，效率更高</li>
+   </ul>
+  </div>
 
-                <h2>我的学习体验</h2>
-                <p>
-                    入门 Python 看的是 <strong>鱼皮</strong> 的教程，讲得清晰易懂；学做饭跟的是 <strong>老饭骨</strong>，大师傅教你做正宗中餐；健身跟的是 <strong>周六野</strong>，每天十分钟坚持下来效果明显。
-                </p>
-                <p>
-                    最神奇的是，有时候搜索一个冷门问题，弹幕里有人会帮你解答。这种"<strong>实时互动</strong>"的学习体验，是其他平台给不了的。
-                </p>
+  <h2>学习体验</h2>
+  <p>
+   入门 Python 看的是 <strong>鱼皮</strong> 的教程，讲得清晰易懂；学做饭跟的是 <strong>老饭骨</strong>，大师傅教你做正宗中餐；健身跟的是 <strong>周六野</strong>，每天十分钟坚持下来效果明显。
+  </p>
+  <p>
+   最神奇的是，有时候搜索一个冷门问题，弹幕里有人会帮你解答。这种"<strong>实时互动</strong>"的学习体验，是其他平台给不了的。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>内容完全免费，造福学习者</li>
-                            <li>教程数量多，覆盖面极广</li>
-                            <li>弹幕互动，学习不孤单</li>
-                            <li>倍速播放，节省时间</li>
-                            <li>收藏夹功能方便整理</li>
-                            <li>up 主质量高，很多是行业专家</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>娱乐内容多，容易分心刷其他视频</li>
-                            <li>部分 up 主更新不稳定</li>
-                            <li>弹幕质量参差不齐</li>
-                            <li>没有系统的学习路径，需要自己规划</li>
-                            <li>部分优质内容被下架</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>内容完全免费，造福学习者</li>
+    <li>教程数量多，覆盖面极广</li>
+    <li>弹幕互动，学习不孤单</li>
+    <li>倍速播放，节省时间</li>
+    <li>收藏夹功能方便整理</li>
+    <li>up 主质量高，很多是行业专家</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>娱乐内容多，容易分心刷其他视频</li>
+    <li>部分 up 主更新不稳定</li>
+    <li>弹幕质量参差不齐</li>
+    <li>没有系统的学习路径，需要自己规划</li>
+    <li>部分优质内容被下架</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    任何想<strong>学新技能</strong>的人都可以在 B 站找到适合自己的内容。特别是 <strong>编程学习</strong>、<strong>语言学习</strong>、<strong>兴趣爱好培养</strong>这几个领域，B 站的内容质量相当高。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   任何想<strong>学新技能</strong>的人都可以在 B 站找到适合自己的内容。特别是 <strong>编程学习</strong>、<strong>语言学习</strong>、<strong>兴趣爱好培养</strong>这几个领域，B 站的内容质量相当高。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    B 站是中国互联网的宝藏，是真正意义上的"学习平台"。只要你愿意，这里有取之不尽的学习资源。"我在 B 站学 XX" 已经成了网络流行语，这本身就说明了一切。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   B 站是中国互联网的宝藏，是真正意义上的"学习平台"。只要你愿意，这里有取之不尽的学习资源。"在 B 站学习 XX" 已经成了网络流行语，这本身就说明了一切。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://www.bilibili.com/" target="_blank" class="action-btn primary">
-                        📺 前往 B站
-                    </a>
-                    <a href="../learning.html" class="action-btn secondary">
-                        ← 返回学习资源
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://www.bilibili.com/" target="_blank" class="action-btn primary">
+   📺 前往 B站
+   </a>
+   <a href="../learning.html" class="action-btn secondary">
+   ← 返回学习资源
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

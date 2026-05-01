@@ -1,299 +1,296 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio Code 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* V3 Blog Style */
-        .article {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Visual Studio Code 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ /* V3 Blog Style */
+ .article {
+  max-width: 800px;
+  margin: 0 auto;
+ }
 
-        .article-header {
-            text-align: center;
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 3rem;
-        }
+ .article-header {
+  text-align: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+ }
 
-        .article-icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-        }
+ .article-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+ }
 
-        .article-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+ .article-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+ }
 
-        .article-meta {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
+ .article-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+ }
 
-        .article-meta span {
-            margin: 0 0.5rem;
-        }
+ .article-meta span {
+  margin: 0 0.5rem;
+ }
 
-        .article-tags {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+ .article-tags {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+ }
 
-        .tag {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--accent);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
+ .tag {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+ }
 
-        .article-content {
-            line-height: 1.9;
-            color: var(--text-secondary);
-        }
+ .article-content {
+  line-height: 1.9;
+  color: var(--text-secondary);
+ }
 
-        .article-content h2 {
-            color: var(--text-primary);
-            font-size: 1.4rem;
-            margin: 2.5rem 0 1rem;
-        }
+ .article-content h2 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+ }
 
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
+ .article-content p {
+  margin-bottom: 1.5rem;
+ }
 
-        .article-content ul {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
+ .article-content ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+ }
 
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
+ .article-content li {
+  margin-bottom: 0.5rem;
+ }
 
-        .article-content strong {
-            color: var(--text-primary);
-        }
+ .article-content strong {
+  color: var(--text-primary);
+ }
 
-        .article-content a {
-            color: var(--accent);
-        }
+ .article-content a {
+  color: var(--accent);
+ }
 
-        .article-content a:hover {
-            text-decoration: underline;
-        }
+ .article-content a:hover {
+  text-decoration: underline;
+ }
 
-        .highlight-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
+ .highlight-box {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+ }
 
-        .highlight-box h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
+ .highlight-box h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+ }
 
-        .pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
+ .pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+ }
 
-        .pros, .cons {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
+ .pros, .cons {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 8px;
+ }
 
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
 
-        .pros li, .cons li {
-            margin-bottom: 0.5rem;
-            list-style: none;
-        }
+ .pros li, .cons li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+ }
 
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
 
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
+ .action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+ }
 
-        .action-btn {
-            flex: 1;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 500;
-            transition: var(--transition);
-        }
+ .action-btn {
+  flex: 1;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: var(--transition);
+ }
 
-        .action-btn.primary {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
+ .action-btn.primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+ }
 
-        .action-btn.primary:hover {
-            background: var(--accent-hover);
-        }
+ .action-btn.primary:hover {
+  background: var(--accent-hover);
+ }
 
-        .action-btn.secondary {
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-        }
+ .action-btn.secondary {
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+ }
 
-        .action-btn.secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
+ .action-btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+ }
 
-        @media (max-width: 600px) {
-            .pros-cons {
-                grid-template-columns: 1fr;
-            }
-            .action-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+ @media (max-width: 600px) {
+  .pros-cons {
+  grid-template-columns: 1fr;
+  }
+  .action-buttons {
+  flex-direction: column;
+  }
+ }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../dev.html">开发工具</a>
-                <span>/</span>
-                <span>VS Code</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../dev.html">开发工具</a>
+  <span>/</span>
+  <span>VS Code</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🔧</div>
-                <h1 class="article-title">Visual Studio Code</h1>
-                <div class="article-meta">
-                    <span>🖥️ Windows / Mac / Linux</span>
-                    <span>|</span>
-                    <span>💰 免费开源</span>
-                    <span>|</span>
-                    <span>📅 2024年12月更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">代码编辑器</span>
-                    <span class="tag">IDE</span>
-                    <span class="tag">前端开发</span>
-                    <span class="tag">推荐</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🔧</div>
+  <h1 class="article-title">Visual Studio Code</h1>
+  <div class="article-meta">
+   <span>🖥️ Windows / Mac / Linux</span>
+   <span>|</span>
+   <span>💰 免费开源</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">代码编辑器</span>
+   <span class="tag">IDE</span>
+   <span class="tag">前端开发</span>
+   <span class="tag">推荐</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>为什么选择 VS Code</h2>
-                <p>
-                    用过 Sublime Text、Atom、WebStorm，最终还是选择了 VS Code。作为一个从 2015 年就开始使用的老用户，VS Code 彻底改变了我的编码体验。
-                </p>
-                <p>
-                    微软出品，质量有保证。开源免费，插件生态超级丰富。从前端到 Python、从 Go 到 Rust，几乎所有主流编程语言都有良好的支持。
-                </p>
+  <div class="article-content">
+  <h2>为什么选择 VS Code</h2>
+  <p>
+   作为一个从 2015 年就开始使用的长期用户，VS Code 彻底改变了编码体验。
+  </p>
+  <p>
+   微软出品，质量有保证。开源免费，插件生态超级丰富。从前端到 Python、从 Go 到 Rust，几乎所有主流编程语言都有良好的支持。
+  </p>
 
-                <h2>我的必装插件</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 提升效率的关键插件</h4>
-                    <ul>
-                        <li><strong>GitLens</strong> — 代码历史一目了然，每行代码的作者和时间直接显示</li>
-                        <li><strong>Error Lens</strong> — 错误信息直接高亮在代码行尾，不再漏看</li>
-                        <li><strong>Prettier</strong> — 代码格式化，保持团队代码风格统一</li>
-                        <li><strong>Live Server</strong> — 前端开发必备，保存即刷新浏览器</li>
-                        <li><strong>Todo Tree</strong> — 收集项目中所有的 TODO 和 FIXME</li>
-                    </ul>
-                </div>
+  <h2>推荐插件</h2>
+  <div class="highlight-box">
+   <h4>⚡ 提升效率的关键插件</h4>
+   <ul>
+   <li><strong>GitLens</strong> — 代码历史一目了然，每行代码的作者和时间直接显示</li>
+   <li><strong>Error Lens</strong> — 错误信息直接高亮在代码行尾，不再漏看</li>
+   <li><strong>Prettier</strong> — 代码格式化，保持团队代码风格统一</li>
+   <li><strong>Live Server</strong> — 前端开发必备，保存即刷新浏览器</li>
+   <li><strong>Todo Tree</strong> — 收集项目中所有的 TODO 和 FIXME</li>
+   </ul>
+  </div>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    用了三年多了，最大的感受是 <strong>流畅</strong>。启动快、响应快、插件加载也快。相比其他 IDE 占用的内存少很多，Mac 上也能流畅运行。
-                </p>
-                <p>
-                    智能提示非常准确，特别是配合 TypeScript 的项目。内置的调试功能也很好用，设置了断点之后变量一目了然。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   用了三年多了，最大的感受是 <strong>流畅</strong>。启动快、响应快、插件加载也快。相比其他 IDE 占用的内存少很多，Mac 上也能流畅运行。
+  </p>
+  <p>
+   智能提示非常准确，特别是配合 TypeScript 的项目。内置的调试功能也很好用，设置了断点之后变量一目了然。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>免费开源，社区活跃</li>
-                            <li>启动快，占用内存小</li>
-                            <li>插件丰富，几乎什么功能都有</li>
-                            <li>跨平台，Win/Mac/Linux 都能用</li>
-                            <li>内置 Git 集成，终端也很方便</li>
-                            <li>主题好看，定制化程度高</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>大型项目偶尔会卡顿</li>
-                            <li>有些插件质量参差不齐</li>
-                            <li>专业 Java 开发还是 IDEA 更强</li>
-                            <li>需要一定配置才能发挥最大威力</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>免费开源，社区活跃</li>
+    <li>启动快，占用内存小</li>
+    <li>插件丰富，几乎什么功能都有</li>
+    <li>跨平台，Win/Mac/Linux 都能用</li>
+    <li>内置 Git 集成，终端也很方便</li>
+    <li>主题好看，定制化程度高</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>大型项目偶尔会卡顿</li>
+    <li>有些插件质量参差不齐</li>
+    <li>专业 Java 开发还是 IDEA 更强</li>
+    <li>需要一定配置才能发挥最大威力</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    如果你做 <strong>前端开发</strong>、<strong>Python</strong>、<strong>Node.js</strong>、<strong>Go</strong> 等，VS Code 几乎是最佳选择。但如果你主要写 Java 或 C#，可能还是 JetBrains 全家桶更顺手。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   适合 <strong>前端开发</strong>、<strong>Python</strong>、<strong>Node.js</strong>、<strong>Go</strong> 等，VS Code 几乎是最佳选择。但适合主要写 Java 或 C#，可能还是 JetBrains 全家桶更顺手。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    VS Code 是一款真正为开发者打造的编辑器。轻量、快速、可扩展，几乎可以满足大部分开发需求。我的主力编辑器，用了三年依然爱不释手。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   VS Code 是一款真正为开发者打造的编辑器。轻量、快速、可扩展，几乎可以满足大部分开发需求。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://code.visualstudio.com/" target="_blank" class="action-btn primary">
-                        ⬇️ 前往下载
-                    </a>
-                    <a href="../dev.html" class="action-btn secondary">
-                        ← 返回开发工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://code.visualstudio.com/" target="_blank" class="action-btn primary">
+   ⬇️ 前往下载
+   </a>
+   <a href="../dev.html" class="action-btn secondary">
+   ← 返回开发工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

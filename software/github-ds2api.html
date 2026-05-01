@@ -1,158 +1,154 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeepSeek to API 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>DeepSeek to API 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html" class="active">GitHub 热点</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../github.html">GitHub 热点</a>
-                <span>/</span>
-                <span>DeepSeek to API</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../github.html">GitHub 热点</a>
+  <span>/</span>
+  <span>DeepSeek to API</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🌐</div>
-                <h1 class="article-title">DeepSeek to API</h1>
-                <div class="article-meta">
-                    <span>⭐ 2,796 Stars</span>
-                    <span>|</span>
-                    <span>🏆 All-Time Popular</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">API</span>
-                    <span class="tag">DeepSeek</span>
-                    <span class="tag">代理</span>
-                    <span class="tag star">🏆 长期高赞</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🌐</div>
+  <h1 class="article-title">DeepSeek to API</h1>
+  <div class="article-meta">
+   <span>⭐ 2,796 Stars</span>
+   <span>|</span>
+   <span>🏆 All-Time Popular</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">API</span>
+   <span class="tag">DeepSeek</span>
+   <span class="tag">代理</span>
+   <span class="tag star">🏆 长期高赞</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>项目简介</h2>
-                <p>
-                    <strong>LLM API 聚合器</strong> — DeepSeek/Claude/GPT 统一接口中间件。
-                </p>
-                <p>
-                    这个项目让你可以通过<strong>统一的 API 接口</strong>访问多种 LLM 服务，支持 DeepSeek、Claude、GPT 等。它是一个高性能的 Go 语言中间件。
-                </p>
+  <div class="article-content">
+  <h2>项目简介</h2>
+  <p>
+   <strong>LLM API 聚合器</strong> — DeepSeek/Claude/GPT 统一接口中间件。
+  </p>
+  <p>
+   这个项目让你可以通过<strong>统一的 API 接口</strong>访问多种 LLM 服务，支持 DeepSeek、Claude、GPT 等。它是一个高性能的 Go 语言中间件。
+  </p>
 
-                <h2>核心功能</h2>
-                <div class="highlight-box">
-                    <h4>🛠️ 技术特性</h4>
-                    <ul>
-                        <li><strong>统一接口</strong> — 一个 API key，访问所有模型</li>
-                        <li><strong>多账号轮询</strong> — 自动轮换多个 API key</li>
-                        <li><strong>格式兼容</strong> — 兼容 OpenAI/Claude API 格式</li>
-                        <li><strong>Docker 部署</strong> — 一键部署，开箱即用</li>
-                    </ul>
-                </div>
+  <h2>核心功能</h2>
+  <div class="highlight-box">
+   <h4>🛠️ 技术特性</h4>
+   <ul>
+   <li><strong>统一接口</strong> — 一个 API key，访问所有模型</li>
+   <li><strong>多账号轮询</strong> — 自动轮换多个 API key</li>
+   <li><strong>格式兼容</strong> — 兼容 OpenAI/Claude API 格式</li>
+   <li><strong>Docker 部署</strong> — 一键部署，开箱即用</li>
+   </ul>
+  </div>
 
-                <h2>使用场景</h2>
-                <p>
-                    适合需要使用多种 LLM 但不想管理多个 API key 的开发者：
-                </p>
-                <ul>
-                    <li>统一管理多个 LLM 服务</li>
-                    <li>负载均衡，降低单点失败</li>
-                    <li>成本优化，自动选择性价比最高的模型</li>
-                </ul>
+  <h2>使用场景</h2>
+  <p>
+   适合需要使用多种 LLM 但不想管理多个 API key 的开发者：
+  </p>
+  <ul>
+   <li>统一管理多个 LLM 服务</li>
+   <li>负载均衡，降低单点失败</li>
+   <li>成本优化，自动选择性价比最高的模型</li>
+  </ul>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>Go 编写，性能优秀</li>
-                            <li>部署简单</li>
-                            <li>兼容性好</li>
-                            <li>支持 Docker</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>需要自己提供 API key</li>
-                            <li>无官方维护</li>
-                            <li>生产环境需自行评估</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>Go 编写，性能优秀</li>
+    <li>部署简单</li>
+    <li>兼容性好</li>
+    <li>支持 Docker</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>需要自己提供 API key</li>
+    <li>无官方维护</li>
+    <li>生产环境需自行评估</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>总结</h2>
-                <p>
-                    对于需要聚合多个 LLM 服务的开发者来说，这是一个实用的工具。2.7k Stars 说明它解决了真实的痛点。
-                </p>
-                <p>
-                    <strong>推荐指数：⭐⭐⭐⭐</strong>
-                </p>
+  <h2>总结</h2>
+  <p>
+   对于需要聚合多个 LLM 服务的开发者来说，这是一个实用的工具。2.7k Stars 说明它解决了真实的痛点。
+  </p>
+<div class="action-buttons">
+   <a href="https://github.com/CJackHwang/ds2api" target="_blank" class="action-btn primary">
+   ⬇️ 查看 GitHub
+   </a>
+   <a href="../github.html" class="action-btn secondary">
+   ← 返回 GitHub 热点
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/CJackHwang/ds2api" target="_blank" class="action-btn primary">
-                        ⬇️ 查看 GitHub
-                    </a>
-                    <a href="../github.html" class="action-btn secondary">
-                        ← 返回 GitHub 热点
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

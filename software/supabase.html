@@ -1,159 +1,156 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supabase 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Supabase 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../cloud.html">云服务</a>
-                <span>/</span>
-                <span>Supabase</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../cloud.html">云服务</a>
+  <span>/</span>
+  <span>Supabase</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">⚡</div>
-                <h1 class="article-title">Supabase</h1>
-                <div class="article-meta">
-                    <span>🌐 Web</span>
-                    <span>|</span>
-                    <span>💰 免费/付费</span>
-                    <span>|</span>
-                    <span>📅 2025年4月</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">数据库</span>
-                    <span class="tag">Firebase替代</span>
-                    <span class="tag">开源</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">⚡</div>
+  <h1 class="article-title">Supabase</h1>
+  <div class="article-meta">
+   <span>🌐 Web</span>
+   <span>|</span>
+   <span>💰 免费/付费</span>
+   <span>|</span>
+   <span>📅 2025年4月</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">数据库</span>
+   <span class="tag">Firebase替代</span>
+   <span class="tag">开源</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>为什么选择 Supabase</h2>
-                <p>
-                    Firebase 的替代方案里，Supabase 是做得最像样的一个。它基于 PostgreSQL，提供了数据库、认证、存储、实时订阅等一系列功能。关键是——开源，自托管选项，数据完全自己掌控。
-                </p>
-                <p>
-                    我一直不太喜欢 Firebase 的 NoSQL 数据库（Firestore），查询能力有限，复杂数据结构很痛苦。Supabase 直接用 PostgreSQL，SQL 查询、关系模型、索引、触发器全都支持，这才是后端开发者熟悉的姿势。
-                </p>
+  <div class="article-content">
+  <h2>为什么选择 Supabase</h2>
+  <p>
+   Firebase 的替代方案里，Supabase 是做得最像样的一个。它基于 PostgreSQL，提供了数据库、认证、存储、实时订阅等一系列功能。关键是——开源，自托管选项，数据完全自己掌控。
+  </p>
+  <p>
+   一直不太喜欢 Firebase 的 NoSQL 数据库（Firestore），查询能力有限，复杂数据结构很痛苦。Supabase 直接用 PostgreSQL，SQL 查询、关系模型、索引、触发器全都支持，这才是后端开发者熟悉的姿势。
+  </p>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    我在几个项目里用 Supabase 做后端，包括一个实时聊天应用和一个 CMS。最大的感受是 <strong>开发体验极好</strong>——直接在浏览器里打开 Studio 界面就能管理数据库、写 SQL、设置 Row Level Security 策略。
-                </p>
-                <p>
-                    <strong>实时订阅</strong>功能真的很酷：数据库有变化时，客户端能实时收到推送。聊天、通知、协作编辑这种场景实现起来非常简单。免费版给了一个 500 MB 的 PostgreSQL 数据库和 50,000 条月活跃用户，个人项目够用很久。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+在几个项目里用 Supabase 做后端，包括一个实时聊天应用和一个 CMS。最大的感受是 <strong>开发体验极好</strong>——直接在浏览器里打开 Studio 界面就能管理数据库、写 SQL、设置 Row Level Security 策略。
+  </p>
+  <p>
+   <strong>实时订阅</strong>功能真的很酷：数据库有变化时，客户端能实时收到推送。聊天、通知、协作编辑这种场景实现起来非常简单。免费版给了一个 500 MB 的 PostgreSQL 数据库和 50,000 条月活跃用户，个人项目够用很久。
+  </p>
 
-                <div class="highlight-box">
-                    <h4>⚡ 核心功能</h4>
-                    <ul>
-                        <li><strong>PostgreSQL 数据库</strong> — 完整的 SQL 关系数据库</li>
-                        <li><strong>认证系统</strong> — 支持 OAuth、手机、邮箱多种方式</li>
-                        <li><strong>实时订阅</strong> — WebSocket 实时推送数据变更</li>
-                        <li><strong>对象存储</strong> — 类似 S3 的文件存储服务</li>
-                    </ul>
-                </div>
+  <div class="highlight-box">
+   <h4>⚡ 核心功能</h4>
+   <ul>
+   <li><strong>PostgreSQL 数据库</strong> — 完整的 SQL 关系数据库</li>
+   <li><strong>认证系统</strong> — 支持 OAuth、手机、邮箱多种方式</li>
+   <li><strong>实时订阅</strong> — WebSocket 实时推送数据变更</li>
+   <li><strong>对象存储</strong> — 类似 S3 的文件存储服务</li>
+   </ul>
+  </div>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>基于 PostgreSQL，功能强大</li>
-                            <li>开源，可自托管</li>
-                            <li>认证+数据库+存储一站式</li>
-                            <li>实时订阅开箱即用</li>
-                            <li>免费额度慷慨</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>国内访问速度较慢</li>
-                            <li>免费版数据库 500MB 上限</li>
-                            <li>实时功能复杂场景有限制</li>
-                            <li>自托管运维成本高</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>基于 PostgreSQL，功能强大</li>
+    <li>开源，可自托管</li>
+    <li>认证+数据库+存储一站式</li>
+    <li>实时订阅开箱即用</li>
+    <li>免费额度慷慨</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>国内访问速度较慢</li>
+    <li>免费版数据库 500MB 上限</li>
+    <li>实时功能复杂场景有限制</li>
+    <li>自托管运维成本高</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    <strong>全栈开发者</strong>、<strong>独立开发者</strong>、<strong>想摆脱 Firebase 的团队</strong>。如果你习惯 SQL 数据库，想找一个带认证和实时功能的后端服务，Supabase 几乎就是最佳答案。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   <strong>全栈开发者</strong>、<strong>独立开发者</strong>、<strong>想摆脱 Firebase 的团队</strong>。适合习惯 SQL 数据库，想找一个带认证和实时功能的后端服务，Supabase 几乎就是最佳答案。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    Firebase 的开源替代里，Supabase 是最成熟的那个。PostgreSQL 的可靠 + BaaS 的便利，这组合太香了。如果你的项目需要关系数据库和一站式后端服务，Supabase 应该成为你的首选。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   Firebase 的开源替代里，Supabase 是最成熟的那个。PostgreSQL 的可靠 + BaaS 的便利，这组合太香了。如果你的项目需要关系数据库和一站式后端服务，Supabase 应该成为你的首选。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://supabase.com/" target="_blank" class="action-btn primary">
-                        ⬇️ 前往官网
-                    </a>
-                    <a href="../cloud.html" class="action-btn secondary">
-                        ← 返回云服务
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://supabase.com/" target="_blank" class="action-btn primary">
+   ⬇️ 前往官网
+   </a>
+   <a href="../cloud.html" class="action-btn secondary">
+   ← 返回云服务
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2025 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2025 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

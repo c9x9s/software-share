@@ -1,167 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YTSage 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>YTSage 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../dev.html">开发工具</a>
-                <span>/</span>
-                <span>YTSage</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../dev.html">开发工具</a>
+  <span>/</span>
+  <span>YTSage</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">▶️</div>
-                <h1 class="article-title">YTSage</h1>
-                <div class="article-meta">
-                    <span>🖥️ Win / Mac / Linux</span>
-                    <span>|</span>
-                    <span>💰 免费开源</span>
-                    <span>|</span>
-                    <span>📅 2024年更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">YouTube</span>
-                    <span class="tag">视频下载</span>
-                    <span class="tag">GUI</span>
-                    <span class="tag">开源</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">▶️</div>
+  <h1 class="article-title">YTSage</h1>
+  <div class="article-meta">
+   <span>🖥️ Win / Mac / Linux</span>
+   <span>|</span>
+   <span>💰 免费开源</span>
+   <span>|</span>
+   <span>📅 2024年更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">YouTube</span>
+   <span class="tag">视频下载</span>
+   <span class="tag">GUI</span>
+   <span class="tag">开源</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>简洁好用的 YouTube 下载器</h2>
-                <p>
-                    yt-dlp 是目前最强的 YouTube 下载命令行工具，但命令行对普通用户不够友好。YTSage 做了个<strong>图形界面</strong>，让下载 YouTube 视频变得像点按钮一样简单。
-                </p>
-                <p>
-                    基于 PySide6 开发，界面现代化，操作直观。支持视频、音频、字幕下载，还整合了 SponsorBlock 功能，可以自动跳过视频中的广告片段。
-                </p>
+  <div class="article-content">
+  <h2>简洁好用的 YouTube 下载器</h2>
+  <p>
+   yt-dlp 是目前最强的 YouTube 下载命令行工具，但命令行对普通用户不够友好。YTSage 做了个<strong>图形界面</strong>，让下载 YouTube 视频变得像点按钮一样简单。
+  </p>
+  <p>
+   基于 PySide6 开发，界面现代化，操作直观。支持视频、音频、字幕下载，还整合了 SponsorBlock 功能，可以自动跳过视频中的广告片段。
+  </p>
 
-                <h2>核心功能</h2>
-                <div class="highlight-box">
-                    <h4>⚡ YTSage 能做什么</h4>
-                    <ul>
-                        <li><strong>视频下载</strong> — 支持任意画质，从 360P 到 4K</li>
-                        <li><strong>音频提取</strong> — 下载纯音频，支持 MP3、AAC 等格式</li>
-                        <li><strong>字幕下载</strong> — 自动下载字幕，可选择语言</li>
-                        <li><strong>SponsorBlock</strong> — 自动跳过片头广告、赞助商片段</li>
-                        <li><strong>播放列表</strong> — 支持整个播放列表批量下载</li>
-                        <li><strong>简洁界面</strong> — 现代化的图形界面，不用记命令</li>
-                    </ul>
-                </div>
+  <h2>核心功能</h2>
+  <div class="highlight-box">
+   <h4>⚡ YTSage 能做什么</h4>
+   <ul>
+   <li><strong>视频下载</strong> — 支持任意画质，从 360P 到 4K</li>
+   <li><strong>音频提取</strong> — 下载纯音频，支持 MP3、AAC 等格式</li>
+   <li><strong>字幕下载</strong> — 自动下载字幕，可选择语言</li>
+   <li><strong>SponsorBlock</strong> — 自动跳过片头广告、赞助商片段</li>
+   <li><strong>播放列表</strong> — 支持整个播放列表批量下载</li>
+   <li><strong>简洁界面</strong> — 现代化的图形界面，不用记命令</li>
+   </ul>
+  </div>
 
-                <h2>使用体验</h2>
-                <p>
-                    只需要粘贴 YouTube 链接，选择想要的画质和格式，点击下载就完成了。相比直接用 yt-dlp 命令行，<strong>省去了记参数的时间</strong>。
-                </p>
-                <p>
-                    <strong>SponsorBlock 功能</strong>是亮点。看教程视频时再也不用手动快进跳过赞助商内容了，下载的时候就自动处理好了，非常贴心。
-                </p>
+  <h2>使用体验</h2>
+  <p>
+   只需要粘贴 YouTube 链接，选择想要的画质和格式，点击下载就完成了。相比直接用 yt-dlp 命令行，<strong>省去了记参数的时间</strong>。
+  </p>
+  <p>
+   <strong>SponsorBlock 功能</strong>是亮点。看教程视频时再也不用手动快进跳过赞助商内容了，下载的时候就自动处理好了，非常贴心。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>图形界面，操作简单</li>
-                            <li>基于 yt-dlp，支持全平台</li>
-                            <li>SponsorBlock 功能实用</li>
-                            <li>支持播放列表批量下载</li>
-                            <li>开源免费</li>
-                            <li>持续更新</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>需要先安装 yt-dlp</li>
-                            <li>不支持哔哩哔哩等其他平台</li>
-                            <li>Mac/Linux 安装稍微麻烦</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>图形界面，操作简单</li>
+    <li>基于 yt-dlp，支持全平台</li>
+    <li>SponsorBlock 功能实用</li>
+    <li>支持播放列表批量下载</li>
+    <li>开源免费</li>
+    <li>持续更新</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>需要先安装 yt-dlp</li>
+    <li>不支持哔哩哔哩等其他平台</li>
+    <li>Mac/Linux 安装稍微麻烦</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    适合需要<strong>下载 YouTube 视频</strong>的用户，特别是喜欢看教程、纪录片、技术视频的朋友。纯命令行恐惧者用这个版本更舒服。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   适合需要<strong>下载 YouTube 视频</strong>的用户，特别是喜欢看教程、纪录片、技术视频的朋友。纯命令行恐惧者用这个版本更舒服。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    YTSage 是 yt-dlp 的最佳图形界面伴侣。让复杂的命令行工具变得人人可用，值得一试。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐☆</strong>（4/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   YTSage 是 yt-dlp 的最佳图形界面伴侣。让复杂的命令行工具变得人人可用，值得一试。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/" target="_blank" class="action-btn primary">
-                        ⬇️ GitHub 下载
-                    </a>
-                    <a href="../dev.html" class="action-btn secondary">
-                        ← 返回开发工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://github.com/" target="_blank" class="action-btn primary">
+   ⬇️ GitHub 下载
+   </a>
+   <a href="../dev.html" class="action-btn secondary">
+   ← 返回开发工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

@@ -1,154 +1,150 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mattpocock/skills 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>mattpocock/skills 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html" class="active">GitHub 热点</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../github.html">GitHub 热点</a>
-                <span>/</span>
-                <span>mattpocock/skills</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../github.html">GitHub 热点</a>
+  <span>/</span>
+  <span>mattpocock/skills</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎯</div>
-                <h1 class="article-title">mattpocock/skills</h1>
-                <div class="article-meta">
-                    <span>⭐ 45,822 Stars</span>
-                    <span>|</span>
-                    <span>📅 今日 7,280 Stars</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">AI 编程</span>
-                    <span class="tag">Claude</span>
-                    <span class="tag">Shell</span>
-                    <span class="tag star">🔥 今日趋势</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎯</div>
+  <h1 class="article-title">mattpocock/skills</h1>
+  <div class="article-meta">
+   <span>⭐ 45,822 Stars</span>
+   <span>|</span>
+   <span>📅 今日 7,280 Stars</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">AI 编程</span>
+   <span class="tag">Claude</span>
+   <span class="tag">Shell</span>
+   <span class="tag star">🔥 今日趋势</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>项目简介</h2>
-                <p>
-                    <strong>Skills for Real Engineers. Straight from my .claude directory.</strong>
-                </p>
-                <p>
-                    这是 Matt Pocock（TypeScript 专家，Twitter @mattpocockuk）分享的 Claude Skills 合集。他是目前最火的 AI 编程布道者之一，这个项目展示了他日常使用的 AI 编程技巧。
-                </p>
+  <div class="article-content">
+  <h2>项目简介</h2>
+  <p>
+   <strong>Skills for Real Engineers. Straight from my .claude directory.</strong>
+  </p>
+  <p>
+   这是 Matt Pocock（TypeScript 专家，Twitter @mattpocockuk）分享的 Claude Skills 合集。他是目前最火的 AI 编程布道者之一，这个项目展示了他日常使用的 AI 编程技巧。
+  </p>
 
-                <h2>Matt Pocock 是谁</h2>
-                <p>
-                    Matt Pocock 是 <strong>Total TypeScript</strong> 的创始人，专注于帮助开发者学习 TypeScript。他的 AI 编程教程在 YouTube 和 Twitter 上非常受欢迎，教会了无数开发者如何有效使用 AI 工具。
-                </p>
+  <h2>Matt Pocock 是谁</h2>
+  <p>
+   Matt Pocock 是 <strong>Total TypeScript</strong> 的创始人，专注于帮助开发者学习 TypeScript。他的 AI 编程教程在 YouTube 和 Twitter 上非常受欢迎，教会了无数开发者如何有效使用 AI 工具。
+  </p>
 
-                <h2>你能学到什么</h2>
-                <div class="highlight-box">
-                    <h4>🛠️ 核心技能</h4>
-                    <ul>
-                        <li><strong>如何给 AI 下指令</strong> — 正确的提示词工程技巧</li>
-                        <li><strong>代码审查</strong> — 让 AI 帮你审查代码质量</li>
-                        <li><strong>Bug 修复</strong> — 用 AI 快速定位和修复问题</li>
-                        <li><strong>重构技巧</strong> — AI 辅助代码重构</li>
-                        <li><strong>Shell 命令</strong> — 复杂的命令行任务</li>
-                    </ul>
-                </div>
+  <h2>你能学到什么</h2>
+  <div class="highlight-box">
+   <h4>🛠️ 核心技能</h4>
+   <ul>
+   <li><strong>如何给 AI 下指令</strong> — 正确的提示词工程技巧</li>
+   <li><strong>代码审查</strong> — 让 AI 帮你审查代码质量</li>
+   <li><strong>Bug 修复</strong> — 用 AI 快速定位和修复问题</li>
+   <li><strong>重构技巧</strong> — AI 辅助代码重构</li>
+   <li><strong>Shell 命令</strong> — 复杂的命令行任务</li>
+   </ul>
+  </div>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>来自实战经验，不是理论</li>
-                            <li>作者是知名技术博主</li>
-                            <li>可以复制到自己的 Claude</li>
-                            <li>持续更新</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>需要 Claude 订阅</li>
-                            <li>主要是英文</li>
-                            <li>部分技能偏高级</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>来自实战经验，不是理论</li>
+    <li>作者是知名技术博主</li>
+    <li>可以复制到自己的 Claude</li>
+    <li>持续更新</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>需要 Claude 订阅</li>
+    <li>主要是英文</li>
+    <li>部分技能偏高级</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>总结</h2>
-                <p>
-                    如果你想提升 AI 编程效率，这个项目是最佳起点。Matt Pocock 的技巧已被 thousands of developers 验证过。
-                </p>
-                <p>
-                    <strong>推荐指数：⭐⭐⭐⭐⭐</strong>
-                </p>
+  <h2>总结</h2>
+  <p>
+   适合想要提升 AI 编程效率，这个项目是最佳起点。Matt Pocock 的技巧已被 thousands of developers 验证过。
+  </p>
+<div class="action-buttons">
+   <a href="https://github.com/mattpocock/skills" target="_blank" class="action-btn primary">
+   ⬇️ 查看 GitHub
+   </a>
+   <a href="../github.html" class="action-btn secondary">
+   ← 返回 GitHub 热点
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/mattpocock/skills" target="_blank" class="action-btn primary">
-                        ⬇️ 查看 GitHub
-                    </a>
-                    <a href="../github.html" class="action-btn secondary">
-                        ← 返回 GitHub 热点
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

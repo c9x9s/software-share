@@ -1,148 +1,145 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostTrack 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>GhostTrack 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html" class="active">GitHub 热点</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../github.html">GitHub 热点</a>
-                <span>/</span>
-                <span>GhostTrack</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../github.html">GitHub 热点</a>
+  <span>/</span>
+  <span>GhostTrack</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">📍</div>
-                <h1 class="article-title">GhostTrack</h1>
-                <div class="article-meta">
-                    <span>⭐ 11,718 Stars</span>
-                    <span>|</span>
-                    <span>📅 今日 1,033 Stars</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">OSINT</span>
-                    <span class="tag">位置追踪</span>
-                    <span class="tag star">🔥 今日趋势</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">📍</div>
+  <h1 class="article-title">GhostTrack</h1>
+  <div class="article-meta">
+   <span>⭐ 11,718 Stars</span>
+   <span>|</span>
+   <span>📅 今日 1,033 Stars</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">Python</span>
+   <span class="tag">OSINT</span>
+   <span class="tag">位置追踪</span>
+   <span class="tag star">🔥 今日趋势</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>项目简介</h2>
-                <p>
-                    <strong>Useful tool to track location or mobile number</strong> — 通过手机号进行定位追踪的开源工具。
-                </p>
-                <p>
-                    GhostTrack 支持通过手机号在<strong>全球 3000+ 站点</strong>收集目标的信息。对于安全研究人员和 OSINT 调查者来说，这是一个有力的工具。
-                </p>
+  <div class="article-content">
+  <h2>项目简介</h2>
+  <p>
+   <strong>Useful tool to track location or mobile number</strong> — 通过手机号进行定位追踪的开源工具。
+  </p>
+  <p>
+   GhostTrack 支持通过手机号在<strong>全球 3000+ 站点</strong>收集目标的信息。对于安全研究人员和 OSINT 调查者来说，这是一个有力的工具。
+  </p>
 
-                <h2>⚠️ 免责声明</h2>
-                <div class="highlight-box">
-                    <h4>🔒 法律提示</h4>
-                    <p>此工具仅供<strong>合法的安全研究和授权的渗透测试</strong>使用。未经授权对他人进行追踪在大多数国家/地区是违法行为。</p>
-                </div>
+  <h2>⚠️ 免责声明</h2>
+  <div class="highlight-box">
+   <h4>🔒 法律提示</h4>
+   <p>此工具仅供<strong>合法的安全研究和授权的渗透测试</strong>使用。未经授权对他人进行追踪在大多数国家/地区是违法行为。</p>
+  </div>
 
-                <h2>技术原理</h2>
-                <p>
-                    GhostTrack 通过自动化方式在各大社交媒体和网站查询手机号，利用这些平台的 API 或网页结构获取信息汇总。
-                </p>
+  <h2>技术原理</h2>
+  <p>
+   GhostTrack 通过自动化方式在各大社交媒体和网站查询手机号，利用这些平台的 API 或网页结构获取信息汇总。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>自动化程度高</li>
-                            <li>支持站点多</li>
-                            <li>持续更新</li>
-                            <li>适合安全研究</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>⚠️ 注意事项</h4>
-                        <ul>
-                            <li>仅供授权使用</li>
-                            <li>需要技术基础</li>
-                            <li>部分站点可能限制</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>自动化程度高</li>
+    <li>支持站点多</li>
+    <li>持续更新</li>
+    <li>适合安全研究</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>⚠️ 注意事项</h4>
+   <ul>
+    <li>仅供授权使用</li>
+    <li>需要技术基础</li>
+    <li>部分站点可能限制</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>总结</h2>
-                <p>
-                    GhostTrack 是 OSINT 领域的热门工具。对于安全研究人员和渗透测试者来说，它能大幅提升信息收集效率。
-                </p>
-                <p>
-                    <strong>推荐指数：⭐⭐⭐⭐</strong>（仅限合法用途）
-                </p>
+  <h2>总结</h2>
+  <p>
+   GhostTrack 是 OSINT 领域的热门工具。对于安全研究人员和渗透测试者来说，它能大幅提升信息收集效率。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="action-btn primary">
-                        ⬇️ 查看 GitHub
-                    </a>
-                    <a href="../github.html" class="action-btn secondary">
-                        ← 返回 GitHub 热点
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="action-btn primary">
+   ⬇️ 查看 GitHub
+   </a>
+   <a href="../github.html" class="action-btn secondary">
+   ← 返回 GitHub 热点
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

@@ -1,115 +1,114 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>npm 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>npm 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav"><ul><li><a href="../index.html">首页</a></li><li><a href="../dev.html">开发工具</a></li><li><a href="../design.html">设计工具</a></li><li><a href="../learning.html">学习资源</a></li></ul></nav>
-        </div>
-    </header>
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>npm</span></div>
-            <div class="article-header">
-                <div class="article-icon">📦</div>
-                <h1 class="article-title">npm</h1>
-                <div class="article-meta"><span>🖥️ Node.js</span><span>|</span><span>💰 免费</span><span>|</span><span>📅 2024年12月</span></div>
-                <div class="article-tags"><span class="tag">包管理</span><span class="tag">前端</span><span class="tag">Node.js</span></div>
-            </div>
-            <div class="article-content">
-                <h2>为什么选择 npm</h2>
-                <p>Node.js 自带的包管理器，也是全球最大的软件注册表。做前端开发，几乎每天都要和 npm 打交道——安装依赖、更新包、发布自己的包。</p>
-                <p>虽然现在有 <strong>yarn</strong>、<strong>pnpm</strong> 等替代品，但 npm 依然是事实标准，很多工具默认都支持 npm。</p>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav"><ul><li><a href="../index.html">首页</a></li><li><a href="../dev.html">开发工具</a></li><li><a href="../design.html">设计工具</a></li><li><a href="../learning.html">学习资源</a></li></ul></nav>
+ </div>
+ </header>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>npm</span></div>
+  <div class="article-header">
+  <div class="article-icon">📦</div>
+  <h1 class="article-title">npm</h1>
+  <div class="article-meta"><span>🖥️ Node.js</span><span>|</span><span>💰 免费</span><span>|</span><span>📅 2024年12月</span></div>
+  <div class="article-tags"><span class="tag">包管理</span><span class="tag">前端</span><span class="tag">Node.js</span></div>
+  </div>
+  <div class="article-content">
+  <h2>为什么选择 npm</h2>
+  <p>Node.js 自带的包管理器，也是全球最大的软件注册表。做前端开发，几乎每天都要和 npm 打交道——安装依赖、更新包、发布自己的包。</p>
+  <p>虽然现在有 <strong>yarn</strong>、<strong>pnpm</strong> 等替代品，但 npm 依然是事实标准，很多工具默认都支持 npm。</p>
 
-                <h2>常用命令</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 日常必用</h4>
-                    <ul>
-                        <li><strong>npm install</strong> — 安装 package.json 里的依赖</li>
-                        <li><strong>npm install xxx</strong> — 安装某个包并保存到依赖</li>
-                        <li><strong>npm install -D xxx</strong> — 安装到开发依赖</li>
-                        <li><strong>npm update</strong> — 更新所有包</li>
-                        <li><strong>npm run dev</strong> — 运行 package.json 里的脚本</li>
-                        <li><strong>npm publish</strong> — 发布自己的包到 npm</li>
-                    </ul>
-                </div>
+  <h2>常用命令</h2>
+  <div class="highlight-box">
+   <h4>⚡ 日常必用</h4>
+   <ul>
+   <li><strong>npm install</strong> — 安装 package.json 里的依赖</li>
+   <li><strong>npm install xxx</strong> — 安装某个包并保存到依赖</li>
+   <li><strong>npm install -D xxx</strong> — 安装到开发依赖</li>
+   <li><strong>npm update</strong> — 更新所有包</li>
+   <li><strong>npm run dev</strong> — 运行 package.json 里的脚本</li>
+   <li><strong>npm publish</strong> — 发布自己的包到 npm</li>
+   </ul>
+  </div>
 
-                <h2>实际使用感受</h2>
-                <p>刚开始用觉得挺好，后来项目大了之后 <strong>node_modules</strong> 动不动就几十 MB，安装也变慢。pnpm 用过一段时间，确实快很多且省空间。</p>
-                <p>不过 npm 胜在 <strong>生态最大</strong>，有时候遇到奇怪的包，只有 npm 上有。npm 的 <strong>npx</strong> 功能也很实用，不用全局安装就能运行命令行工具。</p>
+  <h2>实际使用感受</h2>
+  <p>刚开始用觉得挺好，后来项目大了之后 <strong>node_modules</strong> 动不动就几十 MB，安装也变慢。pnpm 用过一段时间，确实快很多且省空间。</p>
+  <p>不过 npm 胜在 <strong>生态最大</strong>，有时候遇到奇怪的包，只有 npm 上有。npm 的 <strong>npx</strong> 功能也很实用，不用全局安装就能运行命令行工具。</p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>生态最大，包最全</li>
-                            <li>Node.js 内置，无需安装</li>
-                            <li>npx 方便运行临时命令</li>
-                            <li>团队协作无障碍</li>
-                            <li>npm scripts 很好用</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>大型项目安装慢</li>
-                            <li>node_modules 太占空间</li>
-                            <li>幽灵依赖问题</li>
-                            <li>npm install 有时锁版本不一致</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>生态最大，包最全</li>
+    <li>Node.js 内置，无需安装</li>
+    <li>npx 方便运行临时命令</li>
+    <li>团队协作无障碍</li>
+    <li>npm scripts 很好用</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>大型项目安装慢</li>
+    <li>node_modules 太占空间</li>
+    <li>幽灵依赖问题</li>
+    <li>npm install 有时锁版本不一致</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>所有 <strong>前端开发者</strong> 和 <strong>Node.js 开发者</strong>。不管你用 Vue/React 还是纯 Node 后端，都离不开 npm。</p>
+  <h2>适合人群</h2>
+  <p>所有 <strong>前端开发者</strong> 和 <strong>Node.js 开发者</strong>。不管你用 Vue/React 还是纯 Node 后端，都离不开 npm。</p>
 
-                <h2>总结</h2>
-                <p>前端开发的基础设施，虽然有些小问题但瑕不掩瑜。生态优势是其他包管理器短期内无法超越的。</p>
-                <p><strong>评分：⭐⭐⭐⭐☆</strong>（4/5）</p>
+  <h2>总结</h2>
+  <p>前端开发的基础设施，虽然有些小问题但瑕不掩瑜。生态优势是其他包管理器短期内无法超越的。</p>
 
-                <div class="action-buttons">
-                    <a href="https://www.npmjs.com/" target="_blank" class="action-btn primary">🌐 访问官网</a>
-                    <a href="../dev.html" class="action-btn secondary">← 返回开发工具</a>
-                </div>
-            </div>
-        </article>
-    </main>
-    <footer><p>© 2024 极客导航 · 发现优质工具，提升工作效率</p></footer>
+  <div class="action-buttons">
+   <a href="https://www.npmjs.com/" target="_blank" class="action-btn primary">🌐 访问官网</a>
+   <a href="../dev.html" class="action-btn secondary">← 返回开发工具</a>
+  </div>
+  </div>
+ </article>
+ </main>
+ <footer><p>© 2024 极客导航 · 发现优质工具，提升工作效率</p></footer>
 </body>
 </html>

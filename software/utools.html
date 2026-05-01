@@ -1,156 +1,153 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uTools 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>uTools 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../efficiency.html">效率工具</a>
-                <span>/</span>
-                <span>uTools</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../efficiency.html">效率工具</a>
+  <span>/</span>
+  <span>uTools</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🚀</div>
-                <h1 class="article-title">uTools</h1>
-                <div class="article-meta">
-                    <span>🖥️ Windows / Mac / Linux</span>
-                    <span>|</span>
-                    <span>💰 免费 + 付费订阅</span>
-                    <span>|</span>
-                    <span>📅 2024年12月更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">启动器</span>
-                    <span class="tag">插件</span>
-                    <span class="tag">效率</span>
-                    <span class="tag">推荐</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🚀</div>
+  <h1 class="article-title">uTools</h1>
+  <div class="article-meta">
+   <span>🖥️ Windows / Mac / Linux</span>
+   <span>|</span>
+   <span>💰 免费 + 付费订阅</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">启动器</span>
+   <span class="tag">插件</span>
+   <span class="tag">效率</span>
+   <span class="tag">推荐</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>为什么选 uTools</h2>
-                <p>
-                    如果你还在用鼠标点来点去找文件、查翻译、算数字，那你应该试试 uTools。按一下 Alt+Space，一个搜索框弹出来，输入关键词就能做各种事情：启动应用、搜索文件、查词典、算表达式、取色、生成二维码……只有你想不到，没有它做不到。
-                </p>
-                <p>
-                    uTools 本质上是一个插件化的效率启动器，类似 macOS 上的 Alfred 或 Windows 上的 Listary，但它的插件生态更丰富，安装更方便。而且它是国产软件，对中文用户的支持非常好。
-                </p>
+  <div class="article-content">
+  <h2>为什么选 uTools</h2>
+  <p>
+   对于还在使用鼠标点来点去找文件、查翻译、算数字，那你应该试试 uTools。按一下 Alt+Space，一个搜索框弹出来，输入关键词就能做各种事情：启动应用、搜索文件、查词典、算表达式、取色、生成二维码……只有你想不到，没有它做不到。
+  </p>
+  <p>
+   uTools 本质上是一个插件化的效率启动器，类似 macOS 上的 Alfred 或 Windows 上的 Listary，但它的插件生态更丰富，安装更方便。而且它是国产软件，对中文用户的支持非常好。
+  </p>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    装 uTools 大概三年了，现在每天至少要用几十次。最常用的功能：启动应用（再也不用在开始菜单里翻找）、本地文件搜索（比 Windows 自带的快太多）、翻译（选中文本按快捷键直接翻译）。
-                </p>
-                <p>
-                    插件市场是 uTools 的灵魂。我装了几十个插件：JSON 格式化、时间戳转换、颜色选择、流程图绘制、正则测试、Markdown 预览……开发者社区也很活跃，经常有新插件上架。配合 uTools 的超级面板功能，选中文字后按中键就能调出相关操作，效率拉满。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   装 uTools 大概三年了，现在每天至少要用几十次。最常用的功能：启动应用（再也不用在开始菜单里翻找）、本地文件搜索（比 Windows 自带的快太多）、翻译（选中文本按快捷键直接翻译）。
+  </p>
+  <p>
+   插件市场是 uTools 的灵魂。支持安装数十个插件：JSON 格式化、时间戳转换、颜色选择、流程图绘制、正则测试、Markdown 预览……开发者社区也很活跃，经常有新插件上架。配合 uTools 的超级面板功能，选中文字后按中键就能调出相关操作，效率拉满。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>一键呼出，操作超快，形成肌肉记忆</li>
-                            <li>插件生态丰富，扩展性强</li>
-                            <li>文件搜索速度极快</li>
-                            <li>内置翻译、计算、编码转换等高频工具</li>
-                            <li>超级面板增加右键效率</li>
-                            <li>国产软件，中文支持好</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>部分高级功能需要付费会员</li>
-                            <li>插件多了会拖慢启动响应</li>
-                            <li>Linux 版本功能不够完整</li>
-                            <li>云端同步功能收费</li>
-                            <li>偶尔会与某些软件快捷键冲突</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>一键呼出，操作超快，形成肌肉记忆</li>
+    <li>插件生态丰富，扩展性强</li>
+    <li>文件搜索速度极快</li>
+    <li>内置翻译、计算、编码转换等高频工具</li>
+    <li>超级面板增加右键效率</li>
+    <li>国产软件，中文支持好</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>部分高级功能需要付费会员</li>
+    <li>插件多了会拖慢启动响应</li>
+    <li>Linux 版本功能不够完整</li>
+    <li>云端同步功能收费</li>
+    <li>偶尔会与某些软件快捷键冲突</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    <strong>程序员</strong>、<strong>设计师</strong>、<strong>文字工作者</strong>——任何需要在电脑前高效工作的人都适合。特别是经常需要在不同工具和文件之间切换的用户，uTools 能帮你省下大量时间。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   <strong>程序员</strong>、<strong>设计师</strong>、<strong>文字工作者</strong>——任何需要在电脑前高效工作的人都适合。特别是经常需要在不同工具和文件之间切换的用户，uTools 能帮你省下大量时间。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    uTools 是我电脑上不可或缺的生产力工具。它把所有零碎的小工具整合到了一个搜索框中，让操作变得无比流畅。如果你还没有一个效率启动器，uTools 是绝佳的选择。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐½</strong>（4.5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   uTools 是电脑上不可或缺的生产力工具。它把所有零碎的小工具整合到了一个搜索框中，让操作变得无比流畅。对于还没有一个效率启动器，uTools 是绝佳的选择。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://u.tools/" target="_blank" class="action-btn primary">
-                        ⬇️ 前往官网
-                    </a>
-                    <a href="../efficiency.html" class="action-btn secondary">
-                        ← 返回效率工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://u.tools/" target="_blank" class="action-btn primary">
+   ⬇️ 前往官网
+   </a>
+   <a href="../efficiency.html" class="action-btn secondary">
+   ← 返回效率工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

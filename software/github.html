@@ -1,168 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>GitHub 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../learning.html">学习资源</a>
-                <span>/</span>
-                <span>GitHub</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../learning.html">学习资源</a>
+  <span>/</span>
+  <span>GitHub</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">📻</div>
-                <h1 class="article-title">GitHub</h1>
-                <div class="article-meta">
-                    <span>🖥️ Web</span>
-                    <span>|</span>
-                    <span>💰 免费</span>
-                    <span>|</span>
-                    <span>📅 持续更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">开源</span>
-                    <span class="tag">代码托管</span>
-                    <span class="tag">社区</span>
-                    <span class="tag">必收藏</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">📻</div>
+  <h1 class="article-title">GitHub</h1>
+  <div class="article-meta">
+   <span>🖥️ Web</span>
+   <span>|</span>
+   <span>💰 免费</span>
+   <span>|</span>
+   <span>📅 持续更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">开源</span>
+   <span class="tag">代码托管</span>
+   <span class="tag">社区</span>
+   <span class="tag">必收藏</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>全球开发者的精神家园</h2>
-                <p>
-                    GitHub 不仅仅是一个代码托管平台，它是<strong>开源文化的中心</strong>。从 Linux 到 React，从 Vue 到 TensorFlow，无数改变世界的项目都托管在 GitHub 上。
-                </p>
-                <p>
-                    我每天打开 GitHub 的次数比打开微信还多。看最新的开源项目、跟进技术趋势、找轮子用、学习优秀代码，GitHub 是程序员持续成长的源泉。
-                </p>
+  <div class="article-content">
+  <h2>全球开发者的精神家园</h2>
+  <p>
+   GitHub 不仅仅是一个代码托管平台，它是<strong>开源文化的中心</strong>。从 Linux 到 React，从 Vue 到 TensorFlow，无数改变世界的项目都托管在 GitHub 上。
+  </p>
+  <p>
+   日常打开 GitHub 的次数比打开微信还多。看最新的开源项目、跟进技术趋势、找轮子用、学习优秀代码，GitHub 是程序员持续成长的源泉。
+  </p>
 
-                <h2>GitHub 的核心价值</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 让我每天都离不开的功能</h4>
-                    <ul>
-                        <li><strong>开源代码库</strong> — 托管了全球最优秀的开源项目，免费学习优秀代码</li>
-                        <li><strong>GitHub Actions</strong> — 强大的 CI/CD 工具，自动化工作流</li>
-                        <li><strong>GitHub Issues</strong> — 项目管理和 Bug 跟踪的好帮手</li>
-                        <li><strong>GitHub Copilot</strong> — AI 辅助编程，让代码写得更高效</li>
-                        <li><strong>GitHub Pages</strong> — 静态网站托管，我的个人网站就托管在这</li>
-                        <li><strong>Explore 探索</strong> — 发现新奇有趣的项目</li>
-                    </ul>
-                </div>
+  <h2>GitHub 的核心价值</h2>
+  <div class="highlight-box">
+   <h4>⚡ 日常必备功能</h4>
+   <ul>
+   <li><strong>开源代码库</strong> — 托管了全球最优秀的开源项目，免费学习优秀代码</li>
+   <li><strong>GitHub Actions</strong> — 强大的 CI/CD 工具，自动化工作流</li>
+   <li><strong>GitHub Issues</strong> — 项目管理和 Bug 跟踪的好帮手</li>
+   <li><strong>GitHub Copilot</strong> — AI 辅助编程，让代码写得更高效</li>
+   <li><strong>GitHub Pages</strong> — 静态网站托管，个人网站就托管在这</li>
+   <li><strong>Explore 探索</strong> — 发现新奇有趣的项目</li>
+   </ul>
+  </div>
 
-                <h2>我的使用场景</h2>
-                <p>
-                    工作中用 GitHub 管理代码和协作开发；学习时 star 感兴趣的项目，比如最近在研究 <strong>一些 AI 开源项目</strong>，每天都会刷一刷有没有更新。
-                </p>
-                <p>
-                    <strong>GitHub Trending</strong> 是我每天必看的内容，了解全球开发者都在关注什么技术趋势。也经常在上面找一些工具库，避免重复造轮子。
-                </p>
+  <h2>使用场景</h2>
+  <p>
+   工作中用 GitHub 管理代码和协作开发；学习时 star 感兴趣的项目，比如最近在研究 <strong>一些 AI 开源项目</strong>，每天都会刷一刷有没有更新。
+  </p>
+  <p>
+   <strong>GitHub Trending</strong> 是每天必看的内容，了解全球开发者都在关注什么技术趋势。也经常在上面找一些工具库，避免重复造轮子。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>全球最大的代码托管平台</li>
-                            <li>开源精神浓厚，社区活跃</li>
-                            <li>免费无限私有仓库（个人用户）</li>
-                            <li>CI/CD 集成度高</li>
-                            <li>学生认证可以申请免费福利</li>
-                            <li>开发者简历，GitHub 主页是名片</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>私有仓库有协作人数限制</li>
-                            <li>国内访问速度不太稳定</li>
-                            <li>Git 门槛对新手有一定学习成本</li>
-                            <li>企业版价格较贵</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>全球最大的代码托管平台</li>
+    <li>开源精神浓厚，社区活跃</li>
+    <li>免费无限私有仓库（个人用户）</li>
+    <li>CI/CD 集成度高</li>
+    <li>学生认证可以申请免费福利</li>
+    <li>开发者简历，GitHub 主页是名片</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>私有仓库有协作人数限制</li>
+    <li>国内访问速度不太稳定</li>
+    <li>Git 门槛对新手有一定学习成本</li>
+    <li>企业版价格较贵</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    所有 <strong>程序员</strong>都应该使用 GitHub。无论你是学生还是在职开发者，GitHub 都是展示技术实力、学习最新技术、融入开发者社区的最佳平台。一个活跃的 GitHub 账号，是比简历更有说服力的能力证明。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   所有 <strong>程序员</strong>都应该使用 GitHub。无论你是学生还是在职开发者，GitHub 都是展示技术实力、学习最新技术、融入开发者社区的最佳平台。一个活跃的 GitHub 账号，是比简历更有说服力的能力证明。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    GitHub 是程序员必须掌握的工具。它不仅是代码仓库，更是技术人的社交网络、学习平台和展示窗口。善用 GitHub，让你的技术之路走得更宽。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   GitHub 是程序员必须掌握的工具。它不仅是代码仓库，更是技术人的社交网络、学习平台和展示窗口。善用 GitHub，让你的技术之路走得更宽。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/" target="_blank" class="action-btn primary">
-                        🔍 探索 GitHub
-                    </a>
-                    <a href="../learning.html" class="action-btn secondary">
-                        ← 返回学习资源
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://github.com/" target="_blank" class="action-btn primary">
+   🔍 探索 GitHub
+   </a>
+   <a href="../learning.html" class="action-btn secondary">
+   ← 返回学习资源
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

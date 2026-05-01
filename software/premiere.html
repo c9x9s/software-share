@@ -1,168 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premiere Pro 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Premiere Pro 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../design.html">设计工具</a>
-                <span>/</span>
-                <span>Premiere Pro</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../design.html">设计工具</a>
+  <span>/</span>
+  <span>Premiere Pro</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎬</div>
-                <h1 class="article-title">Adobe Premiere Pro</h1>
-                <div class="article-meta">
-                    <span>🖥️ Mac / Windows</span>
-                    <span>|</span>
-                    <span>💰 订阅制</span>
-                    <span>|</span>
-                    <span>📅 2024年12月更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">视频剪辑</span>
-                    <span class="tag">影视制作</span>
-                    <span class="tag">后期制作</span>
-                    <span class="tag">推荐</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎬</div>
+  <h1 class="article-title">Adobe Premiere Pro</h1>
+  <div class="article-meta">
+   <span>🖥️ Mac / Windows</span>
+   <span>|</span>
+   <span>💰 订阅制</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">视频剪辑</span>
+   <span class="tag">影视制作</span>
+   <span class="tag">后期制作</span>
+   <span class="tag">推荐</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>专业视频剪辑的不二之选</h2>
-                <p>
-                    从学生时代用 Premiere 剪第一部微电影，到现在做自媒体内容，Premiere 陪伴我走过了近十年。说它是最好的消费级专业视频剪辑软件，一点不为过。
-                </p>
-                <p>
-                    对我来说，选择 Premiere 而不是 Final Cut Pro 的原因很简单 — <strong>Adobe 全家桶的联动</strong>太香了。在 Pr 里可以直接调用 AE 的合成，Audition 处理音频，AME 导出视频，工作流无缝衔接。
-                </p>
+  <div class="article-content">
+  <h2>专业视频剪辑的不二之选</h2>
+  <p>
+   从学生时代用 Premiere 剪第一部微电影，到现在做自媒体内容，Premiere 历经近十年。说它是最好的消费级专业视频剪辑软件，一点不为过。
+  </p>
+  <p>
+   对使用者来说，选择 Premiere 而不是 Final Cut Pro 的原因很简单 — <strong>Adobe 全家桶的联动</strong>太香了。在 Pr 里可以直接调用 AE 的合成，Audition 处理音频，AME 导出视频，工作流无缝衔接。
+  </p>
 
-                <h2>核心优势</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 让我离不开的功能</h4>
-                    <ul>
-                        <li><strong>多轨道时间线</strong> — 复杂项目也能轻松管理几十条轨道</li>
-                        <li><strong>Lumetri 调色</strong> — 内置专业调色工具，比达芬奇更易上手</li>
-                        <li><strong>动态链接</strong> — 和 After Effects 完美配合，无需渲染即可实时更新</li>
-                        <li><strong>语音转文字</strong> — AI 自动生成字幕，省时省力</li>
-                        <li><strong>Auto Reframe</strong> — AI 自动裁切不同比例，省去重复剪辑</li>
-                    </ul>
-                </div>
+  <h2>核心优势</h2>
+  <div class="highlight-box">
+   <h4>⚡ 核心功能</h4>
+   <ul>
+   <li><strong>多轨道时间线</strong> — 复杂项目也能轻松管理几十条轨道</li>
+   <li><strong>Lumetri 调色</strong> — 内置专业调色工具，比达芬奇更易上手</li>
+   <li><strong>动态链接</strong> — 和 After Effects 完美配合，无需渲染即可实时更新</li>
+   <li><strong>语音转文字</strong> — AI 自动生成字幕，省时省力</li>
+   <li><strong>Auto Reframe</strong> — AI 自动裁切不同比例，省去重复剪辑</li>
+   </ul>
+  </div>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    做 B 站视频这两年，Premiere 是我的主力工具。<strong>语音转文字字幕</strong>功能简直是 UP 主福音，一键生成时间轴字幕，再也不用手动一个字一个字敲了。
-                </p>
-                <p>
-                    配合 <strong>Adobe Express</strong> 做封面，Pr 剪辑 + AE 特效 + PS 修图，一套流程走下来行云流水。当然，前提是你愿意为 Adobe 全家桶买单。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   Premiere 在视频制作领域功能全面。<strong>语音转文字字幕</strong>功能帮助视频创作者快速生成时间轴字幕，大幅减少手动录入字幕的工作量。
+  </p>
+  <p>
+   配合 <strong>Adobe Express</strong> 做封面，Pr 剪辑 + AE 特效 + PS 修图，一套流程走下来行云流水。当然，前提是你愿意为 Adobe 全家桶买单。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>Adobe 全家桶联动，工作流无缝</li>
-                            <li>功能全面，从短视频到长电影都能胜任</li>
-                            <li>教程丰富，学习资源多</li>
-                            <li>支持几乎所有视频格式</li>
-                            <li>Lumetri 调色专业且易用</li>
-                            <li>持续更新，AI 功能越来越强大</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>订阅费用贵，买断版已取消</li>
-                            <li>内存占用大，需要大内存电脑</li>
-                            <li>Mac 版性能不如 Windows 版</li>
-                            <li>启动速度较慢</li>
-                            <li>达芬奇调色更强，专业调色建议配合使用</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>Adobe 全家桶联动，工作流无缝</li>
+    <li>功能全面，从短视频到长电影都能胜任</li>
+    <li>教程丰富，学习资源多</li>
+    <li>支持几乎所有视频格式</li>
+    <li>Lumetri 调色专业且易用</li>
+    <li>持续更新，AI 功能越来越强大</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>订阅费用贵，买断版已取消</li>
+    <li>内存占用大，需要大内存电脑</li>
+    <li>Mac 版性能不如 Windows 版</li>
+    <li>启动速度较慢</li>
+    <li>达芬奇调色更强，专业调色建议配合使用</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    如果你是 <strong>视频创作者</strong>、<strong>自媒体博主</strong>、<strong>婚礼/活动摄影师</strong>，或者需要对视频进行<strong>专业级剪辑和调色</strong>，Premiere Pro 是很好的选择。但如果只是简单拼接视频，剪映等免费工具可能更合适。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   适合 <strong>视频创作者</strong>、<strong>自媒体博主</strong>、<strong>婚礼/活动摄影师</strong>，或者需要对视频进行<strong>专业级剪辑和调色</strong>，Premiere Pro 是很好的选择。但如果只是简单拼接视频，剪映等免费工具可能更合适。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    Premiere Pro 是我每天都在用的工具。虽然贵，但值回票价。Adobe 的生态太完善了，一旦入坑就很难离开。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐☆</strong>（4/5，扣分在价格和资源占用）
-                </p>
+  <h2>总结</h2>
+  <p>
+   Premiere Pro 是每天都在用的工具。虽然贵，但值回票价。Adobe 的生态太完善了，一旦入坑就很难离开。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://www.adobe.com/products/premiere.html" target="_blank" class="action-btn primary">
-                        ⬇️ 前往订阅
-                    </a>
-                    <a href="../design.html" class="action-btn secondary">
-                        ← 返回设计工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://www.adobe.com/products/premiere.html" target="_blank" class="action-btn primary">
+   ⬇️ 前往订阅
+   </a>
+   <a href="../design.html" class="action-btn secondary">
+   ← 返回设计工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

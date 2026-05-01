@@ -1,170 +1,167 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blender 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Blender 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../design.html">设计工具</a>
-                <span>/</span>
-                <span>Blender</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../design.html">设计工具</a>
+  <span>/</span>
+  <span>Blender</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎭</div>
-                <h1 class="article-title">Blender</h1>
-                <div class="article-meta">
-                    <span>🖥️ Mac / Windows / Linux</span>
-                    <span>|</span>
-                    <span>💰 免费开源</span>
-                    <span>|</span>
-                    <span>📅 2024年12月更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">3D建模</span>
-                    <span class="tag">动画</span>
-                    <span class="tag">开源</span>
-                    <span class="tag">推荐</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎭</div>
+  <h1 class="article-title">Blender</h1>
+  <div class="article-meta">
+   <span>🖥️ Mac / Windows / Linux</span>
+   <span>|</span>
+   <span>💰 免费开源</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">3D建模</span>
+   <span class="tag">动画</span>
+   <span class="tag">开源</span>
+   <span class="tag">推荐</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>开源3D创作的巅峰之作</h2>
-                <p>
-                    Blender 是那种让人惊叹"这居然是免费的"软件。作为一个对 3D 感兴趣但又不想花几万块买 Maya 的设计师，Blender 满足了我对 3D 软件的所有想象。
-                </p>
-                <p>
-                    从 <strong>Blender 2.8</strong> 开始，这个软件真正走向成熟。新的 EEVEE 渲染引擎让实时预览成为可能，界面也彻底改头换面。现在 Blender 3.0、4.0 更是一代比一代强。
-                </p>
+  <div class="article-content">
+  <h2>开源3D创作的巅峰之作</h2>
+  <p>
+   Blender 是那种令人印象深刻"这居然是免费的"软件。作为一个对 3D 感兴趣但又不想花几万块买 Maya 的设计师，Blender 满足了对 3D 软件的所有想象。
+  </p>
+  <p>
+   从 <strong>Blender 2.8</strong> 开始，这个软件真正走向成熟。新的 EEVEE 渲染引擎让实时预览成为可能，界面也彻底改头换面。现在 Blender 3.0、4.0 更是一代比一代强。
+  </p>
 
-                <h2>全能型3D工具</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 一站式 3D 解决方案</h4>
-                    <ul>
-                        <li><strong>建模</strong> — 多边形建模、Nurbs曲面、雕刻模式，从工业设计到数字雕塑都能搞定</li>
-                        <li><strong>雕刻</strong> — ZBrush 级别的雕刻工具，数字雕刻师的最爱</li>
-                        <li><strong>动画</strong> — 关键帧、骨骼绑定、物理模拟，动画制作全流程</li>
-                        <li><strong>渲染</strong> — Cycles 路径追踪渲染器，电影级画质；EEVEE 实时渲染器，速度飞快</li>
-                        <li><strong>视频剪辑</strong> — 内置非线性剪辑，虽然不如 Pr 专业，但做 3D 动画够用</li>
-                        <li><strong>几何节点</strong> — 程序化建模，可视化编程，参数化设计神器</li>
-                    </ul>
-                </div>
+  <h2>全能型3D工具</h2>
+  <div class="highlight-box">
+   <h4>⚡ 一站式 3D 解决方案</h4>
+   <ul>
+   <li><strong>建模</strong> — 多边形建模、Nurbs曲面、雕刻模式，从工业设计到数字雕塑都能搞定</li>
+   <li><strong>雕刻</strong> — ZBrush 级别的雕刻工具，数字雕刻师的利器</li>
+   <li><strong>动画</strong> — 关键帧、骨骼绑定、物理模拟，动画制作全流程</li>
+   <li><strong>渲染</strong> — Cycles 路径追踪渲染器，电影级画质；EEVEE 实时渲染器，速度飞快</li>
+   <li><strong>视频剪辑</strong> — 内置非线性剪辑，虽然不如 Pr 专业，但做 3D 动画够用</li>
+   <li><strong>几何节点</strong> — 程序化建模，可视化编程，参数化设计神器</li>
+   </ul>
+  </div>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    用 Blender 做过产品渲染、简单动画、还有 3D 打印模型。<strong>雕刻模式</strong>真的惊艳到我了，配个数位板就能做高模，细节丰富得吓人。
-                </p>
-                <p>
-                    <strong>几何节点</strong>是我最近沉迷的功能。用节点的方式程序化生成建筑、植被、粒子系统，比传统方式高效太多。官方也一直在推这个功能，每周都有社区更新的节点组可用。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   用 Blender 做过产品渲染、简单动画、还有 3D 打印模型。<strong>雕刻模式</strong>真的表现出色，配个数位板就能做高模，细节丰富得吓人。
+  </p>
+  <p>
+   <strong>几何节点</strong>是近期沉迷的功能。用节点的方式程序化生成建筑、植被、粒子系统，比传统方式高效太多。官方也一直在推这个功能，每周都有社区更新的节点组可用。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>完全免费，开源可商用</li>
-                            <li>功能全面，3D 软件能做的它都能做</li>
-                            <li>渲染质量顶级，Cycles 媲美 Arnold</li>
-                            <li>社区活跃，教程资源丰富</li>
-                            <li>插件生态越来越完善</li>
-                            <li>跨平台，Win/Mac/Linux 都能用</li>
-                            <li>内存占用相对合理</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>快捷键多，学习曲线较陡</li>
-                            <li>界面和主流 3D 软件差异较大</li>
-                            <li>大型项目渲染时间较长</li>
-                            <li>Nurbs 建模不如 Rhino 方便</li>
-                            <li>某些专业功能不如 Maya 完善</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>完全免费，开源可商用</li>
+    <li>功能全面，3D 软件能做的它都能做</li>
+    <li>渲染质量顶级，Cycles 媲美 Arnold</li>
+    <li>社区活跃，教程资源丰富</li>
+    <li>插件生态越来越完善</li>
+    <li>跨平台，Win/Mac/Linux 都能用</li>
+    <li>内存占用相对合理</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>快捷键多，学习曲线较陡</li>
+    <li>界面和主流 3D 软件差异较大</li>
+    <li>大型项目渲染时间较长</li>
+    <li>Nurbs 建模不如 Rhino 方便</li>
+    <li>某些专业功能不如 Maya 完善</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    如果你对 <strong>3D 建模</strong>、<strong>动画制作</strong>、<strong>游戏美术</strong>、<strong>产品可视化</strong>感兴趣，Blender 是绝佳起点。相比 Maya、MotionBuilder 等商业软件，Blender 的性价比是无敌的。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   适合对 <strong>3D 建模</strong>、<strong>动画制作</strong>、<strong>游戏美术</strong>、<strong>产品可视化</strong>感兴趣，Blender 是绝佳起点。相比 Maya、MotionBuilder 等商业软件，Blender 的性价比是无敌的。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    Blender 证明了开源软件可以达到商业软件的顶级水平。每个 3D 爱好者都应该试试，你会发现 3D 创作可以如此平民化。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   Blender 证明了开源软件可以达到商业软件的顶级水平。每个 3D 爱好者都应该试试，你会发现 3D 创作可以如此平民化。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://www.blender.org/" target="_blank" class="action-btn primary">
-                        ⬇️ 免费下载
-                    </a>
-                    <a href="../design.html" class="action-btn secondary">
-                        ← 返回设计工具
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://www.blender.org/" target="_blank" class="action-btn primary">
+   ⬇️ 免费下载
+   </a>
+   <a href="../design.html" class="action-btn secondary">
+   ← 返回设计工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

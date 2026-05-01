@@ -1,167 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDN Web Docs 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content a { color: var(--accent); }
-        .article-content a:hover { text-decoration: underline; }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>MDN Web Docs 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../learning.html">学习资源</a>
-                <span>/</span>
-                <span>MDN</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../learning.html">学习资源</a>
+  <span>/</span>
+  <span>MDN</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">📘</div>
-                <h1 class="article-title">MDN Web Docs</h1>
-                <div class="article-meta">
-                    <span>🖥️ Web</span>
-                    <span>|</span>
-                    <span>💰 完全免费</span>
-                    <span>|</span>
-                    <span>📅 持续更新</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">前端</span>
-                    <span class="tag">文档</span>
-                    <span class="tag">参考</span>
-                    <span class="tag">必收藏</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">📘</div>
+  <h1 class="article-title">MDN Web Docs</h1>
+  <div class="article-meta">
+   <span>🖥️ Web</span>
+   <span>|</span>
+   <span>💰 完全免费</span>
+   <span>|</span>
+   <span>📅 持续更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">前端</span>
+   <span class="tag">文档</span>
+   <span class="tag">参考</span>
+   <span class="tag">必收藏</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>前端开发者的百科全书</h2>
-                <p>
-                    MDN Web Docs，前身是 Mozilla Developer Network，是每个前端开发者必收藏的技术文档站点。毫不夸张地说，我的职业生涯有一半是 MDN 陪着走过来的。
-                </p>
-                <p>
-                    从 JavaScript 的 Array 方法，到 CSS 的 flexbox 布局，再到 Web API 的每一个细节，<strong>MDN 是 Web 技术的权威参考</strong>。遇到不确定的 API 查 MDN，比 Google 搜索更靠谱。
-                </p>
+  <div class="article-content">
+  <h2>前端开发者的百科全书</h2>
+  <p>
+   MDN Web Docs，前身是 Mozilla Developer Network，是每个前端开发者必收藏的技术文档站点。毫不夸张地说，职业生涯有一半是 MDN 陪着走过来的。
+  </p>
+  <p>
+   从 JavaScript 的 Array 方法，到 CSS 的 flexbox 布局，再到 Web API 的每一个细节，<strong>MDN 是 Web 技术的权威参考</strong>。遇到不确定的 API 查 MDN，比 Google 搜索更靠谱。
+  </p>
 
-                <h2>为什么 MDN 不可替代</h2>
-                <div class="highlight-box">
-                    <h4>⚡ 让我每天都在用的功能</h4>
-                    <ul>
-                        <li><strong>详细的 API 文档</strong> — 每个方法、属性、事件都有详细说明和代码示例</li>
-                        <li><strong>浏览器兼容性表格</strong> — 一眼看穿各浏览器支持情况</li>
-                        <li><strong>可交互示例</strong> — 直接在页面运行代码，边学边试</li>
-                        <li><strong>中文版本</strong> — 本地化做得越来越好，中文读者福音</li>
-                        <li><strong>Web APIs 索引</strong> — 所有浏览器内置 API 一网打尽</li>
-                    </ul>
-                </div>
+  <h2>为什么 MDN 不可替代</h2>
+  <div class="highlight-box">
+   <h4>⚡ 让每天都在用的功能</h4>
+   <ul>
+   <li><strong>详细的 API 文档</strong> — 每个方法、属性、事件都有详细说明和代码示例</li>
+   <li><strong>浏览器兼容性表格</strong> — 一眼看穿各浏览器支持情况</li>
+   <li><strong>可交互示例</strong> — 直接在页面运行代码，边学边试</li>
+   <li><strong>中文版本</strong> — 本地化做得越来越好，中文读者福音</li>
+   <li><strong>Web APIs 索引</strong> — 所有浏览器内置 API 一网打尽</li>
+   </ul>
+  </div>
 
-                <h2>我的使用场景</h2>
-                <p>
-                    写 CSS 时不确定某个属性是否需要前缀，MDN 查一下兼容性；用 JavaScript 时不知道数组有哪些方法，MDN 有完整的方法列表和示例；学新的 Web API 时，先看 MDN 的概述再动手。
-                </p>
-                <p>
-                    <strong>MDN Learning Area</strong> 也是新手入门的好地方，从零开始学 HTML、CSS、JavaScript，路径清晰，循序渐进。
-                </p>
+  <h2>使用场景</h2>
+  <p>
+   写 CSS 时不确定某个属性是否需要前缀，MDN 查一下兼容性；用 JavaScript 时不知道数组有哪些方法，MDN 有完整的方法列表和示例；学新的 Web API 时，先看 MDN 的概述再动手。
+  </p>
+  <p>
+   <strong>MDN Learning Area</strong> 也是新手入门的好地方，从零开始学 HTML、CSS、JavaScript，路径清晰，循序渐进。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>内容权威，由 Mozilla 和社区共同维护</li>
-                            <li>覆盖面广，Web 技术几乎全覆盖</li>
-                            <li>代码示例丰富，可交互运行</li>
-                            <li>浏览器兼容性信息详细</li>
-                            <li>中文文档越来越完善</li>
-                            <li>完全免费，无需注册</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>部分高级内容需要一定基础才能理解</li>
-                            <li>搜索体验不如一些商业产品</li>
-                            <li>有时内容更新略有延迟</li>
-                            <li>移动端阅读体验一般</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>内容权威，由 Mozilla 和社区共同维护</li>
+    <li>覆盖面广，Web 技术几乎全覆盖</li>
+    <li>代码示例丰富，可交互运行</li>
+    <li>浏览器兼容性信息详细</li>
+    <li>中文文档越来越完善</li>
+    <li>完全免费，无需注册</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>部分高级内容需要一定基础才能理解</li>
+    <li>搜索体验不如一些商业产品</li>
+    <li>有时内容更新略有延迟</li>
+    <li>移动端阅读体验一般</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    无论你是 <strong>前端新手</strong>还是<strong>资深开发者</strong>，MDN 都是必备工具。新手用来学习，老手用来查漏补缺。我现在已经养成了"遇事不决查 MDN"的习惯。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   无论你是 <strong>前端新手</strong>还是<strong>资深开发者</strong>，MDN 都是必备工具。新手用来学习，老手用来查漏补缺。现在已经养成了"遇事不决查 MDN"的习惯。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    MDN 是 Web 开发领域最重要的免费资源之一。它就像一本活着的技术百科全书，每一天都在帮助全球的开发者解决问题。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   MDN 是 Web 开发领域最重要的免费资源之一。它就像一本活着的技术百科全书，每一天都在帮助全球的开发者解决问题。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://developer.mozilla.org/" target="_blank" class="action-btn primary">
-                        🔍 前往 MDN
-                    </a>
-                    <a href="../learning.html" class="action-btn secondary">
-                        ← 返回学习资源
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://developer.mozilla.org/" target="_blank" class="action-btn primary">
+   🔍 前往 MDN
+   </a>
+   <a href="../learning.html" class="action-btn secondary">
+   ← 返回学习资源
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

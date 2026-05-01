@@ -1,158 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vercel 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vercel 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../cloud.html">云服务</a>
-                <span>/</span>
-                <span>Vercel</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../cloud.html">云服务</a>
+  <span>/</span>
+  <span>Vercel</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">▲</div>
-                <h1 class="article-title">Vercel</h1>
-                <div class="article-meta">
-                    <span>🌐 Web</span>
-                    <span>|</span>
-                    <span>💰 免费/付费</span>
-                    <span>|</span>
-                    <span>📅 2025年4月</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">前端部署</span>
-                    <span class="tag">Serverless</span>
-                    <span class="tag">Next.js</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">▲</div>
+  <h1 class="article-title">Vercel</h1>
+  <div class="article-meta">
+   <span>🌐 Web</span>
+   <span>|</span>
+   <span>💰 免费/付费</span>
+   <span>|</span>
+   <span>📅 2025年4月</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">前端部署</span>
+   <span class="tag">Serverless</span>
+   <span class="tag">Next.js</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>为什么选择 Vercel</h2>
-                <p>
-                    如果你做前端开发，Vercel 这个名字一定不陌生。它是 Next.js 背后团队的作品，也是目前我最喜欢的前端托管平台。GitHub 登录后连上仓库，推送代码就自动部署，体验丝滑。
-                </p>
-                <p>
-                    免费版已经非常慷慨——个人项目、小团队完全够用。带宽和构建时长虽然有限制，但正常使用很少超。而且全球 CDN 加速，国内用户访问速度也还不错。
-                </p>
+  <div class="article-content">
+  <h2>为什么选择 Vercel</h2>
+  <p>
+   适合前端开发，Vercel 这个名字一定不陌生。它是 Next.js 背后团队的作品，也是目前其核心亮点是的前端托管平台。GitHub 登录后连上仓库，推送代码就自动部署，体验丝滑。
+  </p>
+  <p>
+   免费版已经非常慷慨——个人项目、小团队完全够用。带宽和构建时长虽然有限制，但正常使用很少超。而且全球 CDN 加速，国内用户访问速度也还不错。
+  </p>
 
-                <h2>实际使用感受</h2>
-                <p>
-                    我把好几个个人项目都放在 Vercel 上，包括这个博客和几个小工具。部署流程简单到令人发指：<strong>git push → 自动构建 → 秒级上线</strong>。Preview Deployments 功能也很实用，每个 PR 自动生成预览链接，团队协作神器。
-                </p>
-                <p>
-                    Serverless Functions 是另一个杀手特性。直接在前端项目里写 API 路由，不用单独维护后端。我用量不大的项目完全免费跑着，成本为零。
-                </p>
+  <h2>实际使用感受</h2>
+  <p>
+   可将好几个个人项目都放在 Vercel 上，包括这个博客和几个小工具。部署流程简单到令人发指：<strong>git push → 自动构建 → 秒级上线</strong>。Preview Deployments 功能也很实用，每个 PR 自动生成预览链接，团队协作神器。
+  </p>
+  <p>
+   Serverless Functions 是另一个杀手特性。直接在前端项目里写 API 路由，不用单独维护后端。用量不大的项目完全免费跑着，成本为零。
+  </p>
 
-                <div class="highlight-box">
-                    <h4>⚡ 常用功能</h4>
-                    <ul>
-                        <li><strong>Edge Functions</strong> — 全球边缘节点运行，延迟极低</li>
-                        <li><strong>自动 HTTPS</strong> — 自定义域名加 SSL 一键搞定</li>
-                        <li><strong>Analytics</strong> — 内置流量分析，不依赖第三方</li>
-                    </ul>
-                </div>
+  <div class="highlight-box">
+   <h4>⚡ 常用功能</h4>
+   <ul>
+   <li><strong>Edge Functions</strong> — 全球边缘节点运行，延迟极低</li>
+   <li><strong>自动 HTTPS</strong> — 自定义域名加 SSL 一键搞定</li>
+   <li><strong>Analytics</strong> — 内置流量分析，不依赖第三方</li>
+   </ul>
+  </div>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>部署流程极简，Git 集成优秀</li>
-                            <li>免费额度充足</li>
-                            <li>全球 CDN 加速</li>
-                            <li>Next.js 原生支持最佳</li>
-                            <li>Serverless Functions 方便实用</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>国内访问偶尔不稳定</li>
-                            <li>冷启动有延迟</li>
-                            <li>免费版带宽有限制</li>
-                            <li>复杂后端需求不够用</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>部署流程极简，Git 集成优秀</li>
+    <li>免费额度充足</li>
+    <li>全球 CDN 加速</li>
+    <li>Next.js 原生支持最佳</li>
+    <li>Serverless Functions 方便实用</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>国内访问偶尔不稳定</li>
+    <li>冷启动有延迟</li>
+    <li>免费版带宽有限制</li>
+    <li>复杂后端需求不够用</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>适合人群</h2>
-                <p>
-                    <strong>前端开发者</strong>、<strong>独立开发者</strong>、<strong>Next.js 用户</strong>。如果你需要一个简单快速的静态站或全栈托管平台，Vercel 是首选之一。
-                </p>
+  <h2>适合人群</h2>
+  <p>
+   <strong>前端开发者</strong>、<strong>独立开发者</strong>、<strong>Next.js 用户</strong>。适合需要一个简单快速的静态站或全栈托管平台，Vercel 是首选之一。
+  </p>
 
-                <h2>总结</h2>
-                <p>
-                    用了两年多的前端部署平台，从个人项目到生产环境都很靠谱。免费版足够良心，付费版功能强大。如果做前端项目，Vercel 应该是你的默认选项。
-                </p>
-                <p>
-                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
-                </p>
+  <h2>总结</h2>
+  <p>
+   用了两年多的前端部署平台，从个人项目到生产环境都很靠谱。免费版足够良心，付费版功能强大。如果做前端项目，Vercel 应该是你的默认选项。
+  </p>
 
-                <div class="action-buttons">
-                    <a href="https://vercel.com/" target="_blank" class="action-btn primary">
-                        ⬇️ 前往官网
-                    </a>
-                    <a href="../cloud.html" class="action-btn secondary">
-                        ← 返回云服务
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
+  <div class="action-buttons">
+   <a href="https://vercel.com/" target="_blank" class="action-btn primary">
+   ⬇️ 前往官网
+   </a>
+   <a href="../cloud.html" class="action-btn secondary">
+   ← 返回云服务
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-    <footer>
-        <p>© 2025 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2025 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>

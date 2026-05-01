@@ -1,153 +1,149 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeVoice 评测 - 极客导航</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .article { max-width: 800px; margin: 0 auto; }
-        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 2rem; margin-bottom: 1rem; }
-        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .article-meta span { margin: 0 0.5rem; }
-        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-        .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
-        .article-content { line-height: 1.9; color: var(--text-secondary); }
-        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-        .article-content li { margin-bottom: 0.5rem; }
-        .article-content strong { color: var(--text-primary); }
-        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
-        .cons h4 { color: #f87171; margin-bottom: 1rem; }
-        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-        .pros li::before { content: "✓ "; color: #4ade80; }
-        .cons li::before { content: "✗ "; color: #f87171; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-        .action-btn.primary:hover { background: var(--accent-hover); }
-        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
-        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>VibeVoice 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .tag.star { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../dev.html">开发工具</a></li>
-                    <li><a href="../design.html">设计工具</a></li>
-                    <li><a href="../learning.html">学习资源</a></li>
-                    <li><a href="../github.html" class="active">GitHub 热点</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html" class="active">GitHub 热点</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
 
-    <main class="container">
-        <article class="article">
-            <div class="breadcrumb">
-                <a href="../index.html">首页</a>
-                <span>/</span>
-                <a href="../github.html">GitHub 热点</a>
-                <span>/</span>
-                <span>VibeVoice</span>
-            </div>
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../github.html">GitHub 热点</a>
+  <span>/</span>
+  <span>VibeVoice</span>
+  </div>
 
-            <div class="article-header">
-                <div class="article-icon">🎤</div>
-                <h1 class="article-title">VibeVoice</h1>
-                <div class="article-meta">
-                    <span>⭐ 45,803 Stars</span>
-                    <span>|</span>
-                    <span>📅 今日 1,200+ Stars</span>
-                </div>
-                <div class="article-tags">
-                    <span class="tag">AI</span>
-                    <span class="tag">语音识别</span>
-                    <span class="tag">开源</span>
-                    <span class="tag star">🔥 今日趋势</span>
-                </div>
-            </div>
+  <div class="article-header">
+  <div class="article-icon">🎤</div>
+  <h1 class="article-title">VibeVoice</h1>
+  <div class="article-meta">
+   <span>⭐ 45,803 Stars</span>
+   <span>|</span>
+   <span>📅 今日 1,200+ Stars</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">AI</span>
+   <span class="tag">语音识别</span>
+   <span class="tag">开源</span>
+   <span class="tag star">🔥 今日趋势</span>
+  </div>
+  </div>
 
-            <div class="article-content">
-                <h2>项目简介</h2>
-                <p>
-                    <strong>Open-Source Frontier Voice AI</strong> — 微软出品的开源前沿语音 AI 项目。
-                </p>
-                <p>
-                    VibeVoice 提供开源的语音识别和生成能力，支持实时语音对话。这个项目让开发者可以自建语音 AI 服务，不依赖云厂商。
-                </p>
+  <div class="article-content">
+  <h2>项目简介</h2>
+  <p>
+   <strong>Open-Source Frontier Voice AI</strong> — 微软出品的开源前沿语音 AI 项目。
+  </p>
+  <p>
+   VibeVoice 提供开源的语音识别和生成能力，支持实时语音对话。这个项目让开发者可以自建语音 AI 服务，不依赖云厂商。
+  </p>
 
-                <h2>核心特性</h2>
-                <div class="highlight-box">
-                    <h4>🎯 技术亮点</h4>
-                    <ul>
-                        <li><strong>开源语音识别</strong> — 基于 Whisper 的开源方案</li>
-                        <li><strong>实时对话</strong> — 支持低延迟的语音交互</li>
-                        <li><strong>自托管</strong> — 完全本地部署，数据不上云</li>
-                        <li><strong>多语言支持</strong> — 涵盖主流语言</li>
-                    </ul>
-                </div>
+  <h2>核心特性</h2>
+  <div class="highlight-box">
+   <h4>🎯 技术亮点</h4>
+   <ul>
+   <li><strong>开源语音识别</strong> — 基于 Whisper 的开源方案</li>
+   <li><strong>实时对话</strong> — 支持低延迟的语音交互</li>
+   <li><strong>自托管</strong> — 完全本地部署，数据不上云</li>
+   <li><strong>多语言支持</strong> — 涵盖主流语言</li>
+   </ul>
+  </div>
 
-                <h2>为什么值得关注</h2>
-                <p>
-                    语音 AI 正在爆发，但大多数方案都需要付费 API。VibeVoice 提供了<strong>完全开源的替代方案</strong>，让开发者可以自由部署。
-                </p>
+  <h2>为什么值得关注</h2>
+  <p>
+   语音 AI 正在爆发，但大多数方案都需要付费 API。VibeVoice 提供了<strong>完全开源的替代方案</strong>，让开发者可以自由部署。
+  </p>
 
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h4>✅ 优点</h4>
-                        <ul>
-                            <li>完全开源免费</li>
-                            <li>微软技术背书</li>
-                            <li>可自托管保护隐私</li>
-                            <li>实时性好</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <h4>❌ 缺点</h4>
-                        <ul>
-                            <li>部署有一定难度</li>
-                            <li>需要 GPU 资源</li>
-                            <li>文档还在完善</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>完全开源免费</li>
+    <li>微软技术背书</li>
+    <li>可自托管保护隐私</li>
+    <li>实时性好</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>部署有一定难度</li>
+    <li>需要 GPU 资源</li>
+    <li>文档还在完善</li>
+   </ul>
+   </div>
+  </div>
 
-                <h2>总结</h2>
-                <p>
-                    语音 AI 领域的开源里程碑。如果你需要语音识别/生成能力，这个项目值得研究。
-                </p>
-                <p>
-                    <strong>推荐指数：⭐⭐⭐⭐</strong>
-                </p>
+  <h2>总结</h2>
+  <p>
+   语音 AI 领域的开源里程碑。适合需要语音识别/生成能力，这个项目值得研究。
+  </p>
+<div class="action-buttons">
+   <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="action-btn primary">
+   ⬇️ 查看 GitHub
+   </a>
+   <a href="../github.html" class="action-btn secondary">
+   ← 返回 GitHub 热点
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
 
-                <div class="action-buttons">
-                    <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="action-btn primary">
-                        ⬇️ 查看 GitHub
-                    </a>
-                    <a href="../github.html" class="action-btn secondary">
-                        ← 返回 GitHub 热点
-                    </a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-    </footer>
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
 </body>
 </html>
