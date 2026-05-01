@@ -87,45 +87,6 @@
    突出特点是它的 <strong>Docker 支持</strong>——任何能 Docker 化的应用都能直接部署。比起 Vercel 和 Netlify 的 Serverless 限制，Railway 的灵活性高出一个级别。
   </p>
 
-  <h2>实际使用感受</h2>
-  <p>
-   可将一个个人博客后端（Node.js + PostgreSQL）和几个小 API 服务都迁移到了 Railway。部署体验很顺——<strong>GitHub 连接仓库，Railway 自动检测语言和环境，一键部署</strong>。数据库也是点几下就创建好，连接字符串自动注入环境变量。
-  </p>
-  <p>
-   免费版给了 500 小时的月度运行时长和 1 GB 内存，用来跑一些小项目完全够用。之前用 Heroku 免费版挂了之后，Railway 是最好的替代。不过注意，免费项目如果长时间没流量会自动休眠，唤醒需要几秒钟。
-  </p>
-
-  <div class="highlight-box">
-   <h4>🚂 特色功能</h4>
-   <ul>
-   <li><strong>模板市场</strong> — 一键部署 Node.js、Python、Next.js 等模板</li>
-   <li><strong>环境变量管理</strong> — 直观的 Web 界面，分组管理</li>
-   <li><strong>日志查看器</strong> — 实时日志，排错方便</li>
-   </ul>
-  </div>
-
-  <div class="pros-cons">
-   <div class="pros">
-   <h4>✅ 优点</h4>
-   <ul>
-    <li>全栈部署，语言限制少</li>
-    <li>内置数据库，一键创建</li>
-    <li>Docker 支持，灵活度极高</li>
-    <li>部署流程简单</li>
-    <li>有免费额度可用</li>
-   </ul>
-   </div>
-   <div class="cons">
-   <h4>❌ 缺点</h4>
-   <ul>
-    <li>免费额度少（500h/月）</li>
-    <li>项目休眠有冷启动延迟</li>
-    <li>国内访问速度一般</li>
-    <li>高级功能价格偏贵</li>
-   </ul>
-   </div>
-  </div>
-
   <h2>适合人群</h2>
   <p>
    <strong>全栈开发者</strong>、<strong>独立开发者</strong>、<strong>需要快速部署后端的团队</strong>。如果你的项目需要后端服务 + 数据库，又不愿意自己折腾服务器，Railway 是个很舒服的选择。
