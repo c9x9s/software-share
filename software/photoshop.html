@@ -1,168 +1,167 @@
- 1|<!DOCTYPE html>
- 2|<html lang="zh-CN">
- 3|<head>
- 4| <meta charset="UTF-8">
- 5| <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 6| <title>Photoshop 评测 - 极客导航</title>
- 7| <link rel="stylesheet" href="../css/style.css">
- 8| <style>
- 9| .article { max-width: 800px; margin: 0 auto; }
- 10| .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
- 11| .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
- 12| .article-title { font-size: 2rem; margin-bottom: 1rem; }
- 13| .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
- 14| .article-meta span { margin: 0 0.5rem; }
- 15| .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
- 16| .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
- 17| .article-content { line-height: 1.9; color: var(--text-secondary); }
- 18| .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
- 19| .article-content p { margin-bottom: 1.5rem; }
- 20| .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
- 21| .article-content li { margin-bottom: 0.5rem; }
- 22| .article-content strong { color: var(--text-primary); }
- 23| .article-content a { color: var(--accent); }
- 24| .article-content a:hover { text-decoration: underline; }
- 25| .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
- 26| .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
- 27| .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
- 28| .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
- 29| .pros h4 { color: #4ade80; margin-bottom: 1rem; }
- 30| .cons h4 { color: #f87171; margin-bottom: 1rem; }
- 31| .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
- 32| .pros li::before { content: "✓ "; color: #4ade80; }
- 33| .cons li::before { content: "✗ "; color: #f87171; }
- 34| .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
- 35| .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
- 36| .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
- 37| .action-btn.primary:hover { background: var(--accent-hover); }
- 38| .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
- 39| .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
- 40| @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
- 41| </style>
- 42|</head>
- 43|<body>
- 44| <header>
- 45| <div class="header-inner">
- 46|  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
- 47|  <nav class="main-nav">
- 48|  <ul>
- 49|   <li><a href="../index.html">首页</a></li>
- 50|   <li><a href="../dev.html">开发工具</a></li>
- 51|   <li><a href="../design.html">设计工具</a></li>
- 52|   <li><a href="../learning.html">学习资源</a></li>
- 53|  </ul>
- 54|  </nav>
- 55| </div>
- 56| </header>
- 57|
- 58| <main class="container">
- 59| <article class="article">
- 60|  <div class="breadcrumb">
- 61|  <a href="../index.html">首页</a>
- 62|  <span>/</span>
- 63|  <a href="../design.html">设计工具</a>
- 64|  <span>/</span>
- 65|  <span>Photoshop</span>
- 66|  </div>
- 67|
- 68|  <div class="article-header">
- 69|  <div class="article-icon">🖌️</div>
- 70|  <h1 class="article-title">Adobe Photoshop</h1>
- 71|  <div class="article-meta">
- 72|   <span>🖥️ Mac / Windows</span>
- 73|   <span>|</span>
- 74|   <span>💰 订阅制</span>
- 75|   <span>|</span>
- 76|   <span>📅 2024年12月更新</span>
- 77|  </div>
- 78|  <div class="article-tags">
- 79|   <span class="tag">图片编辑</span>
- 80|   <span class="tag">设计</span>
- 81|   <span class="tag">数字绘画</span>
- 82|   <span class="tag">经典</span>
- 83|  </div>
- 84|  </div>
- 85|
- 86|  <div class="article-content">
- 87|  <h2>图像处理领域的标杆</h2>
- 88|  <p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Photoshop 评测 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .article { max-width: 800px; margin: 0 auto; }
+ .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-title { font-size: 2rem; margin-bottom: 1rem; }
+ .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+ .article-meta span { margin: 0 0.5rem; }
+ .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+ .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+ .article-content { line-height: 1.9; color: var(--text-secondary); }
+ .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+ .article-content p { margin-bottom: 1.5rem; }
+ .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+ .article-content li { margin-bottom: 0.5rem; }
+ .article-content strong { color: var(--text-primary); }
+ .article-content a { color: var(--accent); }
+ .article-content a:hover { text-decoration: underline; }
+ .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+ .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+ .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+ .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+ .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+ .cons h4 { color: #f87171; margin-bottom: 1rem; }
+ .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+ .pros li::before { content: "✓ "; color: #4ade80; }
+ .cons li::before { content: "✗ "; color: #f87171; }
+ .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+ .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+ .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+ .action-btn.primary:hover { background: var(--accent-hover); }
+ .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+ .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+ @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+ </style>
+</head>
+<body>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+  <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
+
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../design.html">设计工具</a>
+  <span>/</span>
+  <span>Photoshop</span>
+  </div>
+
+  <div class="article-header">
+  <div class="article-icon">🖌️</div>
+  <h1 class="article-title">Adobe Photoshop</h1>
+  <div class="article-meta">
+   <span>🖥️ Mac / Windows</span>
+   <span>|</span>
+   <span>💰 订阅制</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">图片编辑</span>
+   <span class="tag">设计</span>
+   <span class="tag">数字绘画</span>
+   <span class="tag">经典</span>
+  </div>
+  </div>
+
+  <div class="article-content">
+  <h2>图像处理领域的标杆</h2>
+  <p>
 Photoshop 的名字几乎成了图片编辑的代名词。从 1990 年诞生至今，PS 一直是设计师、摄影师、数字艺术家最信赖的工具。
- 90|  </p>
- 91|  <p>
- 92|   虽然现在有很多轻量级的替代品如 Figma、Canva 等，但要说<strong>专业图片处理</strong>、<strong>高级合成</strong>、<strong>商业级修图</strong>，Photoshop 依然是无可争议的首选。
- 93|  </p>
- 94|
- 95|  <h2>核心能力</h2>
- 96|  <div class="highlight-box">
- 97|   <h4>⚡ 为什么 PS 依然是首选</h4>
- 98|   <ul>
- 99|   <li><strong>图层系统</strong> — 强大的图层管理，是所有设计软件中最灵活的</li>
- 100|   <li><strong>选区和蒙版</strong> — 精准的选择工具和蒙版系统，合成无敌</li>
- 101|   <li><strong>滤镜和插件</strong> — Camera Raw、Neural Filters 等强大滤镜，插件生态丰富</li>
- 102|   <li><strong>AI 功能</strong> — 最近加入的 AI 填充、生成式填充让修图更高效</li>
- 103|   <li><strong>文字处理</strong> — 文字排版能力远超其他设计软件</li>
- 104|   </ul>
- 105|  </div>
- 106|
- 107|  <h2>使用场景</h2>
- 108|  <p>
- 109|   平时做电商设计、产品海报、社交媒体配图，基本都是先用 AI 生成素材，然后在 PS 里精修。<strong>内容感知填充</strong>和<strong>AI 生成填充</strong>是现在用得最多的功能，去背景、加元素、扩图一气呵成。
- 110|  </p>
- 111|  <p>
- 112|   配合 Lightroom 处理 RAW 照片，工作流非常顺畅。摄影师群体对 PS 依赖度很高，从曝光调整到肤色还原，PS 是每天必用的工具。
- 113|  </p>
- 114|
- 115|  <div class="pros-cons">
- 116|   <div class="pros">
- 117|   <h4>✅ 优点</h4>
- 118|   <ul>
- 119|    <li>功能最全面，图像处理行业的标准</li>
- 120|    <li>图层和蒙版系统极其强大</li>
- 121|    <li>AI 功能持续进化，越来越智能</li>
- 122|    <li>教程资源丰富，学习资料满天飞</li>
- 123|    <li>和其他 Adobe 软件无缝集成</li>
- 124|    <li>第三方插件和素材资源丰富</li>
- 125|   </ul>
- 126|   </div>
- 127|   <div class="cons">
- 128|   <h4>❌ 缺点</h4>
- 129|   <ul>
- 130|    <li>订阅费用较高，一年下来不便宜</li>
- 131|    <li>学习曲线陡峭，功能太多容易迷失</li>
- 132|    <li>内存占用大，大文件容易卡顿</li>
- 133|    <li>对于简单任务显得太重太复杂</li>
- 134|    <li>Mac 版偶尔有性能问题</li>
- 135|   </ul>
- 136|   </div>
- 137|  </div>
- 138|
- 139|  <h2>适合人群</h2>
- 140|  <p>
- 141|   适合<strong>专业设计师</strong>、<strong>摄影师</strong>、<strong>数字艺术家</strong>，或者需要做<strong>复杂的图片合成和精修</strong>，PS 是必备技能。但对于简单的社交媒体配图，Canva 或在线工具可能更高效。
- 142|  </p>
- 143|
- 144|  <h2>总结</h2>
- 145|  <p>
+  </p>
+  <p>
+   虽然现在有很多轻量级的替代品如 Figma、Canva 等，但要说<strong>专业图片处理</strong>、<strong>高级合成</strong>、<strong>商业级修图</strong>，Photoshop 依然是无可争议的首选。
+  </p>
+
+  <h2>核心能力</h2>
+  <div class="highlight-box">
+   <h4>⚡ 为什么 PS 依然是首选</h4>
+   <ul>
+   <li><strong>图层系统</strong> — 强大的图层管理，是所有设计软件中最灵活的</li>
+   <li><strong>选区和蒙版</strong> — 精准的选择工具和蒙版系统，合成无敌</li>
+   <li><strong>滤镜和插件</strong> — Camera Raw、Neural Filters 等强大滤镜，插件生态丰富</li>
+   <li><strong>AI 功能</strong> — 最近加入的 AI 填充、生成式填充让修图更高效</li>
+   <li><strong>文字处理</strong> — 文字排版能力远超其他设计软件</li>
+   </ul>
+  </div>
+
+  <h2>使用场景</h2>
+  <p>
+   平时做电商设计、产品海报、社交媒体配图，基本都是先用 AI 生成素材，然后在 PS 里精修。<strong>内容感知填充</strong>和<strong>AI 生成填充</strong>是现在用得最多的功能，去背景、加元素、扩图一气呵成。
+  </p>
+  <p>
+   配合 Lightroom 处理 RAW 照片，工作流非常顺畅。摄影师群体对 PS 依赖度很高，从曝光调整到肤色还原，PS 是每天必用的工具。
+  </p>
+
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>功能最全面，图像处理行业的标准</li>
+    <li>图层和蒙版系统极其强大</li>
+    <li>AI 功能持续进化，越来越智能</li>
+    <li>教程资源丰富，学习资料满天飞</li>
+    <li>和其他 Adobe 软件无缝集成</li>
+    <li>第三方插件和素材资源丰富</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>订阅费用较高，一年下来不便宜</li>
+    <li>学习曲线陡峭，功能太多容易迷失</li>
+    <li>内存占用大，大文件容易卡顿</li>
+    <li>对于简单任务显得太重太复杂</li>
+    <li>Mac 版偶尔有性能问题</li>
+   </ul>
+   </div>
+  </div>
+
+  <h2>适合人群</h2>
+  <p>
+   适合<strong>专业设计师</strong>、<strong>摄影师</strong>、<strong>数字艺术家</strong>，或者需要做<strong>复杂的图片合成和精修</strong>，PS 是必备技能。但对于简单的社交媒体配图，Canva 或在线工具可能更高效。
+  </p>
+
+  <h2>总结</h2>
+  <p>
    Photoshop 是那种虽然复杂但专业工作者不可或缺的工具。三十多年了依然是行业标准，这本身就说明了一切。订阅制虽然费用较高，但专业工作者是必不可少的。
- 147|  </p>
- 148|  <p>
- 150|  </p>
- 151|
- 152|  <div class="action-buttons">
- 153|   <a href="https://www.adobe.com/products/photoshop.html" target="_blank" class="action-btn primary">
- 154|   ⬇️ 前往订阅
- 155|   </a>
- 156|   <a href="../design.html" class="action-btn secondary">
- 157|   ← 返回设计工具
- 158|   </a>
- 159|  </div>
- 160|  </div>
- 161| </article>
- 162| </main>
- 163|
- 164| <footer>
- 165| <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
- 166| </footer>
- 167|</body>
- 168|</html>
- 169|
+  </p>
+  <p>
+  </p>
+
+  <div class="action-buttons">
+   <a href="https://www.adobe.com/products/photoshop.html" target="_blank" class="action-btn primary">
+   ⬇️ 前往订阅
+   </a>
+   <a href="../design.html" class="action-btn secondary">
+   ← 返回设计工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
+
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
+</body>
+</html>
