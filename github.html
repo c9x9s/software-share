@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub 热点 - 极客导航</title>
+    <title>GitHub 项目 - 极客导航</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* V2 Style - Software Card Grid */
         .software-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
         }
-
         .software-card {
             background: var(--bg-card);
             border-radius: var(--card-radius);
@@ -20,41 +18,16 @@
             transition: var(--transition);
             border: 1px solid transparent;
         }
-
         .software-card:hover {
             border-color: var(--accent);
             transform: translateY(-4px);
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
         }
-
-        .card-header {
-            padding: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            flex-shrink: 0;
-        }
-
-        .card-info {
-            flex: 1;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .card-meta {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
+        .card-header { padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+        .card-icon { font-size: 2.5rem; flex-shrink: 0; }
+        .card-info { flex: 1; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
         .meta-tag {
             background: rgba(0, 212, 255, 0.1);
             color: var(--accent);
@@ -62,95 +35,19 @@
             border-radius: 4px;
             font-size: 0.75rem;
         }
-
         .meta-tag.stars {
             background: rgba(255, 215, 0, 0.15);
             color: #ffd700;
         }
-
-        .meta-tag.platform {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
-        }
-
-        .card-body {
-            padding: 0 1.5rem 1.5rem;
-        }
-
-        .card-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .card-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 0.6rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .section-divider {
-            margin: 3rem 0 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-divider h2 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .trending-badge {
-            background: linear-gradient(135deg, #ff6b6b, #ffa500);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .classic-badge {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
+        .meta-tag.platform { background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .card-body { padding: 0 1.5rem 1.5rem; }
+        .card-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+        .card-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border-color); display: flex; gap: 1rem; }
+        .btn { flex: 1; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; text-align: center; cursor: pointer; transition: var(--transition); }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); border: none; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
     </style>
 </head>
 <body>
@@ -163,7 +60,10 @@
                     <li><a href="dev.html">开发工具</a></li>
                     <li><a href="design.html">设计工具</a></li>
                     <li><a href="learning.html">学习资源</a></li>
-                    <li><a href="github.html" class="active">GitHub 热点</a></li>
+                    <li><a href="efficiency.html">效率工具</a></li>
+                    <li><a href="security.html">安全工具</a></li>
+                    <li><a href="cloud.html">云服务</a></li>
+                    <li><a href="github.html" class="active">GitHub 项目</a></li>
                 </ul>
             </nav>
         </div>
@@ -173,20 +73,36 @@
         <div class="breadcrumb">
             <a href="index.html">首页</a>
             <span>/</span>
-            <span>GitHub 热点</span>
+            <span>GitHub 项目</span>
         </div>
 
         <div class="section-title">
-            <h1>🐙 GitHub 热点</h1>
-            <p>追踪 GitHub 趋势项目，发现全球开发者的热门作品</p>
-        </div>
-
-        <!-- 今日趋势 -->
-        <div class="section-divider">
-            <h2>📈 今日趋势 <span class="trending-badge">Trending Today</span></h2>
+            <h1>🐙 GitHub 项目</h1>
+            <p>精选 GitHub 上每月爆火的开源项目，发现开发者的热门作品</p>
         </div>
 
         <div class="software-grid">
+            <!-- GitHub Desktop -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🐙</div>
+                    <div class="card-info">
+                        <div class="card-title">GitHub Desktop</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 30k+</span>
+                            <span class="meta-tag platform">Win / Mac</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">GitHub 官方出品的桌面版 Git 客户端，提供可视化界面管理仓库、分支和提交。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-desktop.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/desktop/desktop" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
             <!-- Superpowers -->
             <div class="software-card">
                 <div class="card-header">
@@ -195,7 +111,6 @@
                         <div class="card-title">Superpowers</div>
                         <div class="card-meta">
                             <span class="meta-tag stars">⭐ 173k</span>
-                            <span class="meta-tag trending-badge">今日 3.7k</span>
                             <span class="meta-tag platform">GitHub</span>
                         </div>
                     </div>
@@ -217,13 +132,12 @@
                         <div class="card-title">free-programming-books</div>
                         <div class="card-meta">
                             <span class="meta-tag stars">⭐ 387k</span>
-                            <span class="meta-tag trending-badge">今日 500+</span>
                             <span class="meta-tag platform">GitHub</span>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">📚 Freely available programming books. 全球最全的免费编程书籍合集，涵盖所有主流语言。</p>
+                    <p class="card-desc">全球最全的免费编程书籍合集，涵盖所有主流语言。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-freebooks.html" class="btn btn-primary">查看详情</a>
@@ -231,145 +145,6 @@
                 </div>
             </div>
 
-            <!-- Warp -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🖥️</div>
-                    <div class="card-info">
-                        <div class="card-title">Warp</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 45k</span>
-                            <span class="meta-tag trending-badge">今日 12k</span>
-                            <span class="meta-tag platform">Rust</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">Warp is an agentic development environment, born out of the terminal. AI 驱动的终端，让你用自然语言操作命令行。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-warp.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/warpdotdev/warp" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-
-            <!-- Mattpocock Skills -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-info">
-                        <div class="card-title">mattpocock/skills</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 45k</span>
-                            <span class="meta-tag trending-badge">今日 7k</span>
-                            <span class="meta-tag platform">Shell</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">Skills for Real Engineers. Straight from my .claude directory. Matt Pocock 的 Claude 技能库，教你如何用 AI 提升开发效率。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-skills.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/mattpocock/skills" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-
-            <!-- VibeVoice -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🎤</div>
-                    <div class="card-info">
-                        <div class="card-title">VibeVoice</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 45k</span>
-                            <span class="meta-tag trending-badge">今日 1.2k</span>
-                            <span class="meta-tag platform">Microsoft</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">Open-Source Frontier Voice AI. 开源前沿语音 AI，支持实时语音对话和 transcription。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-vibevoice.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-
-            <!-- GitNexus -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🧠</div>
-                    <div class="card-info">
-                        <div class="card-title">GitNexus</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 33k</span>
-                            <span class="meta-tag trending-badge">今日 774</span>
-                            <span class="meta-tag platform">TypeScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">Zero-Server Code Intelligence Engine. 在浏览器中分析 GitHub 仓库，AI 驱动的代码知识图谱。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-gitnexus.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-
-            <!-- GhostTrack -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">📍</div>
-                    <div class="card-info">
-                        <div class="card-title">GhostTrack</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 11k</span>
-                            <span class="meta-tag trending-badge">今日 1k</span>
-                            <span class="meta-tag platform">Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">Useful tool to track location or mobile number. 手机号定位追踪工具，支持全球 3000+ 站点信息收集。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-ghosttrack.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-
-            <!-- Awesome Codex Skills -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🛠️</div>
-                    <div class="card-info">
-                        <div class="card-title">awesome-codex-skills</div>
-                        <div class="card-meta">
-                            <span class="meta-tag stars">⭐ 4.9k</span>
-                            <span class="meta-tag trending-badge">今日 1k</span>
-                            <span class="meta-tag platform">Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">A curated list of practical Codex skills for automating workflows. Codex CLI 技能精选，自动化工作流必备。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github-awesomecodex.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/ComposioHQ/awesome-codex-skills" target="_blank" class="btn btn-secondary">GitHub →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 长期高赞 -->
-        <div class="section-divider">
-            <h2>🏆 长期高赞 <span class="classic-badge">All Time Popular</span></h2>
-        </div>
-
-        <div class="software-grid">
             <!-- PowerToys -->
             <div class="software-card">
                 <div class="card-header">
@@ -383,7 +158,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows. Windows 效率神器合集。</p>
+                    <p class="card-desc">Windows 效率工具合集，微软官方出品，包括 FancyZones、PowerRename 等实用工具。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-powertoys.html" class="btn btn-primary">查看详情</a>
@@ -404,11 +179,74 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">An efficient blocker for Chromium and Firefox. Fast and lean. 最流行的广告拦截器，轻量高效。</p>
+                    <p class="card-desc">最流行的广告拦截器，轻量高效，支持 Chromium 和 Firefox。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-ublock.html" class="btn btn-primary">查看详情</a>
                     <a href="https://github.com/gorhill/uBlock" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Warp -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🖥️</div>
+                    <div class="card-info">
+                        <div class="card-title">Warp</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 45k</span>
+                            <span class="meta-tag platform">Rust</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">AI 驱动的终端，让用户可以用自然语言操作命令行。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-warp.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/warpdotdev/warp" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- mattpocock/skills -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-info">
+                        <div class="card-title">mattpocock/skills</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 45k</span>
+                            <span class="meta-tag platform">Shell</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Matt Pocock 的 Claude 技能库，教你如何用 AI 提升开发效率。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-skills.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/mattpocock/skills" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- VibeVoice -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎤</div>
+                    <div class="card-info">
+                        <div class="card-title">VibeVoice</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 45k</span>
+                            <span class="meta-tag platform">Microsoft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">开源前沿语音 AI，支持实时语音对话和转录。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-vibevoice.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="btn btn-secondary">GitHub →</a>
                 </div>
             </div>
 
@@ -425,7 +263,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">Invidious is an alternative front-end to YouTube. 无需 Google 即可观看 YouTube，保护隐私。</p>
+                    <p class="card-desc">YouTube 的替代前端，无需 Google 账号即可观看，保护隐私。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-invidious.html" class="btn btn-primary">查看详情</a>
@@ -446,7 +284,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites. 通过用户名在 3000+ 平台收集个人信息。</p>
+                    <p class="card-desc">通过用户名在 3000+ 平台搜索个人公开信息，OSINT 工具。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-maigret.html" class="btn btn-primary">查看详情</a>
@@ -454,7 +292,70 @@
                 </div>
             </div>
 
-            <!-- ds2api -->
+            <!-- GitNexus -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🧠</div>
+                    <div class="card-info">
+                        <div class="card-title">GitNexus</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 33k</span>
+                            <span class="meta-tag platform">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">在浏览器中分析 GitHub 仓库的 AI 代码知识图谱引擎。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-gitnexus.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- GhostTrack -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📍</div>
+                    <div class="card-info">
+                        <div class="card-title">GhostTrack</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 11k</span>
+                            <span class="meta-tag platform">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">手机号定位追踪工具，支持全球 3000+ 站点信息收集。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-ghosttrack.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/HunxByts/GhostTrack" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- awesome-codex-skills -->
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🛠️</div>
+                    <div class="card-info">
+                        <div class="card-title">awesome-codex-skills</div>
+                        <div class="card-meta">
+                            <span class="meta-tag stars">⭐ 4.9k</span>
+                            <span class="meta-tag platform">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">Codex CLI 技能精选清单，用于自动化工作流。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/github-awesomecodex.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://github.com/ComposioHQ/awesome-codex-skills" target="_blank" class="btn btn-secondary">GitHub →</a>
+                </div>
+            </div>
+
+            <!-- DeepSeek to API -->
             <div class="software-card">
                 <div class="card-header">
                     <div class="card-icon">🌐</div>
@@ -467,7 +368,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">LLM API 聚合器，DeepSeek/Claude/GPT 统一接口。支持多账号轮询、Docker 部署。</p>
+                    <p class="card-desc">LLM API 聚合器，DeepSeek/Claude/GPT 统一接口，支持多账号轮询和 Docker 部署。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-ds2api.html" class="btn btn-primary">查看详情</a>
@@ -488,7 +389,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">Coding Agent Harness. Rust 编写的 AI 编程助手框架，轻量高性能。</p>
+                    <p class="card-desc">Rust 编写的 AI 编程助手框架，轻量高性能。</p>
                 </div>
                 <div class="card-footer">
                     <a href="software/github-jcode.html" class="btn btn-primary">查看详情</a>
@@ -498,8 +399,8 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem; padding: 2rem; color: var(--text-muted);">
-            <p>📊 数据来源：GitHub Trending | 最后更新：2025年1月</p>
-            <p style="margin-top: 0.5rem;"><a href="https://github.com/trending" target="_blank" style="color: var(--accent);">查看更多趋势 →</a></p>
+            <p>📊 数据来源：GitHub Trending | 每月更新</p>
+            <p style="margin-top: 0.5rem;"><a href="https://github.com/trending" target="_blank" style="color: var(--accent);">查看更多项目 →</a></p>
         </div>
     </main>
 
