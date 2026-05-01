@@ -92,6 +92,30 @@
    它是互联网安全基金会（ISRG）运营的非营利项目，目标是让全网都变成 HTTPS。到今天，Let's Encrypt 已经签发了超过 40 亿张证书，互联网上超过一半的 HTTPS 网站都在用它。
   </p>
 
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>完全免费，无需任何费用</li>
+    <li>自动化签发和续签，零维护</li>
+    <li>支持通配符证书（*）</li>
+    <li>客户端工具丰富（Certbot, acme.sh, Caddy 等）</li>
+    <li>非营利组织运营，值得信赖</li>
+    <li>主流浏览器全部信任</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>证书有效期仅 90 天，必须自动化</li>
+    <li>没有付费证书的企业级支持服务</li>
+    <li>DV 类型，不支持 OV 或 EV 证书</li>
+    <li>某些老旧设备可能不信任 ISRG Root</li>
+    <li>API 请求有频率限制</li>
+   </ul>
+   </div>
+  </div>
+
   <h2>适合人群</h2>
   <p>
    <strong>个人站长</strong>、<strong>开发者</strong>、<strong>中小企业</strong> 都适合。如果你的网站只需要基本的 HTTPS 加密（大多数场景够了），Let's Encrypt 就是最佳选择。大企业或金融场景需要 OV/EV 证书的，还是得买付费证书。
