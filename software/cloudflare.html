@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudflare 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../security.html">安全工具</a>
+                <span>/</span>
+                <span>Cloudflare</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🌐</div>
+                <h1 class="article-title">Cloudflare</h1>
+                <div class="article-meta">
+                    <span>🖥️ Web 服务 / API</span>
+                    <span>|</span>
+                    <span>💰 免费 + 付费方案</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">CDN</span>
+                    <span class="tag">安全</span>
+                    <span class="tag">DDoS防护</span>
+                    <span class="tag">推荐</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选 Cloudflare</h2>
+                <p>
+                    如果你运营任何网站——不管是个人博客还是企业应用——Cloudflare 都是必上的一道保护层。它不仅仅是 CDN，更是防火墙、加速器、DNS 管理、边缘计算平台。而且它的免费套餐慷慨到令人难以置信。
+                </p>
+                <p>
+                    Cloudflare 最大的价值在于它的全球网络。你的网站流量通过 Cloudflare 的 300+ 个数据中心分发，用户就近访问，速度提升明显。同时它会自动拦截恶意流量，抵御 DDoS 攻击。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    我的个人博客和几个小项目都在 Cloudflare 后面。配置非常简单：把 DNS 改到 Cloudflare 的 nameserver，几分钟后就生效了。之后 SSL 证书自动签发、缓存规则自动生效，几乎不需要额外操心。
+                </p>
+                <p>
+                    最让我惊艳的是 Workers 和 Pages。Workers 可以在边缘节点运行 JavaScript，延迟极低。我用来做 API 网关、A/B 测试、甚至是简单的后端服务。Pages 则是免费的前端托管平台，和 GitHub 集成，push 即部署，对个人项目来说完全够用。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>免费套餐极其慷慨，个人站完全够用</li>
+                            <li>全球 CDN 加速，用户访问速度快</li>
+                            <li>免费 SSL 证书，自动续签</li>
+                            <li>DDoS 防护能力业界顶级</li>
+                            <li>Workers 边缘计算，玩法多样</li>
+                            <li>控制面板直观易用</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>国内访问受限于网络环境</li>
+                            <li>免费套餐的功能限制逐渐增多</li>
+                            <li>DNS 解析延迟偶有波动</li>
+                            <li>某些功能（如 Argo）需要额外付费</li>
+                            <li>客服响应速度一般</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    <strong>任何网站站长</strong>——个人博客、企业官网、电商站点、SaaS 应用。特别适合想提升网站速度和安全性的开发者，以及想利用 Workers 做边缘计算的创新者。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    Cloudflare 是现代互联网基础设施的基石。免费套餐就已经提供了 CDN、SSL、DDoS 防护三大核心能力，再加上 Workers 和 Pages 等创新服务，很难找到不用的理由。我的每个域名都走了 Cloudflare。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://www.cloudflare.com/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../security.html" class="action-btn secondary">
+                        ← 返回安全工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

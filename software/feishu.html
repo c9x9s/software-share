@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞书 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../efficiency.html">效率工具</a>
+                <span>/</span>
+                <span>飞书</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🐦</div>
+                <h1 class="article-title">飞书</h1>
+                <div class="article-meta">
+                    <span>🖥️ Windows / Mac / 移动端 / Web</span>
+                    <span>|</span>
+                    <span>💰 免费基础版 + 付费企业版</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">协作</span>
+                    <span class="tag">文档</span>
+                    <span class="tag">即时通讯</span>
+                    <span class="tag">推荐</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选飞书</h2>
+                <p>
+                    在字节跳动工作了几年，飞书是我的日常主力协作工具。离开后我仍然推荐它，因为在文档协作和团队沟通这个赛道上，飞书确实是做得最用心的产品之一。
+                </p>
+                <p>
+                    飞书最让我佩服的是它的"文档优先"理念。聊天时发个链接就能嵌入完整的多维表格或投票，不用切来切去。而且飞书文档的编辑体验非常丝滑，排版能力堪比 Notion，但协同实时性更强。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    我团队现在用飞书管理所有项目。文档里面直接嵌入看板视图做任务追踪、插入投票收集意见、@同事直接提醒——这些操作都在一个页面里完成，大家不用在不同工具间跳转，效率确实高。
+                </p>
+                <p>
+                    多维表格（类似 Notion 的数据库）也是我高频使用的功能。用来做项目排期、Bug 追踪、需求池管理都非常顺手。免费版对中小企业来说完全够用，而且飞书的会议和日历也是无缝集成的，一个账号搞定所有。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>文档协作体验顶级，实时同步零延迟</li>
+                            <li>多维表格功能强大，项目管理利器</li>
+                            <li>IM + 文档 + 会议 + 日历全面打通</li>
+                            <li>免费版功能慷慨，中小企业友好</li>
+                            <li>模板库丰富，上手快</li>
+                            <li>国内网络环境友好，无需翻墙</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>国内版数据放在字节跳动服务器</li>
+                            <li>国际版（Lark）体验不如国内版</li>
+                            <li>搜索功能有待改进</li>
+                            <li>功能太多有时反而增加学习成本</li>
+                            <li>个人用户用的话有些"大炮打蚊子"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    <strong>中小企业团队</strong>、<strong>远程办公团队</strong>、<strong>产品和技术团队</strong> 都非常适合飞书。如果你在找一款集成度高、开箱即用的协作工具，飞书值得一试。个人用户可能更适合 Notion 或 Obsidian。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    飞书是目前国内做得最好的协作工具之一，没有之一。它的文档协作体验和对中国团队的适配度都远超国外竞品。找一个团队协作工具？飞书是首选。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://www.feishu.cn/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../efficiency.html" class="action-btn secondary">
+                        ← 返回效率工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

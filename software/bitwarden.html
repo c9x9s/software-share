@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwarden 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../security.html">安全工具</a>
+                <span>/</span>
+                <span>Bitwarden</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🔑</div>
+                <h1 class="article-title">Bitwarden</h1>
+                <div class="article-meta">
+                    <span>🖥️ Windows / Mac / Linux / 移动端 / 浏览器</span>
+                    <span>|</span>
+                    <span>💰 免费 + 付费方案</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">密码管理</span>
+                    <span class="tag">开源</span>
+                    <span class="tag">跨平台</span>
+                    <span class="tag">推荐</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选 Bitwarden</h2>
+                <p>
+                    LastPass 爆出数据泄露事件后，我就开始寻找替代品。试过 1Password（太贵）、KeePass（太复古），直到发现 Bitwarden——开源、免费、功能不输付费产品，简直是密码管理领域的良心。
+                </p>
+                <p>
+                    Bitwarden 是开源项目，代码托管在 GitHub 上，任何人都可以审计。这意味着不存在后门或隐私问题。而且它通过端到端加密保护你的数据，连 Bitwarden 自己都看不到你的密码。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    从 LastPass 迁移到 Bitwarden 非常顺畅，导入功能支持几乎所有主流密码管理器的格式。浏览器扩展（Chrome/Firefox/Edge 都有）自动填充做得很好，比之前用的几家都稳定。
+                </p>
+                <p>
+                    我最喜欢它的密码生成器和安全报告功能。生成器可以自定义长度、字符类型，一键生成高强度密码。安全报告会提示哪些密码是重复的、弱密码或已经泄露的。用了半年，把几十个账号的密码全部换成了随机生成的强密码，安全感拉满。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>开源免费，可自建服务器（Vaultwarden）</li>
+                            <li>端到端加密，隐私安全有保障</li>
+                            <li>全平台覆盖，浏览器/桌面/移动端无缝同步</li>
+                            <li>自动填充稳定好用</li>
+                            <li>免费版已经够用，付费版很便宜（$10/年）</li>
+                            <li>支持 TOTP 两步验证码</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>UI 设计偏实用，不太精致</li>
+                            <li>部分高级功能（TOTP）需付费</li>
+                            <li>自建服务器需一定技术基础</li>
+                            <li>桌面端 App 偶尔有同步延迟</li>
+                            <li>紧急联系人功能不够完善</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    <strong>所有人</strong>——只要你在网上有账号密码，就应该用密码管理器。Bitwarden 特别适合注重隐私、喜欢开源软件的用户。如果你有技术能力，自建 Vaultwarden 可以获得完全自主的数据控制权。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    密码管理器是现代数字生活的刚需，而 Bitwarden 是目前最好的选择——没有之一。开源、安全、免费、功能全面，找不到不用的理由。我已经给身边所有朋友都安利了一遍。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://bitwarden.com/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../security.html" class="action-btn secondary">
+                        ← 返回安全工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../efficiency.html">效率工具</a>
+                <span>/</span>
+                <span>Obsidian</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🗂️</div>
+                <h1 class="article-title">Obsidian</h1>
+                <div class="article-meta">
+                    <span>🖥️ Windows / Mac / Linux / 移动端</span>
+                    <span>|</span>
+                    <span>💰 免费（同步等增值服务收费）</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">知识管理</span>
+                    <span class="tag">Markdown</span>
+                    <span class="tag">双向链接</span>
+                    <span class="tag">推荐</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选 Obsidian</h2>
+                <p>
+                    如果你对知识管理有过追求，大概率听说过"第二大脑"这个概念。Obsidian 就是目前实现这个理念最好的工具之一。它基于 Markdown 本地文件存储，配上双向链接和图谱视图，让笔记之间可以自由连接，形成一个真正的知识网络。
+                </p>
+                <p>
+                    我选择 Obsidian 的原因很简单：<strong>数据在我手里</strong>。所有笔记都是本地纯文本 Markdown 文件，不会像某些在线笔记软件那样担心数据被锁在平台里。加上它强大的插件生态，可玩性极高。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    刚上手 Obsidian 可能会有点懵 — 它太自由了，不知道怎么开始。但一旦建立起自己的笔记系统后，你就会打开新世界的大门。我用它来做技术文档整理、读书笔记、Rust 学习记录，以及日常的想法碎片。
+                </p>
+                <p>
+                    双向链接是杀手级功能。当你给"变量的生命周期"这篇文章链接到"所有权系统"时，Obsidian 会自动在图谱中建立关联。时间长了，这些连接会帮你发现知识点之间的隐藏关系，这种感觉非常奇妙。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>本地纯文本存储，数据完全可控</li>
+                            <li>Markdown 原生支持，迁移成本低</li>
+                            <li>双向链接 + 图谱视图，知识网络可视化</li>
+                            <li>插件生态极其丰富，几乎无所不能</li>
+                            <li>完全免费，没有功能限制</li>
+                            <li>社区活跃，主题和插件更新频繁</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>上手门槛较高，新手容易迷失</li>
+                            <li>官方同步服务收费且体验一般</li>
+                            <li>插件过多时启动变慢</li>
+                            <li>移动端体验不如桌面端</li>
+                            <li>协作功能基本为零</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    如果你喜欢 <strong>长期积累知识</strong>、<strong>做研究</strong>、<strong>写技术文档</strong>，或者对 PKM（个人知识管理）感兴趣，Obsidian 绝对值得投入。但不适合需要强协作或不喜欢折腾的用户。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    Obsidian 是目前最让我满意的本地知识管理工具。它不只是一个笔记软件，更是一个<strong>思考的放大镜</strong>。花点时间学习它的使用方式，回报是长期的。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://obsidian.md/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../efficiency.html" class="action-btn secondary">
+                        ← 返回效率工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

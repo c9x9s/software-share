@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Encrypt 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../security.html">安全工具</a>
+                <span>/</span>
+                <span>Let's Encrypt</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">🔒</div>
+                <h1 class="article-title">Let's Encrypt</h1>
+                <div class="article-meta">
+                    <span>🖥️ Web 服务 / 命令行</span>
+                    <span>|</span>
+                    <span>💰 完全免费</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">SSL</span>
+                    <span class="tag">证书</span>
+                    <span class="tag">免费</span>
+                    <span class="tag">自动化</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选 Let's Encrypt</h2>
+                <p>
+                    在 2016 年之前，给网站配上 HTTPS 还是件麻烦事——SSL 证书要么贵、要么申请流程繁琐。Let's Encrypt 的出现彻底改变了一切。它提供完全免费的 SSL/TLS 证书，而且全程自动化，有效期 90 天到期自动续签。
+                </p>
+                <p>
+                    它是互联网安全基金会（ISRG）运营的非营利项目，目标是让全网都变成 HTTPS。到今天，Let's Encrypt 已经签发了超过 40 亿张证书，互联网上超过一半的 HTTPS 网站都在用它。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    我用 Let's Encrypt 给个人博客、API 服务、实验性项目都配了证书。配合 Certbot 工具，一行命令就能搞定。更爽的是，搭配 cron 或 systemd timer 设置自动续签后，就像不存在一样——完全不用管它。
+                </p>
+                <p>
+                    对于稍复杂的场景，比如泛域名证书（*.example.com）、多域名证书、DNS-01 验证（需要通配符证书时），Let's Encrypt 也完全支持。我使用 acme.sh 脚本配合阿里云 DNS API，实现了全自动的通配符证书签发和续签，非常稳定，两年没出过问题。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>完全免费，无需任何费用</li>
+                            <li>自动化签发和续签，零维护</li>
+                            <li>支持通配符证书（*）</li>
+                            <li>客户端工具丰富（Certbot, acme.sh, Caddy 等）</li>
+                            <li>非营利组织运营，值得信赖</li>
+                            <li>主流浏览器全部信任</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>证书有效期仅 90 天，必须自动化</li>
+                            <li>没有付费证书的企业级支持服务</li>
+                            <li>DV 类型，不支持 OV 或 EV 证书</li>
+                            <li>某些老旧设备可能不信任 ISRG Root</li>
+                            <li>API 请求有频率限制</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    <strong>个人站长</strong>、<strong>开发者</strong>、<strong>中小企业</strong> 都适合。如果你的网站只需要基本的 HTTPS 加密（大多数场景够了），Let's Encrypt 就是最佳选择。大企业或金融场景需要 OV/EV 证书的，还是得买付费证书。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    Let's Encrypt 是互联网史上最重要的基础设施项目之一。它把 HTTPS 的门槛降到了零，让每个网站都能以零成本获得加密保护。如果你还没给网站配 HTTPS，真的没有理由不开始。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://letsencrypt.org/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../security.html" class="action-btn secondary">
+                        ← 返回安全工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>

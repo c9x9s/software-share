@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学习资源 - 极客导航</title>
+    <title>安全工具 - 极客导航</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .software-grid {
@@ -76,9 +76,9 @@
                     <li><a href="index.html">首页</a></li>
                     <li><a href="dev.html">开发工具</a></li>
                     <li><a href="design.html">设计工具</a></li>
-                    <li><a href="learning.html" class="active">学习资源</a></li>
+                    <li><a href="learning.html">学习资源</a></li>
                     <li><a href="efficiency.html">效率工具</a></li>
-                    <li><a href="security.html">安全工具</a></li>
+                    <li><a href="security.html" class="active">安全工具</a></li>
                     <li><a href="cloud.html">云服务</a></li>
                 </ul>
             </nav>
@@ -89,133 +89,92 @@
         <div class="breadcrumb">
             <a href="index.html">首页</a>
             <span>/</span>
-            <span>学习资源</span>
+            <span>安全工具</span>
         </div>
 
         <div class="section-title">
-            <h1>📚 学习资源</h1>
-            <p>持续学习是程序员的自我修养，这些资源帮我不断进步</p>
+            <h1>🛡️ 安全工具</h1>
+            <p>保护你的数字资产，密码管理、网络安全、隐私保护一个都不能少</p>
         </div>
 
         <div class="software-grid">
             <div class="software-card">
                 <div class="card-header">
-                    <div class="card-icon">📘</div>
+                    <div class="card-icon">🔑</div>
                     <div class="card-info">
-                        <div class="card-title">MDN Web Docs</div>
+                        <div class="card-title">Bitwarden</div>
                         <div class="card-meta">
-                            <span class="meta-tag">免费</span>
-                            <span class="meta-tag platform">Web</span>
+                            <span class="meta-tag">免费开源</span>
+                            <span class="meta-tag platform">Web / Mac / Win / Linux / App</span>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">Mozilla 维护的 Web 技术权威文档，HTML、CSS、JavaScript、Web API 都有详尽说明。是前端开发者每天必查的技术文档。</p>
+                    <p class="card-desc">开源密码管理器，免费版已经足够强大。支持所有设备同步，自动填充密码，生成强密码。自托管方案让你完全掌控自己的数据。</p>
                 </div>
                 <div class="card-footer">
-                    <a href="software/mdn.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://developer.mozilla.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                    <a href="software/bitwarden.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://bitwarden.com/" target="_blank" class="btn btn-secondary">官网 →</a>
                 </div>
             </div>
 
             <div class="software-card">
                 <div class="card-header">
-                    <div class="card-icon">🏫</div>
+                    <div class="card-icon">🌐</div>
                     <div class="card-info">
-                        <div class="card-title">Coursera</div>
+                        <div class="card-title">Cloudflare</div>
                         <div class="card-meta">
                             <span class="meta-tag">免费/付费</span>
-                            <span class="meta-tag platform">Web / App</span>
+                            <span class="meta-tag platform">Web</span>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">全球知名在线学习平台，与斯坦福、耶鲁等顶尖大学合作提供专业课程。涵盖编程、数据科学、商业管理等各个领域。</p>
+                    <p class="card-desc">全球领先的 CDN 和安全服务商，提供 DDoS 防护、WAF、DNS 托管、SSL 证书等一站式网络安全方案。免费套餐对个人站长非常友好。</p>
                 </div>
                 <div class="card-footer">
-                    <a href="software/coursera.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://www.coursera.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                    <a href="software/cloudflare.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.cloudflare.com/" target="_blank" class="btn btn-secondary">官网 →</a>
                 </div>
             </div>
 
             <div class="software-card">
                 <div class="card-header">
-                    <div class="card-icon">📝</div>
+                    <div class="card-icon">🔒</div>
                     <div class="card-info">
-                        <div class="card-title">LeetCode</div>
+                        <div class="card-title">Let's Encrypt</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Web</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">免费、自动化、开放的证书颁发机构（CA）。通过 Certbot 等客户端，只需要几分钟就能为你的网站部署 HTTPS，让每个网站都默认加密。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/letsencrypt.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://letsencrypt.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🦊</div>
+                    <div class="card-info">
+                        <div class="card-title">Proton VPN</div>
                         <div class="card-meta">
                             <span class="meta-tag">免费/付费</span>
-                            <span class="meta-tag platform">Web / App</span>
+                            <span class="meta-tag platform">Mac / Win / Linux / App</span>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-desc">程序员算法刷题必备平台，拥有数千道算法题目和面经分享。想进大厂工作，LeetCode 是绕不过的一道坎。</p>
+                    <p class="card-desc">瑞士 Proton 公司出品的 VPN 服务，注重隐私和透明度。免费版无广告、无限流量，付费版支持高速流媒体和 P2P，日志零记录政策。</p>
                 </div>
                 <div class="card-footer">
-                    <a href="software/leetcode.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://leetcode.com/" target="_blank" class="btn btn-secondary">官网 →</a>
-                </div>
-            </div>
-
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">📻</div>
-                    <div class="card-info">
-                        <div class="card-title">GitHub</div>
-                        <div class="card-meta">
-                            <span class="meta-tag">免费</span>
-                            <span class="meta-tag platform">Web</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">全球最大的开源代码托管平台，也是学习优秀开源项目的最佳场所。Star 感兴趣的项目，跟踪最新技术趋势。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/github.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://github.com/" target="_blank" class="btn btn-secondary">官网 →</a>
-                </div>
-            </div>
-
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">🎓</div>
-                    <div class="card-info">
-                        <div class="card-title">Bilibili</div>
-                        <div class="card-meta">
-                            <span class="meta-tag">免费</span>
-                            <span class="meta-tag platform">Web / App</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">你以为 B 站只是二次元？这里有大量优质的技术教程、学习直播、考试辅导。程序员假装在娱乐，实际在学习。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/bilibili.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://www.bilibili.com/" target="_blank" class="btn btn-secondary">官网 →</a>
-                </div>
-            </div>
-
-            <!-- 打字鸭 -->
-            <div class="software-card">
-                <div class="card-header">
-                    <div class="card-icon">⌨️</div>
-                    <div class="card-info">
-                        <div class="card-title">打字鸭</div>
-                        <div class="card-meta">
-                            <span class="meta-tag">免费</span>
-                            <span class="meta-tag platform">Web</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">免费打字练习平台，科学的指法训练和盲打课程。程序员提升打字速度的利器，拼音输入、代码符号等多种练习模式。</p>
-                </div>
-                <div class="card-footer">
-                    <a href="software/dazhibi.html" class="btn btn-primary">查看详情</a>
-                    <a href="https://www.dazibi.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                    <a href="software/protonvpn.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://protonvpn.com/" target="_blank" class="btn btn-secondary">官网 →</a>
                 </div>
             </div>
         </div>

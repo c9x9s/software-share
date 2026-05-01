@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snipaste 评测 - 极客导航</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article { max-width: 800px; margin: 0 auto; }
+        .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2rem; margin-bottom: 1rem; }
+        .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        .article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+        .tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+        .article-content { line-height: 1.9; color: var(--text-secondary); }
+        .article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); }
+        .article-content a:hover { text-decoration: underline; }
+        .highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+        .pros h4 { color: #4ade80; margin-bottom: 1rem; }
+        .cons h4 { color: #f87171; margin-bottom: 1rem; }
+        .pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+        .pros li::before { content: "✓ "; color: #4ade80; }
+        .cons li::before { content: "✗ "; color: #f87171; }
+        .action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+        .action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+        .action-btn.primary:hover { background: var(--accent-hover); }
+        .action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../dev.html">开发工具</a></li>
+                    <li><a href="../design.html">设计工具</a></li>
+                    <li><a href="../learning.html">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <div class="breadcrumb">
+                <a href="../index.html">首页</a>
+                <span>/</span>
+                <a href="../efficiency.html">效率工具</a>
+                <span>/</span>
+                <span>Snipaste</span>
+            </div>
+
+            <div class="article-header">
+                <div class="article-icon">📸</div>
+                <h1 class="article-title">Snipaste</h1>
+                <div class="article-meta">
+                    <span>🖥️ Windows / Mac</span>
+                    <span>|</span>
+                    <span>💰 免费</span>
+                    <span>|</span>
+                    <span>📅 2024年12月更新</span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">截图</span>
+                    <span class="tag">贴图</span>
+                    <span class="tag">效率</span>
+                    <span class="tag">推荐</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>为什么选 Snipaste</h2>
+                <p>
+                    你可能觉得截图工具能有多厉害？Windows 自带的截图工具不也能用吗？——用了 Snipaste 之后你就不会这么说了。Snipaste 最牛逼的功能是"贴图"：把截图"贴"在屏幕上，就像在桌面上贴了一张便签纸，可以随时查看和对比。
+                </p>
+                <p>
+                    开发者是一个独立开发者（levi），一个人维护这个软件好几年，品质却吊打各种大厂产品。关键是完全免费，Windows 版和 Mac 版都做得非常精致。
+                </p>
+
+                <h2>实际使用感受</h2>
+                <p>
+                    写代码时经常需要参考文档或设计稿，Snipaste 的贴图功能简直是刚需。F1 截图、F3 贴图，快捷键一按，截图就固定在屏幕上。写 CSS 时对着设计稿调样式，开发 API 时照着接口文档写代码，效率提升不止一倍。
+                </p>
+                <p>
+                    标注功能也做得很细致：矩形、椭圆、箭头、文字、高亮、马赛克……该有的都有。而且 Snipaste 的取色器是我见过最好用的，按 C 就能复制颜色值，设计师和前端开发都爱它。
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ 优点</h4>
+                        <ul>
+                            <li>贴图功能独此一家，用过就回不去</li>
+                            <li>截图标注工具齐全，操作流畅</li>
+                            <li>取色器功能太强了，开发/设计都适用</li>
+                            <li>完全免费，无广告无内购</li>
+                            <li>启动快，占用资源极少</li>
+                            <li>可自定义快捷键，高效操作</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ 缺点</h4>
+                        <ul>
+                            <li>Mac 版本功能比 Windows 少一些</li>
+                            <li>没有 OCR 文字识别功能</li>
+                            <li>不支持滚动截图</li>
+                            <li>更新频率不太高</li>
+                            <li>没有云同步或历史记录管理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>适合人群</h2>
+                <p>
+                    <strong>程序员</strong>、<strong>设计师</strong>、<strong>产品经理</strong>、<strong>写文档的人</strong>——几乎所有需要屏幕截图并对比信息的上班族，Snipaste 都是必备利器。
+                </p>
+
+                <h2>总结</h2>
+                <p>
+                    Snipaste 是我每台电脑必装的第一个软件。它可能不是最全能的截图工具，但凭着"贴图"这一个杀手功能，就足以让它成为我离不开的效率工具。小而美，说的就是它。
+                </p>
+                <p>
+                    <strong>评分：⭐⭐⭐⭐⭐</strong>（5/5）
+                </p>
+
+                <div class="action-buttons">
+                    <a href="https://www.snipaste.com/" target="_blank" class="action-btn primary">
+                        ⬇️ 前往官网
+                    </a>
+                    <a href="../efficiency.html" class="action-btn secondary">
+                        ← 返回效率工具
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>
