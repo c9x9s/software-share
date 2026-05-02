@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect x="8" y="8" width="48" height="48" rx="6" fill="#2d2d2d" stroke="#00d4ff" stroke-width="1.5"/>
-  <rect x="16" y="12" width="32" height="4" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <rect x="18" y="16" width="12" height="16" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <rect x="34" y="16" width="12" height="16" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="24" y1="20" x2="24" y2="28" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="40" y1="20" x2="40" y2="28" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="18" y1="38" x2="46" y2="38" stroke="#00d4ff" stroke-width="1.5"/>
-  <rect x="22" y="38" width="20" height="10" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="32" y1="38" x2="32" y2="48" stroke="#00d4ff" stroke-width="1.5"/>
+  <!-- Weixin IME (微信输入法) - Green WeChat chat bubble -->
+  <!-- Outer rounded chat bubble -->
+  <rect x="4" y="8" width="56" height="44" rx="10" fill="#07C160"/>
+  <!-- Lighter top half gradient illusion -->
+  <rect x="4" y="8" width="56" height="22" rx="10" fill="#06AD56"/>
+  <!-- Chat bubble tail (bottom right corner triangle) -->
+  <polygon points="44,52 48,56 52,52" fill="#07C160"/>
+  <!-- Inner white area for the bubble -->
+  <rect x="10" y="14" width="44" height="32" rx="6" fill="white"/>
+  <!-- WeChat green dots/typing indicator or chat lines -->
+  <rect x="16" y="22" width="28" height="4" rx="2" fill="#E0E0E0"/>
+  <rect x="16" y="30" width="32" height="4" rx="2" fill="#E0E0E0"/>
+  <rect x="16" y="38" width="20" height="4" rx="2" fill="#E0E0E0"/>
+  <!-- Input cursor line (IME indicator) -->
+  <rect x="16" y="38" width="2" height="4" fill="#07C160"/>
 </svg>

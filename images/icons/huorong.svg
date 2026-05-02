@@ -1,6 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect x="8" y="8" width="48" height="48" rx="6" fill="#2d2d2d" stroke="#00d4ff" stroke-width="1.5"/>
-  <path d="M16 48 L16 20 L24 28 L32 16 L40 28 L48 20 L48 48" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round"/>
-  <circle cx="32" cy="36" r="6" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="32" y1="30" x2="32" y2="36" stroke="#00d4ff" stroke-width="2"/>
+  <!-- Huorong (火绒安全) - Blue/white shield icon -->
+  <!-- Shield shape -->
+  <path d="M32 4 L58 16 Q58 40 48 50 Q40 58 32 62 Q24 58 16 50 Q6 40 6 16 Z" fill="#1565C0"/>
+  <!-- Lighter shield interior -->
+  <path d="M32 8 L54 18 Q54 38 46 47 Q39 54 32 58 Q25 54 18 47 Q10 38 10 18 Z" fill="#1E88E5"/>
+  <!-- Innermost lighter area -->
+  <path d="M32 12 L50 20 Q50 36 44 44 Q38 50 32 54 Q26 50 20 44 Q14 36 14 20 Z" fill="#42A5F5"/>
+  <!-- Chinese character "火" (fire) stylized in white -->
+  <!-- Left stroke of 火 -->
+  <path d="M22 26 Q26 22 28 28 Q30 34 26 40" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M18 32 L30 32" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right side of 火 -->
+  <path d="M36 22 L32 38 Q34 44 40 46" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M30 44 Q32 48 38 46" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Small flame dots -->
+  <circle cx="38" cy="24" r="1.5" fill="white"/>
+  <circle cx="24" cy="36" r="1.5" fill="white"/>
 </svg>

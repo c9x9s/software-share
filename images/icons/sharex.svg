@@ -1,8 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect x="8" y="8" width="48" height="48" rx="6" fill="#2d2d2d" stroke="#00d4ff" stroke-width="1.5"/>
-  <rect x="14" y="14" width="36" height="28" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <circle cx="26" cy="28" r="4" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <circle cx="38" cy="28" r="4" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="18" y1="40" x2="46" y2="40" stroke="#00d4ff" stroke-width="1.5"/>
-  <line x1="32" y1="28" x2="32" y2="40" stroke="#00d4ff" stroke-width="1"/>
+  <!-- ShareX - Blue share box with arrow -->
+  <!-- Box/rectangle -->
+  <rect x="6" y="10" width="52" height="42" rx="6" fill="#2B579A"/>
+  <!-- Lighter top -->
+  <rect x="6" y="10" width="52" height="18" rx="6" fill="#3570C0"/>
+  <!-- Arrow shooting outward from top-right (share action) -->
+  <!-- Arrow line -->
+  <line x1="36" y1="36" x2="56" y2="16" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Arrow head -->
+  <polygon points="56,16 48,14 52,22" fill="white"/>
+  <!-- Small document/page icon inside the box -->
+  <rect x="18" y="24" width="14" height="18" rx="2" fill="white" opacity="0.9"/>
+  <line x1="22" y1="30" x2="28" y2="30" stroke="#2B579A" stroke-width="1.5"/>
+  <line x1="22" y1="34" x2="28" y2="34" stroke="#2B579A" stroke-width="1.5"/>
+  <line x1="22" y1="38" x2="26" y2="38" stroke="#2B579A" stroke-width="1.5"/>
 </svg>
