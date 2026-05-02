@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ShareX 截图录屏 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+.article { max-width: 800px; margin: 0 auto; }
+.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+.article-title { font-size: 2rem; margin-bottom: 1rem; }
+.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.article-meta span { margin: 0 0.5rem; }
+.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+.article-content { line-height: 1.9; color: var(--text-secondary); }
+.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content strong { color: var(--text-primary); }
+.article-content a { color: var(--accent); }
+.article-content a:hover { text-decoration: underline; }
+.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+.pros h4 { color: #4ade80; margin-bottom: 1rem; }
+.cons h4 { color: #f87171; margin-bottom: 1rem; }
+.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+.pros li::before { content: "✓ "; color: #4ade80; }
+.cons li::before { content: "✗ "; color: #f87171; }
+.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+.action-btn.primary:hover { background: var(--accent-hover); }
+.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+</style>
+</head>
+<body>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+    <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html">GitHub 项目</a></li>
+   <li><a href="../efficiency.html">效率工具</a></li>
+   <li><a href="../daily.html">日常工具</a></li>
+   <li><a href="../security.html">安全工具</a></li>
+   <li><a href="../cloud.html">云服务</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
+
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../daily.html">日常工具</a>
+  <span>/</span>
+  <span>ShareX</span>
+  </div>
+
+  <div class="article-header">
+  <div class="article-icon">📹</div>
+  <h1 class="article-title">ShareX</h1>
+  <div class="article-meta">
+   <span>🖥️ Windows</span>
+   <span>|</span>
+   <span>💰 免费</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">截图</span>
+   <span class="tag">录屏</span>
+   <span class="tag">GIF</span>
+  </div>
+  </div>
+
+  <div class="article-content">
+  <h2>为什么选 ShareX</h2>
+  <p>
+   如果你的截图需求不仅仅是"截屏+标注"，而是需要更强大的一体化工作流——截图、录屏、制作 GIF、OCR 文字识别、上传图床、生成分享链接——那么 ShareX 就是不二之选。它是一个开源免费的全能型截图工具，功能多到让你怀疑这只是一个截图软件。
+  </p>
+  <p>
+   ShareX 最强大的地方在于它的"上传后动作"——截图后可以自动上传到 Imgur、FTP、S3 等各种图床或服务器，然后直接复制分享链接到剪贴板。对于经常写文档、做教程、或者需要频繁分享截图的人来说，这个工作流可以节省大量时间。
+  </p>
+
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>功能全面：截图、录屏、GIF、OCR 一应俱全</li>
+    <li>内置多种图床和文件上传服务</li>
+    <li>可自定义的工作流和快捷键</li>
+    <li>支持截图后自动添加水印</li>
+    <li>开源免费，社区活跃</li>
+    <li>截图编辑器功能丰富，标注工具齐全</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>功能太多导致界面有点杂乱</li>
+    <li>学习成本较高，需要花时间配置</li>
+    <li>仅支持 Windows 平台</li>
+    <li>第一次启动时的配置向导不够友好</li>
+    <li>某些上传服务需要自己配置 API Key</li>
+   </ul>
+   </div>
+  </div>
+
+  <h2>适合人群</h2>
+  <p>
+   <strong>技术作者</strong>、<strong>内容创作者</strong>、<strong>程序员</strong>——如果你经常需要截屏做教程、录制操作步骤、或者需要快速分享截图，ShareX 的强大工作流会大幅提升效率。特别是那些需要将截图上传到图床然后分享链接的人，用 ShareX 就再也不用多费一步操作。
+  </p>
+
+  <h2>总结</h2>
+  <p>
+   ShareX 是开源社区的一颗明珠。它把一个简单的截图工具做成了功能丰富的工作流引擎。虽然学习曲线稍陡峭，但一旦配置好适合自己的工作流，效率提升是质的飞跃。如果你愿意花点时间折腾，它会回报你超值的使用体验。
+  </p>
+
+  <div class="action-buttons">
+   <a href="https://getsharex.com/" target="_blank" class="action-btn primary">
+   ⬇️ 前往官网
+   </a>
+   <a href="../daily.html" class="action-btn secondary">
+   ← 返回日常工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
+
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
+</body>
+</html>

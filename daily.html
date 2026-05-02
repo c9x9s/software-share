@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常工具 - 极客导航</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .software-card {
+            background: var(--bg-card);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .software-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .card-icon { font-size: 2.5rem; flex-shrink: 0; }
+        .card-info { flex: 1; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .meta-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        .meta-tag.platform {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+        .card-body { padding: 0 1.5rem 1.5rem; }
+        .card-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); border: none; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">⚡极客<span>导航</span></a>
+                        <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dev.html">开发工具</a></li>
+                    <li><a href="design.html">设计工具</a></li>
+                    <li><a href="learning.html">学习资源</a></li>
+                    <li><a href="github.html">GitHub 项目</a></li>
+                    <li><a href="efficiency.html">效率工具</a></li>
+                    <li><a href="daily.html" class="active">日常工具</a></li>
+                    <li><a href="security.html">安全工具</a></li>
+                    <li><a href="cloud.html">云服务</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span>/</span>
+            <span>日常工具</span>
+        </div>
+
+        <div class="section-title">
+            <h1>🏠 日常工具</h1>
+            <p>电脑日常必备的实用工具，每个普通用户都值得拥有</p>
+        </div>
+
+        <div class="software-grid">
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-info">
+                        <div class="card-title">Everything</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">秒搜电脑上所有文件，比 Windows 自带搜索快一百倍。输入关键词即刻显示结果，支持正则、通配符，还能通过 HTTP 远程搜索。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/everything.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.voidtools.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📦</div>
+                    <div class="card-info">
+                        <div class="card-title">7-Zip</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费开源</span>
+                            <span class="meta-tag platform">Win / Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">开源免费的解压压缩神器，无广告无弹窗。支持 ZIP、RAR、7z 等几十种格式，压缩率比 WinRAR 还高，体积只有 1MB 多。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/7zip.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.7-zip.org/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🖥️</div>
+                    <div class="card-info">
+                        <div class="card-title">向日葵远程控制</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费/付费</span>
+                            <span class="meta-tag platform">Win / Mac / App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">国产远程控制软件，帮爸妈修电脑、远程办公必备。免费版支持流畅的远控、文件传输，手机也能控制电脑，无需公网 IP。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/sunlogin.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://sunlogin.oray.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🗑️</div>
+                    <div class="card-info">
+                        <div class="card-title">Geek Uninstaller</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">最简单粗暴的卸载工具。普通卸载残留的注册表和文件夹，Geek 能扫描得一干二净。绿色版不用安装，随用随删，强迫症福音。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/geekuninstaller.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://geekuninstaller.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎬</div>
+                    <div class="card-info">
+                        <div class="card-title">PotPlayer</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">最强 Windows 本地播放器，几乎能放所有视频格式。启动极快、画质好、字幕支持完善，可自定义皮肤和快捷键，无广告不流氓。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/potplayer.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://potplayer.daum.net/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🛡️</div>
+                    <div class="card-info">
+                        <div class="card-title">火绒安全</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">国内最干净的免费杀毒软件，无弹窗、无广告、不捆绑。病毒查杀、弹窗拦截、U盘防护、网络防护一应俱全，轻量不卡机。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/huorong.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.huorong.cn/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">⌨️</div>
+                    <div class="card-info">
+                        <div class="card-title">微信输入法</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win / Mac / App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">腾讯出品的新一代输入法，干净无广告、跨设备剪贴板同步、词库云端共享。支持常用语快捷输入、表情联想，打字体验丝滑。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/weixinime.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://z.weixin.qq.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">📹</div>
+                    <div class="card-info">
+                        <div class="card-title">ShareX</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费开源</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">开源截图+录屏+GIF制作神器，功能比微信截图强十倍。截图标注、OCR文字识别、滚动截图、录屏转GIF、上传图床，一站式搞定。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/sharex.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://getsharex.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🖼️</div>
+                    <div class="card-info">
+                        <div class="card-title">Honeyview</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">最轻量好用的看图软件，启动速度秒杀系统自带。支持几乎所有图片格式，包括RAW、PSD。鼠标滚轮翻页、Bing壁纸、压缩包内看图。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/honeyview.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.bandisoft.com/honeyview/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+
+            <div class="software-card">
+                <div class="card-header">
+                    <div class="card-icon">🎞️</div>
+                    <div class="card-info">
+                        <div class="card-title">ScreenToGif</div>
+                        <div class="card-meta">
+                            <span class="meta-tag">免费开源</span>
+                            <span class="meta-tag platform">Win</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-desc">免费开源的屏幕录制转GIF工具，录制区域自由选择、帧率可调、支持手绘标注。编辑功能也很强，可删除帧、添加字幕、调整大小。</p>
+                </div>
+                <div class="card-footer">
+                    <a href="software/screentogif.html" class="btn btn-primary">查看详情</a>
+                    <a href="https://www.screentogif.com/" target="_blank" class="btn btn-secondary">官网 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+    </footer>
+</body>
+</html>
