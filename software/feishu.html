@@ -10,6 +10,7 @@
  .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
  .article-icon { font-size: 5rem; margin-bottom: 1.5rem; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
 .article-icon img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+.article-icon :is(img.article-icon-img) { filter: none; }
  .article-title { font-size: 2rem; margin-bottom: 1rem; }
  .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
  .article-meta span { margin: 0 0.5rem; }
@@ -71,7 +72,7 @@
   </div>
 
   <div class="article-header">
-  <div class="article-icon">🐦</div>
+  <div class="article-icon"><img src="../images/icons/feishu.png" alt="飞书" class="article-icon-img"></div>
   <h1 class="article-title">飞书</h1>
   <div class="article-meta">
    <span>🖥️ Windows / Mac / 移动端 / Web</span>
