@@ -8,7 +8,8 @@
  <style>
  .article { max-width: 800px; margin: 0 auto; }
  .article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
- .article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+ .article-icon { font-size: 5rem; margin-bottom: 1.5rem; width: 80px; height: 80px; display: inline-flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto; }
+.article-icon img { width: 80px; height: 80px; object-fit: contain; filter: brightness(0) invert(1); }
  .article-title { font-size: 2rem; margin-bottom: 1rem; }
  .article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
  .article-meta span { margin: 0 0.5rem; }
@@ -58,7 +59,7 @@
  <article class="article">
   <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="../dev.html">开发工具</a><span>/</span><span>Postman</span></div>
   <div class="article-header">
-  <div class="article-icon">📮</div>
+  <div class="article-icon"><img src="../images/icons/postman.svg" alt="Postman"></div>
   <h1 class="article-title">Postman</h1>
   <div class="article-meta"><span>🖥️ Win / Mac / Linux</span><span>|</span><span>💰 免费/付费</span><span>|</span><span>📅 2024年12月</span></div>
   <div class="article-tags"><span class="tag">API</span><span class="tag">调试</span><span class="tag">后端开发</span></div>
