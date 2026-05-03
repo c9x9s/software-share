@@ -1,152 +1,151 @@
-     1|     1|<!DOCTYPE html>
-     2|     2|<html lang="zh-CN">
-     3|     3|<head>
-     4|     4| <meta charset="UTF-8">
-     5|     5| <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6|     6| <title>向日葵远程控制 - 极客导航</title>
-     7|     7| <link rel="stylesheet" href="../css/style.css">
-     8|     8| <style>
-     9|     9|.article { max-width: 800px; margin: 0 auto; }
-    10|    10|.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-    11|    11|.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-    12|    12|.article-title { font-size: 2rem; margin-bottom: 1rem; }
-    13|    13|.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-    14|    14|.article-meta span { margin: 0 0.5rem; }
-    15|    15|.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-    16|    16|.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-    17|    17|.article-content { line-height: 1.9; color: var(--text-secondary); }
-    18|    18|.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-    19|    19|.article-content p { margin-bottom: 1.5rem; }
-    20|    20|.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-    21|    21|.article-content li { margin-bottom: 0.5rem; }
-    22|    22|.article-content strong { color: var(--text-primary); }
-    23|    23|.article-content a { color: var(--accent); }
-    24|    24|.article-content a:hover { text-decoration: underline; }
-    25|    25|.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-    26|    26|.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-    27|    27|.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-    28|    28|.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-    29|    29|.pros h4 { color: #4ade80; margin-bottom: 1rem; }
-    30|    30|.cons h4 { color: #f87171; margin-bottom: 1rem; }
-    31|    31|.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-    32|    32|.pros li::before { content: "✓ "; color: #4ade80; }
-    33|    33|.cons li::before { content: "✗ "; color: #f87171; }
-    34|    34|.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-    35|    35|.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-    36|    36|.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-    37|    37|.action-btn.primary:hover { background: var(--accent-hover); }
-    38|    38|.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-    39|    39|.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向日葵远程控制 - 极客导航</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.article { max-width: 800px; margin: 0 auto; }
+.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+.article-title { font-size: 2rem; margin-bottom: 1rem; }
+.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.article-meta span { margin: 0 0.5rem; }
+.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+.article-content { line-height: 1.9; color: var(--text-secondary); }
+.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content strong { color: var(--text-primary); }
+.article-content a { color: var(--accent); }
+.article-content a:hover { text-decoration: underline; }
+.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+.pros h4 { color: #4ade80; margin-bottom: 1rem; }
+.cons h4 { color: #f87171; margin-bottom: 1rem; }
+.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+.pros li::before { content: "✓ "; color: #4ade80; }
+.cons li::before { content: "✗ "; color: #f87171; }
+.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+.action-btn.primary:hover { background: var(--accent-hover); }
+.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
 .article-icon-img { width: 80px; height: 80px; }
 .article-icon { font-size: inherit; }
-    40|    40|@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    41|    41|</style>
-    42|    42|</head>
-    43|    43|<body>
-    44|    44| <header>
-    45|    45| <div class="header-inner">
-    46|    46|  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-    47|    47|    <nav class="main-nav">
-    48|    48|  <ul>
-    49|    49|   <li><a href="../index.html">首页</a></li>
-    50|    50|   <li><a href="../dev.html">开发工具</a></li>
-    51|    51|   <li><a href="../design.html">设计工具</a></li>
-    52|    52|   <li><a href="../learning.html">学习资源</a></li>
-    53|    53|   <li><a href="../github.html">GitHub 项目</a></li>
-    54|    54|   <li><a href="../efficiency.html">效率工具</a></li>
-    55|    55|   <li><a href="../daily.html">日常工具</a></li>
-    56|    56|   <li><a href="../security.html">安全工具</a></li>
-    57|    57|   <li><a href="../cloud.html">云服务</a></li>
-    58|    58|  </ul>
-    59|    59|  </nav>
-    60|    60| </div>
-    61|    61| </header>
-    62|    62|
-    63|    63| <main class="container">
-    64|    64| <article class="article">
-    65|    65|  <div class="breadcrumb">
-    66|    66|  <a href="../index.html">首页</a>
-    67|    67|  <span>/</span>
-    68|    68|  <a href="../daily.html">日常工具</a>
-    69|    69|  <span>/</span>
-    70|    70|  <span>向日葵远程控制</span>
-    71|    71|  </div>
-    72|    72|
-    73|    73|  <div class="article-header">
-    74|    74|  <div class="article-icon"><img src="../images/icons/sunlogin.png" alt="向日葵远程控制" class="article-icon-img"></div>
-    75|    75|  <h1 class="article-title">向日葵远程控制</h1>
-    76|    76|  <div class="article-meta">
-    77|    77|   <span>🖥️ Windows / Mac / App</span>
-    78|    78|   <span>|</span>
-    79|    79|   <span>💰 免费</span>
-    80|    80|   <span>|</span>
-    81|    81|   <span>📅 2024年12月更新</span>
-    82|    82|  </div>
-    83|    83|  <div class="article-tags">
-    84|    84|   <span class="tag">远程</span>
-    85|    85|   <span class="tag">协助</span>
-    86|    86|   <span class="tag">免费</span>
-    87|    87|  </div>
-    88|    88|  </div>
-    89|    89|
-    90|    90|  <div class="article-content">
-    91|    91|  <h2>为什么选向日葵</h2>
-    92|    92|  <p>
-    93|    93|   远程控制软件的需求越来越大——帮爸妈解决电脑问题、远程办公连接公司电脑、出差时访问家里文件……向日葵是国内最成熟的远程控制解决方案之一，免费版的功能已经相当够用，速度和稳定性在同类产品中属于第一梯队。
-    94|    94|  </p>
-    95|    95|  <p>
-    96|    96|   相比 TeamViewer 越来越严格的商业检测和收费策略，向日葵对个人用户非常友好。支持跨平台连接，电脑控制手机、手机控制电脑都毫无压力。还有屏幕录制、远程文件传输、远程开机等实用功能。
-    97|    97|  </p>
-    98|    98|
-    99|    99|  <div class="pros-cons">
-   100|   100|   <div class="pros">
-   101|   101|   <h4>✅ 优点</h4>
-   102|   102|   <ul>
-   103|   103|    <li>国内服务器，连接速度快延迟低</li>
-   104|   104|    <li>免费版功能充足，不限时长和次数</li>
-   105|   105|    <li>支持全平台：Windows、Mac、Linux、iOS、Android</li>
-   106|   106|    <li>支持远程文件传输，传文件很方便</li>
-   107|   107|    <li>有远程开机硬件支持（向日葵开机棒）</li>
-   108|   108|    <li>手机端体验好，支持触控操作</li>
-   109|   109|   </ul>
-   110|   110|   </div>
-   111|   111|   <div class="cons">
-   112|   112|   <h4>❌ 缺点</h4>
-   113|   113|   <ul>
-   114|   114|    <li>免费版有画质限制，最高 720p</li>
-   115|   115|    <li>偶尔会有广告推广提示</li>
-   116|   116|    <li>某些高级功能需要付费订阅</li>
-   117|   117|    <li>连接的设备较多时管理稍显混乱</li>
-   118|   118|    <li>企业版价格偏高</li>
-   119|   119|   </ul>
-   120|   120|   </div>
-   121|   121|  </div>
-   122|   122|
-   123|   123|  <h2>适合人群</h2>
-   124|   124|  <p>
-   125|   125|   <strong>需要远程办公的人</strong>、<strong>IT 运维人员</strong>、<strong>经常帮亲友修电脑的朋友</strong>——向日葵的免费版足够满足绝大多数个人远程控制需求。如果你需要一个稳定、快速、不限连接次数的国产远程工具，向日葵是非常靠谱的选择。
-   126|   126|  </p>
-   127|   127|
-   128|   128|  <h2>总结</h2>
-   129|   129|  <p>
-   130|   130|   向日葵是国内远程控制领域的老牌选手，经过多年迭代，稳定性和易用性都相当出色。免费版没有 TeamViewer 那种"疑似商业使用"的误判烦恼，适合个人用户长期使用。
-   131|   131|  </p>
-   132|   132|
-   133|   133|  <div class="action-buttons">
-   134|   134|   <a href="https://sunlogin.oray.com/" target="_blank" class="action-btn primary">
-   135|   135|   ⬇️ 前往官网
-   136|   136|   </a>
-   137|   137|   <a href="../daily.html" class="action-btn secondary">
-   138|   138|   ← 返回日常工具
-   139|   139|   </a>
-   140|   140|  </div>
-   141|   141|  </div>
-   142|   142| </article>
-   143|   143| </main>
-   144|   144|
-   145|   145| <footer>
-   146|   146| <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-   147|   147| </footer>
-   148|   148|</body>
-   149|   149|</html>
-   150|   150|
+@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+<nav class="main-nav">
+<ul>
+<li><a href="../index.html">首页</a></li>
+<li><a href="../dev.html">开发工具</a></li>
+<li><a href="../design.html">设计工具</a></li>
+<li><a href="../learning.html">学习资源</a></li>
+<li><a href="../github.html">GitHub 项目</a></li>
+<li><a href="../efficiency.html">效率工具</a></li>
+<li><a href="../daily.html">日常工具</a></li>
+<li><a href="../security.html">安全工具</a></li>
+<li><a href="../cloud.html">云服务</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<article class="article">
+<div class="breadcrumb">
+<a href="../index.html">首页</a>
+<span>/</span>
+<a href="../daily.html">日常工具</a>
+<span>/</span>
+<span>向日葵远程控制</span>
+</div>
+
+<div class="article-header">
+<div class="article-icon"><img src="../images/icons/sunlogin.png" alt="向日葵远程控制" class="article-icon-img"></div>
+<h1 class="article-title">向日葵远程控制</h1>
+<div class="article-meta">
+<span>🖥️ Windows / Mac / App</span>
+<span>|</span>
+<span>💰 免费</span>
+<span>|</span>
+<span>📅 2024年12月更新</span>
+</div>
+<div class="article-tags">
+<span class="tag">远程</span>
+<span class="tag">协助</span>
+<span class="tag">免费</span>
+</div>
+</div>
+
+<div class="article-content">
+<h2>为什么选向日葵</h2>
+<p>
+远程控制软件的需求越来越大——帮爸妈解决电脑问题、远程办公连接公司电脑、出差时访问家里文件……向日葵是国内最成熟的远程控制解决方案之一，免费版的功能已经相当够用，速度和稳定性在同类产品中属于第一梯队。
+</p>
+<p>
+相比 TeamViewer 越来越严格的商业检测和收费策略，向日葵对个人用户非常友好。支持跨平台连接，电脑控制手机、手机控制电脑都毫无压力。还有屏幕录制、远程文件传输、远程开机等实用功能。
+</p>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✅ 优点</h4>
+<ul>
+<li>国内服务器，连接速度快延迟低</li>
+<li>免费版功能充足，不限时长和次数</li>
+<li>支持全平台：Windows、Mac、Linux、iOS、Android</li>
+<li>支持远程文件传输，传文件很方便</li>
+<li>有远程开机硬件支持（向日葵开机棒）</li>
+<li>手机端体验好，支持触控操作</li>
+</ul>
+</div>
+<div class="cons">
+<h4>❌ 缺点</h4>
+<ul>
+<li>免费版有画质限制，最高 720p</li>
+<li>偶尔会有广告推广提示</li>
+<li>某些高级功能需要付费订阅</li>
+<li>连接的设备较多时管理稍显混乱</li>
+<li>企业版价格偏高</li>
+</ul>
+</div>
+</div>
+
+<h2>适合人群</h2>
+<p>
+<strong>需要远程办公的人</strong>、<strong>IT 运维人员</strong>、<strong>经常帮亲友修电脑的朋友</strong>——向日葵的免费版足够满足绝大多数个人远程控制需求。如果你需要一个稳定、快速、不限连接次数的国产远程工具，向日葵是非常靠谱的选择。
+</p>
+
+<h2>总结</h2>
+<p>
+向日葵是国内远程控制领域的老牌选手，经过多年迭代，稳定性和易用性都相当出色。免费版没有 TeamViewer 那种"疑似商业使用"的误判烦恼，适合个人用户长期使用。
+</p>
+
+<div class="action-buttons">
+<a href="https://sunlogin.oray.com/" target="_blank" class="action-btn primary">
+⬇️ 前往官网
+</a>
+<a href="../daily.html" class="action-btn secondary">
+← 返回日常工具
+</a>
+</div>
+</div>
+</article>
+</main>
+
+<footer>
+<p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+</footer>
+</body>
+</html>

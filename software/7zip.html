@@ -1,152 +1,151 @@
-     1|     1|<!DOCTYPE html>
-     2|     2|<html lang="zh-CN">
-     3|     3|<head>
-     4|     4| <meta charset="UTF-8">
-     5|     5| <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6|     6| <title>7-Zip 解压工具 - 极客导航</title>
-     7|     7| <link rel="stylesheet" href="../css/style.css">
-     8|     8| <style>
-     9|     9|.article { max-width: 800px; margin: 0 auto; }
-    10|    10|.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-    11|    11|.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-    12|    12|.article-title { font-size: 2rem; margin-bottom: 1rem; }
-    13|    13|.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-    14|    14|.article-meta span { margin: 0 0.5rem; }
-    15|    15|.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-    16|    16|.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-    17|    17|.article-content { line-height: 1.9; color: var(--text-secondary); }
-    18|    18|.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-    19|    19|.article-content p { margin-bottom: 1.5rem; }
-    20|    20|.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-    21|    21|.article-content li { margin-bottom: 0.5rem; }
-    22|    22|.article-content strong { color: var(--text-primary); }
-    23|    23|.article-content a { color: var(--accent); }
-    24|    24|.article-content a:hover { text-decoration: underline; }
-    25|    25|.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-    26|    26|.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-    27|    27|.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-    28|    28|.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-    29|    29|.pros h4 { color: #4ade80; margin-bottom: 1rem; }
-    30|    30|.cons h4 { color: #f87171; margin-bottom: 1rem; }
-    31|    31|.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-    32|    32|.pros li::before { content: "✓ "; color: #4ade80; }
-    33|    33|.cons li::before { content: "✗ "; color: #f87171; }
-    34|    34|.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-    35|    35|.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-    36|    36|.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-    37|    37|.action-btn.primary:hover { background: var(--accent-hover); }
-    38|    38|.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-    39|    39|.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>7-Zip 解压工具 - 极客导航</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+.article { max-width: 800px; margin: 0 auto; }
+.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+.article-title { font-size: 2rem; margin-bottom: 1rem; }
+.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.article-meta span { margin: 0 0.5rem; }
+.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+.article-content { line-height: 1.9; color: var(--text-secondary); }
+.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content strong { color: var(--text-primary); }
+.article-content a { color: var(--accent); }
+.article-content a:hover { text-decoration: underline; }
+.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+.pros h4 { color: #4ade80; margin-bottom: 1rem; }
+.cons h4 { color: #f87171; margin-bottom: 1rem; }
+.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+.pros li::before { content: "✓ "; color: #4ade80; }
+.cons li::before { content: "✗ "; color: #f87171; }
+.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+.action-btn.primary:hover { background: var(--accent-hover); }
+.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
 .article-icon-img { width: 80px; height: 80px; }
 .article-icon { font-size: inherit; }
-    40|    40|@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    41|    41|</style>
-    42|    42|</head>
-    43|    43|<body>
-    44|    44| <header>
-    45|    45| <div class="header-inner">
-    46|    46|  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-    47|    47|    <nav class="main-nav">
-    48|    48|  <ul>
-    49|    49|   <li><a href="../index.html">首页</a></li>
-    50|    50|   <li><a href="../dev.html">开发工具</a></li>
-    51|    51|   <li><a href="../design.html">设计工具</a></li>
-    52|    52|   <li><a href="../learning.html">学习资源</a></li>
-    53|    53|   <li><a href="../github.html">GitHub 项目</a></li>
-    54|    54|   <li><a href="../efficiency.html">效率工具</a></li>
-    55|    55|   <li><a href="../daily.html">日常工具</a></li>
-    56|    56|   <li><a href="../security.html">安全工具</a></li>
-    57|    57|   <li><a href="../cloud.html">云服务</a></li>
-    58|    58|  </ul>
-    59|    59|  </nav>
-    60|    60| </div>
-    61|    61| </header>
-    62|    62|
-    63|    63| <main class="container">
-    64|    64| <article class="article">
-    65|    65|  <div class="breadcrumb">
-    66|    66|  <a href="../index.html">首页</a>
-    67|    67|  <span>/</span>
-    68|    68|  <a href="../daily.html">日常工具</a>
-    69|    69|  <span>/</span>
-    70|    70|  <span>7-Zip</span>
-    71|    71|  </div>
-    72|    72|
-    73|    73|  <div class="article-header">
-    74|    74|  <div class="article-icon"><img src="../images/icons/7zip.svg" alt="7-Zip" class="article-icon-img"></div>
-    75|    75|  <h1 class="article-title">7-Zip</h1>
-    76|    76|  <div class="article-meta">
-    77|    77|   <span>🖥️ Windows / Linux</span>
-    78|    78|   <span>|</span>
-    79|    79|   <span>💰 免费</span>
-    80|    80|   <span>|</span>
-    81|    81|   <span>📅 2024年12月更新</span>
-    82|    82|  </div>
-    83|    83|  <div class="article-tags">
-    84|    84|   <span class="tag">解压</span>
-    85|    85|   <span class="tag">压缩</span>
-    86|    86|   <span class="tag">免费开源</span>
-    87|    87|  </div>
-    88|    88|  </div>
-    89|    89|
-    90|    90|  <div class="article-content">
-    91|    91|  <h2>为什么选 7-Zip</h2>
-    92|    92|  <p>
-    93|    93|   压缩解压工具几乎是每台电脑的必备软件。7-Zip 是开源免费领域无可争议的王者，压缩率极高，支持格式全面，而且没有任何广告和付费限制。相比于 WinRAR 的弹窗提醒和 Bandizip 的收费策略，7-Zip 干净得让人感动。
-    94|    94|  </p>
-    95|    95|  <p>
-    96|    96|   它自创的 7z 格式在同等压缩率下体积更小，尤其是在压缩大量文本文件和程序文件时优势明显。同时还支持 ZIP、RAR、TAR、GZIP 等几十种格式的读写，日常使用绰绰有余。
-    97|    97|  </p>
-    98|    98|
-    99|    99|  <div class="pros-cons">
-   100|   100|   <div class="pros">
-   101|   101|   <h4>✅ 优点</h4>
-   102|   102|   <ul>
-   103|   103|    <li>完全开源免费，无广告无弹窗</li>
-   104|   104|    <li>7z 格式压缩率极高，节省磁盘空间</li>
-   105|   105|    <li>支持多达几十种压缩格式</li>
-   106|   106|    <li>集成到系统右键菜单，使用方便</li>
-   107|   107|    <li>支持 AES-256 加密，安全性好</li>
-   108|   108|    <li>软件体积小，安装包不到 2MB</li>
-   109|   109|   </ul>
-   110|   110|   </div>
-   111|   111|   <div class="cons">
-   112|   112|   <h4>❌ 缺点</h4>
-   113|   113|   <ul>
-   114|   114|    <li>界面设计比较老旧，不够现代化</li>
-   115|   115|    <li>不支持 RAR 格式的创建（仅支持解压）</li>
-   116|   116|    <li>没有文件预览功能</li>
-   117|   117|    <li>多卷压缩操作不够直观</li>
-   118|   118|    <li>没有内置文件管理器</li>
-   119|   119|   </ul>
-   120|   120|   </div>
-   121|   121|  </div>
-   122|   122|
-   123|   123|  <h2>适合人群</h2>
-   124|   124|  <p>
-   125|   125|   <strong>所有电脑用户</strong>——7-Zip 适合任何需要压缩或解压文件的人。无论你是普通办公族需要解压邮件附件，还是程序员需要打包项目部署，7-Zip 都能满足需求。尤其推荐给在意软件纯净度、不想被广告打扰的用户。
-   126|   126|  </p>
-   127|   127|
-   128|   128|  <h2>总结</h2>
-   129|   129|  <p>
-   130|   130|   7-Zip 是开源世界的一颗明珠，用最小的体积和最干净的体验，解决了文件压缩这个日常刚需。如果你还在用盗版的 WinRAR 或者忍受带广告的压缩软件，换成 7-Zip 会让你的电脑清净不少。
-   131|   131|  </p>
-   132|   132|
-   133|   133|  <div class="action-buttons">
-   134|   134|   <a href="https://www.7-zip.org/" target="_blank" class="action-btn primary">
-   135|   135|   ⬇️ 前往官网
-   136|   136|   </a>
-   137|   137|   <a href="../daily.html" class="action-btn secondary">
-   138|   138|   ← 返回日常工具
-   139|   139|   </a>
-   140|   140|  </div>
-   141|   141|  </div>
-   142|   142| </article>
-   143|   143| </main>
-   144|   144|
-   145|   145| <footer>
-   146|   146| <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-   147|   147| </footer>
-   148|   148|</body>
-   149|   149|</html>
-   150|   150|
+@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+</style>
+</head>
+<body>
+ <header>
+ <div class="header-inner">
+  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+    <nav class="main-nav">
+  <ul>
+   <li><a href="../index.html">首页</a></li>
+   <li><a href="../dev.html">开发工具</a></li>
+   <li><a href="../design.html">设计工具</a></li>
+   <li><a href="../learning.html">学习资源</a></li>
+   <li><a href="../github.html">GitHub 项目</a></li>
+   <li><a href="../efficiency.html">效率工具</a></li>
+   <li><a href="../daily.html">日常工具</a></li>
+   <li><a href="../security.html">安全工具</a></li>
+   <li><a href="../cloud.html">云服务</a></li>
+  </ul>
+  </nav>
+ </div>
+ </header>
+
+ <main class="container">
+ <article class="article">
+  <div class="breadcrumb">
+  <a href="../index.html">首页</a>
+  <span>/</span>
+  <a href="../daily.html">日常工具</a>
+  <span>/</span>
+  <span>7-Zip</span>
+  </div>
+
+  <div class="article-header">
+  <div class="article-icon"><img src="../images/icons/7zip.svg" alt="7-Zip" class="article-icon-img"></div>
+  <h1 class="article-title">7-Zip</h1>
+  <div class="article-meta">
+   <span>🖥️ Windows / Linux</span>
+   <span>|</span>
+   <span>💰 免费</span>
+   <span>|</span>
+   <span>📅 2024年12月更新</span>
+  </div>
+  <div class="article-tags">
+   <span class="tag">解压</span>
+   <span class="tag">压缩</span>
+   <span class="tag">免费开源</span>
+  </div>
+  </div>
+
+  <div class="article-content">
+  <h2>为什么选 7-Zip</h2>
+  <p>
+   压缩解压工具几乎是每台电脑的必备软件。7-Zip 是开源免费领域无可争议的王者，压缩率极高，支持格式全面，而且没有任何广告和付费限制。相比于 WinRAR 的弹窗提醒和 Bandizip 的收费策略，7-Zip 干净得让人感动。
+  </p>
+  <p>
+   它自创的 7z 格式在同等压缩率下体积更小，尤其是在压缩大量文本文件和程序文件时优势明显。同时还支持 ZIP、RAR、TAR、GZIP 等几十种格式的读写，日常使用绰绰有余。
+  </p>
+
+  <div class="pros-cons">
+   <div class="pros">
+   <h4>✅ 优点</h4>
+   <ul>
+    <li>完全开源免费，无广告无弹窗</li>
+    <li>7z 格式压缩率极高，节省磁盘空间</li>
+    <li>支持多达几十种压缩格式</li>
+    <li>集成到系统右键菜单，使用方便</li>
+    <li>支持 AES-256 加密，安全性好</li>
+    <li>软件体积小，安装包不到 2MB</li>
+   </ul>
+   </div>
+   <div class="cons">
+   <h4>❌ 缺点</h4>
+   <ul>
+    <li>界面设计比较老旧，不够现代化</li>
+    <li>不支持 RAR 格式的创建（仅支持解压）</li>
+    <li>没有文件预览功能</li>
+    <li>多卷压缩操作不够直观</li>
+    <li>没有内置文件管理器</li>
+   </ul>
+   </div>
+  </div>
+
+  <h2>适合人群</h2>
+  <p>
+   <strong>所有电脑用户</strong>——7-Zip 适合任何需要压缩或解压文件的人。无论你是普通办公族需要解压邮件附件，还是程序员需要打包项目部署，7-Zip 都能满足需求。尤其推荐给在意软件纯净度、不想被广告打扰的用户。
+  </p>
+
+  <h2>总结</h2>
+  <p>
+   7-Zip 是开源世界的一颗明珠，用最小的体积和最干净的体验，解决了文件压缩这个日常刚需。如果你还在用盗版的 WinRAR 或者忍受带广告的压缩软件，换成 7-Zip 会让你的电脑清净不少。
+  </p>
+
+  <div class="action-buttons">
+   <a href="https://www.7-zip.org/" target="_blank" class="action-btn primary">
+   ⬇️ 前往官网
+   </a>
+   <a href="../daily.html" class="action-btn secondary">
+   ← 返回日常工具
+   </a>
+  </div>
+  </div>
+ </article>
+ </main>
+
+ <footer>
+ <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+ </footer>
+</body>
+</html>

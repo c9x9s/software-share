@@ -1,153 +1,152 @@
-     1|     1|<!DOCTYPE html>
-     2|     2|<html lang="zh-CN">
-     3|     3|<head>
-     4|     4| <meta charset="UTF-8">
-     5|     5| <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6|     6| <title>PotPlayer 视频播放器 - 极客导航</title>
-     7|     7| <link rel="stylesheet" href="../css/style.css">
-     8|     8| <style>
-     9|     9|.article { max-width: 800px; margin: 0 auto; }
-    10|    10|.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
-    11|    11|.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-    12|    12|.article-title { font-size: 2rem; margin-bottom: 1rem; }
-    13|    13|.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
-    14|    14|.article-meta span { margin: 0 0.5rem; }
-    15|    15|.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-    16|    16|.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
-    17|    17|.article-content { line-height: 1.9; color: var(--text-secondary); }
-    18|    18|.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-    19|    19|.article-content p { margin-bottom: 1.5rem; }
-    20|    20|.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
-    21|    21|.article-content li { margin-bottom: 0.5rem; }
-    22|    22|.article-content strong { color: var(--text-primary); }
-    23|    23|.article-content a { color: var(--accent); }
-    24|    24|.article-content a:hover { text-decoration: underline; }
-    25|    25|.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-    26|    26|.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-    27|    27|.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-    28|    28|.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
-    29|    29|.pros h4 { color: #4ade80; margin-bottom: 1rem; }
-    30|    30|.cons h4 { color: #f87171; margin-bottom: 1rem; }
-    31|    31|.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
-    32|    32|.pros li::before { content: "✓ "; color: #4ade80; }
-    33|    33|.cons li::before { content: "✗ "; color: #f87171; }
-    34|    34|.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-    35|    35|.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
-    36|    36|.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
-    37|    37|.action-btn.primary:hover { background: var(--accent-hover); }
-    38|    38|.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
-    39|    39|.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PotPlayer 视频播放器 - 极客导航</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.article { max-width: 800px; margin: 0 auto; }
+.article-header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+.article-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+.article-title { font-size: 2rem; margin-bottom: 1rem; }
+.article-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.article-meta span { margin: 0 0.5rem; }
+.article-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.tag { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; }
+.article-content { line-height: 1.9; color: var(--text-secondary); }
+.article-content h2 { color: var(--text-primary); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content strong { color: var(--text-primary); }
+.article-content a { color: var(--accent); }
+.article-content a:hover { text-decoration: underline; }
+.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+.highlight-box h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.pros, .cons { background: var(--bg-card); padding: 1.5rem; border-radius: 8px; }
+.pros h4 { color: #4ade80; margin-bottom: 1rem; }
+.cons h4 { color: #f87171; margin-bottom: 1rem; }
+.pros li, .cons li { margin-bottom: 0.5rem; list-style: none; }
+.pros li::before { content: "✓ "; color: #4ade80; }
+.cons li::before { content: "✗ "; color: #f87171; }
+.action-buttons { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+.action-btn { flex: 1; padding: 1rem 2rem; border-radius: 8px; text-align: center; font-weight: 500; transition: var(--transition); }
+.action-btn.primary { background: var(--accent); color: var(--bg-primary); }
+.action-btn.primary:hover { background: var(--accent-hover); }
+.action-btn.secondary { border: 1px solid var(--border-color); color: var(--text-secondary); }
+.action-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
 .article-icon-img { width: 80px; height: 80px; }
 .article-icon { font-size: inherit; }
-    40|    40|@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
-    41|    41|</style>
-    42|    42|</head>
-    43|    43|<body>
-    44|    44| <header>
-    45|    45| <div class="header-inner">
-    46|    46|  <a href="../index.html" class="logo">⚡极客<span>导航</span></a>
-    47|    47|    <nav class="main-nav">
-    48|    48|  <ul>
-    49|    49|   <li><a href="../index.html">首页</a></li>
-    50|    50|   <li><a href="../dev.html">开发工具</a></li>
-    51|    51|   <li><a href="../design.html">设计工具</a></li>
-    52|    52|   <li><a href="../learning.html">学习资源</a></li>
-    53|    53|   <li><a href="../github.html">GitHub 项目</a></li>
-    54|    54|   <li><a href="../efficiency.html">效率工具</a></li>
-    55|    55|   <li><a href="../daily.html">日常工具</a></li>
-    56|    56|   <li><a href="../security.html">安全工具</a></li>
-    57|    57|   <li><a href="../cloud.html">云服务</a></li>
-    58|    58|  </ul>
-    59|    59|  </nav>
-    60|    60| </div>
-    61|    61| </header>
-    62|    62|
-    63|    63| <main class="container">
-    64|    64| <article class="article">
-    65|    65|  <div class="breadcrumb">
-    66|    66|  <a href="../index.html">首页</a>
-    67|    67|  <span>/</span>
-    68|    68|  <a href="../daily.html">日常工具</a>
-    69|    69|  <span>/</span>
-    70|    70|  <span>PotPlayer</span>
-    71|    71|  </div>
-    72|    72|
-    73|    73|  <div class="article-header">
-    74|    74|  <div class="article-icon"><img src="../images/icons/potplayer.png" alt="PotPlayer" class="article-icon-img"></div>
-    75|    75|  <h1 class="article-title">PotPlayer</h1>
-    76|    76|  <div class="article-meta">
-    77|    77|   <span>🖥️ Windows</span>
-    78|    78|   <span>|</span>
-    79|    79|   <span>💰 免费</span>
-    80|    80|   <span>|</span>
-    81|    81|   <span>📅 2024年12月更新</span>
-    82|    82|  </div>
-    83|    83|  <div class="article-tags">
-    84|    84|   <span class="tag">播放器</span>
-    85|    85|   <span class="tag">视频</span>
-    86|    86|   <span class="tag">免费</span>
-    87|    87|  </div>
-    88|    88|  </div>
-    89|    89|
-    90|    90|  <div class="article-content">
-    91|    91|  <h2>为什么选 PotPlayer</h2>
-    92|    92|  <p>
-    93|    93|   Windows 上从来不缺视频播放器，但 PotPlayer 凭借超强的解码能力、极致的性能优化和丰富的自定义选项，始终是很多人的首选。无论是 4K 超高清视频、各种冷门格式、还是倍速播放，PotPlayer 都能轻松应对。
-    94|    94|  </p>
-    95|    95|  <p>
-    96|    96|   它的前身是 KMP 播放器，开发者是同一个大神（姜勇囍）。内置了几乎所有的音视频解码器，开箱即用，不需要像 MPC-HC 那样自己折腾解码包。而且内存占用控制得非常好，播放高码率视频时依然流畅。
-    97|    97|  </p>
-    98|    98|
-    99|    99|  <div class="pros-cons">
-   100|   100|   <div class="pros">
-   101|   101|   <h4>✅ 优点</h4>
-   102|   102|   <ul>
-   103|   103|    <li>解码能力极强，几乎所有格式通吃</li>
-   104|   104|    <li>启动快、播放流畅，资源占用低</li>
-   105|   105|    <li>支持硬件加速，4K/8K 播放无压力</li>
-   106|   106|    <li>倍速播放音质保真度很高</li>
-   107|   107|    <li>皮肤和界面高度可定制</li>
-   108|   108|    <li>支持直播流播放和录屏功能</li>
-   109|   109|   </ul>
-   110|   110|   </div>
-   111|   111|   <div class="cons">
-   112|   112|   <h4>❌ 缺点</h4>
-   113|   113|   <ul>
-   114|   114|    <li>仅支持 Windows 平台</li>
-   115|   115|    <li>部分皮肤和功能设置有一定学习门槛</li>
-   116|   116|    <li>安装包自带推广软件需注意取消勾选</li>
-   117|   117|    <li>界面默认风格偏老旧</li>
-   118|   118|    <li>更新频率近年有所下降</li>
-   119|   119|    <li>某些高级功能藏在深层菜单里不好找</li>
-   120|   120|   </ul>
-   121|   121|   </div>
-   122|   122|  </div>
-   123|   123|
-   124|   124|  <h2>适合人群</h2>
-   125|   125|  <p>
-   126|   126|   <strong>所有 Windows 视频用户</strong>——从普通追剧党到硬核影音发烧友，PotPlayer 都能满足。如果你经常下载各种格式的视频资源，或者对播放流畅度和画质有较高要求，PotPlayer 是目前 Windows 上最省心的选择。
-   127|   127|  </p>
-   128|   128|
-   129|   129|  <h2>总结</h2>
-   130|   130|  <p>
-   131|   131|   PotPlayer 是 Windows 视频播放器领域的老大哥，解码能力和性能优化在同类软件中一直处于领先地位。如果你还在用 Windows Media Player 或者各种带广告的播放器，换成 PotPlayer 会让观影体验提升一大截。
-   132|   132|  </p>
-   133|   133|
-   134|   134|  <div class="action-buttons">
-   135|   135|   <a href="https://potplayer.tv/" target="_blank" class="action-btn primary">
-   136|   136|   ⬇️ 前往官网
-   137|   137|   </a>
-   138|   138|   <a href="../daily.html" class="action-btn secondary">
-   139|   139|   ← 返回日常工具
-   140|   140|   </a>
-   141|   141|  </div>
-   142|   142|  </div>
-   143|   143| </article>
-   144|   144| </main>
-   145|   145|
-   146|   146| <footer>
-   147|   147| <p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
-   148|   148| </footer>
-   149|   149|</body>
-   150|   150|</html>
-   151|   151|
+@media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } .action-buttons { flex-direction: column; } }
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a href="../index.html" class="logo">⚡极客<span>导航</span></a>
+<nav class="main-nav">
+<ul>
+<li><a href="../index.html">首页</a></li>
+<li><a href="../dev.html">开发工具</a></li>
+<li><a href="../design.html">设计工具</a></li>
+<li><a href="../learning.html">学习资源</a></li>
+<li><a href="../github.html">GitHub 项目</a></li>
+<li><a href="../efficiency.html">效率工具</a></li>
+<li><a href="../daily.html">日常工具</a></li>
+<li><a href="../security.html">安全工具</a></li>
+<li><a href="../cloud.html">云服务</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<article class="article">
+<div class="breadcrumb">
+<a href="../index.html">首页</a>
+<span>/</span>
+<a href="../daily.html">日常工具</a>
+<span>/</span>
+<span>PotPlayer</span>
+</div>
+
+<div class="article-header">
+<div class="article-icon"><img src="../images/icons/potplayer.png" alt="PotPlayer" class="article-icon-img"></div>
+<h1 class="article-title">PotPlayer</h1>
+<div class="article-meta">
+<span>🖥️ Windows</span>
+<span>|</span>
+<span>💰 免费</span>
+<span>|</span>
+<span>📅 2024年12月更新</span>
+</div>
+<div class="article-tags">
+<span class="tag">播放器</span>
+<span class="tag">视频</span>
+<span class="tag">免费</span>
+</div>
+</div>
+
+<div class="article-content">
+<h2>为什么选 PotPlayer</h2>
+<p>
+Windows 上从来不缺视频播放器，但 PotPlayer 凭借超强的解码能力、极致的性能优化和丰富的自定义选项，始终是很多人的首选。无论是 4K 超高清视频、各种冷门格式、还是倍速播放，PotPlayer 都能轻松应对。
+</p>
+<p>
+它的前身是 KMP 播放器，开发者是同一个大神（姜勇囍）。内置了几乎所有的音视频解码器，开箱即用，不需要像 MPC-HC 那样自己折腾解码包。而且内存占用控制得非常好，播放高码率视频时依然流畅。
+</p>
+
+<div class="pros-cons">
+<div class="pros">
+<h4>✅ 优点</h4>
+<ul>
+<li>解码能力极强，几乎所有格式通吃</li>
+<li>启动快、播放流畅，资源占用低</li>
+<li>支持硬件加速，4K/8K 播放无压力</li>
+<li>倍速播放音质保真度很高</li>
+<li>皮肤和界面高度可定制</li>
+<li>支持直播流播放和录屏功能</li>
+</ul>
+</div>
+<div class="cons">
+<h4>❌ 缺点</h4>
+<ul>
+<li>仅支持 Windows 平台</li>
+<li>部分皮肤和功能设置有一定学习门槛</li>
+<li>安装包自带推广软件需注意取消勾选</li>
+<li>界面默认风格偏老旧</li>
+<li>更新频率近年有所下降</li>
+<li>某些高级功能藏在深层菜单里不好找</li>
+</ul>
+</div>
+</div>
+
+<h2>适合人群</h2>
+<p>
+<strong>所有 Windows 视频用户</strong>——从普通追剧党到硬核影音发烧友，PotPlayer 都能满足。如果你经常下载各种格式的视频资源，或者对播放流畅度和画质有较高要求，PotPlayer 是目前 Windows 上最省心的选择。
+</p>
+
+<h2>总结</h2>
+<p>
+PotPlayer 是 Windows 视频播放器领域的老大哥，解码能力和性能优化在同类软件中一直处于领先地位。如果你还在用 Windows Media Player 或者各种带广告的播放器，换成 PotPlayer 会让观影体验提升一大截。
+</p>
+
+<div class="action-buttons">
+<a href="https://potplayer.tv/" target="_blank" class="action-btn primary">
+⬇️ 前往官网
+</a>
+<a href="../daily.html" class="action-btn secondary">
+← 返回日常工具
+</a>
+</div>
+</div>
+</article>
+</main>
+
+<footer>
+<p>© 2024 极客导航 · 发现优质工具，提升工作效率</p>
+</footer>
+</body>
+</html>
